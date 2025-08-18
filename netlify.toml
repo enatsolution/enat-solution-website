@@ -1,0 +1,42 @@
+[build]
+  publish = "."
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+[form]
+  name = "contact"
+  action = "/thank-you.html"
+  
+[[form.fields]]
+  name = "name"
+  type = "text"
+  required = true
+  
+[[form.fields]]
+  name = "email"
+  type = "email"
+  required = true
+  
+[[form.fields]]
+  name = "service"
+  type = "select"
+  required = true
+  
+[[form.fields]]
+  name = "message"
+  type = "textarea"
+  required = true
+
+[context.production.environment]
+  TOML_ENV = "production"

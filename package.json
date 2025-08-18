@@ -1,0 +1,26 @@
+{
+  "name": "enat-solution-website",
+  "version": "1.0.0",
+  "description": "Professional recruitment agency website for Enat Solution",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000",
+    "dev": "npx live-server .",
+    "build": "echo 'Static site - no build process needed'"
+  },
+  "keywords": [
+    "recruitment",
+    "staffing",
+    "website",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Enat Solution",
+  "license": "ISC",
+  "homepage": "https://enatsolution.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/enat-solution-website.git"
+  }
+}
