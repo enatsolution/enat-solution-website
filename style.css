@@ -377,20 +377,46 @@ body {
     border-color: #3b82f6;
 }
 
-/* Phone Input Group */
+/* Phone Input Group - Combined Box */
 .phone-input-group {
     display: flex;
-    gap: 0.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    background-color: white;
+}
+
+.phone-input-group:focus-within {
+    border-color: #3b82f6;
 }
 
 .country-code-select {
     flex: 0 0 auto;
-    min-width: 140px;
-    padding: 1rem 0.5rem;
+    min-width: 200px;
+    padding: 1rem;
+    border: none;
+    background-color: #f8fafc;
+    font-size: 1rem;
+    cursor: pointer;
+    border-right: 1px solid #e5e7eb;
+}
+
+.country-code-select:focus {
+    outline: none;
+    background-color: #f1f5f9;
 }
 
 .phone-input-group input[type="tel"] {
     flex: 1;
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.phone-input-group input[type="tel"]:focus {
+    outline: none;
 }
 
 /* Footer */
@@ -497,11 +523,12 @@ body {
 
     .phone-input-group {
         flex-direction: column;
-        gap: 1rem;
     }
 
     .country-code-select {
         min-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
     }
 
     .footer .container {
