@@ -31,21 +31,35 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 
 // Contact form submission
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    const submitBtn = this.querySelector('button[type="submit"]');
+    e.preventDefault();
+
+    const form = this;
+    const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
+    const formData = new FormData(form);
 
     // Show loading state
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    // Let the form submit naturally to Formspree
-    // After submission, Formspree will redirect or show a success page
+    // Submit to Netlify
+    fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+        // Redirect to thank you page
+        window.location.href = '/thank-you.html';
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('There was an error sending your message. Please try again or email us directly at info@enatsolution.com');
 
-    // Reset button after a delay (in case of errors)
-    setTimeout(() => {
+        // Reset button
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-    }, 3000);
+    });
 });
 
 // Add scroll effect to navbar
