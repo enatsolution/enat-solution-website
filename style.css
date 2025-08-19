@@ -377,6 +377,22 @@ body {
     border-color: #3b82f6;
 }
 
+/* Phone Input Group */
+.phone-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.country-code-select {
+    flex: 0 0 auto;
+    min-width: 140px;
+    padding: 1rem 0.5rem;
+}
+
+.phone-input-group input[type="tel"] {
+    flex: 1;
+}
+
 /* Footer */
 .footer {
     background: #1e3a8a;
@@ -477,6 +493,15 @@ body {
 
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .phone-input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .country-code-select {
+        min-width: 100%;
     }
 
     .footer .container {
