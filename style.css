@@ -41,11 +41,38 @@ body {
     font-size: 1.8rem;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .logo-img {
     height: 50px;
     width: auto;
     max-width: 200px;
     object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.company-name {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tagline {
+    color: #f97316;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
 }
 
 .nav-menu {
@@ -104,6 +131,10 @@ body {
 
 .hero-logo {
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .hero-logo-img {
@@ -111,6 +142,27 @@ body {
     width: auto;
     max-width: 400px;
     object-fit: contain;
+}
+
+.hero-logo-text {
+    text-align: center;
+    line-height: 1.3;
+}
+
+.hero-company-name {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.hero-tagline {
+    color: #f97316;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
 }
 
 .hero-buttons {
@@ -530,14 +582,36 @@ body {
         font-size: 2.5rem;
     }
 
+    .nav-logo {
+        gap: 10px;
+    }
+
     .logo-img {
-        height: 40px;
-        max-width: 150px;
+        height: 35px;
+        max-width: 120px;
+    }
+
+    .company-name {
+        font-size: 1.1rem;
+    }
+
+    .tagline {
+        font-size: 0.6rem;
+        letter-spacing: 0.5px;
     }
 
     .hero-logo-img {
         height: 80px;
         max-width: 250px;
+    }
+
+    .hero-company-name {
+        font-size: 1.8rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
     }
 
     .hero-buttons {
