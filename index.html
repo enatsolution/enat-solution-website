@@ -7,6 +7,9 @@
     <meta name="description" content="Enat Solution - Your trusted partner in talent solutions. Specializing in IT, Healthcare, and General Staffing recruitment services in Maryland.">
     <meta name="keywords" content="recruitment, staffing, IT jobs, healthcare jobs, Maryland recruitment agency">
     <link rel="canonical" href="https://enatsolution.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -23,11 +26,14 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#services">Industries</a></li>
                 <li><a href="#jobs">Jobs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -46,8 +52,9 @@
                     <div class="hero-tagline">CONNECTING TALENT WITH CARE</div>
                 </div>
             </div>
-            <h1>Your Trusted Partner in Talent Solutions</h1>
-            <p>Fresh perspective, proven expertise - Connecting exceptional talent with outstanding opportunities across IT, Healthcare, and General Staffing</p>
+            <h1>Connecting Exceptional Talent with Opportunity</h1>
+            <p class="hero-subtitle">Across IT, Healthcare & More</p>
+            <p class="hero-description">We fill positions in an average of 2 weeks with 24/7 candidate support and full client satisfaction. Your success is our mission.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Find Talent</a>
                 <a href="#jobs" class="btn btn-secondary">Find Jobs</a>
@@ -55,47 +62,182 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="why-choose-us section-padding">
         <div class="container">
-            <h2>About Enat Solution</h2>
-            <p>Founded with a vision to revolutionize recruitment, Enat Solution brings fresh energy and innovative approaches to talent acquisition. Our team combines industry expertise with cutting-edge technology to deliver personalized recruitment solutions that exceed expectations.</p>
-            <div class="stats">
-                <div class="stat">
-                    <h3>100%</h3>
-                    <p>Client Satisfaction Focus</p>
+            <div class="section-header">
+                <h2>Why Choose Enat Solution</h2>
+                <p>We deliver results that matter with proven expertise and personalized service</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>2 Week Average</h3>
+                    <p>Jobs filled in an average of 2 weeks, not months. Our streamlined process gets results fast.</p>
                 </div>
-                <div class="stat">
-                    <h3>24/7</h3>
-                    <p>Dedicated Support</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock candidate support for urgent placements and ongoing assistance.</p>
                 </div>
-                <div class="stat">
-                    <h3>3</h3>
-                    <p>Key Industries</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Full Satisfaction</h3>
+                    <p>Complete client satisfaction that speaks to our commitment to excellence and results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Matching</h3>
+                    <p>Deep industry knowledge ensures perfect candidate-role alignment every time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Industries Served Section -->
+    <section id="services" class="industries-served section-padding">
         <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>IT Recruitment</h3>
-                    <p>Leveraging our network and expertise to connect innovative companies with skilled software developers, cybersecurity experts, and IT professionals who drive digital transformation.</p>
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Specialized expertise across key sectors driving today's economy</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Information Technology</h3>
+                        <p>Software developers, cybersecurity experts, data scientists, and IT professionals driving digital transformation across industries.</p>
+                        <ul class="industry-roles">
+                            <li>Software Engineers</li>
+                            <li>DevOps Specialists</li>
+                            <li>Data Analysts</li>
+                            <li>Cybersecurity Experts</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Healthcare Staffing</h3>
-                    <p>Committed to supporting healthcare excellence by matching qualified nurses, physicians, and healthcare professionals with facilities that value quality patient care.</p>
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Healthcare</h3>
+                        <p>Qualified nurses, physicians, and healthcare professionals supporting quality patient care and medical excellence.</p>
+                        <ul class="industry-roles">
+                            <li>Registered Nurses</li>
+                            <li>Medical Assistants</li>
+                            <li>Healthcare Administrators</li>
+                            <li>Specialists & Physicians</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-users"></i>
-                    <h3>General Staffing</h3>
-                    <p>Building strong foundations for businesses through strategic placement of administrative, customer service, and operational professionals who contribute to organizational success.</p>
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>General Staffing</h3>
+                        <p>Administrative, customer service, and operational professionals building strong organizational foundations.</p>
+                        <ul class="industry-roles">
+                            <li>Administrative Assistants</li>
+                            <li>Customer Service Reps</li>
+                            <li>Operations Managers</li>
+                            <li>Sales Professionals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Work</h2>
+                <p>Our proven 3-step process delivers results efficiently and effectively</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connect</h3>
+                        <p>We understand your needs, culture, and requirements through detailed consultation and strategic planning.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Screen</h3>
+                        <p>Our expert team thoroughly vets candidates using comprehensive screening and assessment processes.</p>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Match</h3>
+                        <p>We deliver perfectly aligned candidates who fit your role requirements and company culture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Success stories from companies and candidates who trust Enat Solution</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Enat Solution found us the perfect software engineer in just 10 days. Their understanding of our technical requirements was exceptional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>CTO, TechStart Inc.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The 24/7 support during my job search was incredible. They helped me land my dream role in healthcare administration."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>Healthcare Administrator</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Professional, efficient, and results-driven. Enat Solution consistently delivers quality candidates for our growing team."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Lisa Rodriguez</h4>
+                            <span>HR Director, MedCare Solutions</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,30 +268,79 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
+    <!-- About Our Story Section -->
+    <section id="about" class="about-story section-padding">
         <div class="container">
-            <h2>Why Choose Enat Solution?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Personalized Approach</h3>
-                    <p>We take time to understand your unique needs and provide tailored solutions that fit your specific requirements.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header">
+                        <h2>Our Story</h2>
+                        <p>Founded with a vision to revolutionize recruitment through personalized service and innovative approaches</p>
+                    </div>
+                    <div class="story-content">
+                        <p>At Enat Solution, we believe that the right talent can transform organizations and the right opportunity can change lives. Founded with fresh energy and innovative approaches, we bring a new perspective to talent acquisition.</p>
+                        <p>Our team combines deep industry expertise with cutting-edge technology to deliver personalized recruitment solutions that exceed expectations. We're not just filling positions – we're building lasting partnerships and creating success stories.</p>
+                        <div class="values-list">
+                            <div class="value-item">
+                                <i class="fas fa-heart"></i>
+                                <span>Connecting talent with care and precision</span>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-handshake"></i>
+                                <span>Building lasting partnerships</span>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-star"></i>
+                                <span>Delivering excellence in every placement</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Trusted & Reliable</h3>
-                    <p>Built on integrity and transparency, we ensure confidential handling of all information and maintain the highest professional standards.</p>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2 Weeks</div>
+                        <div class="stat-label">Average Fill Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Candidate Support</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Key Industries</div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Fast & Efficient</h3>
-                    <p>Our streamlined processes and dedicated team ensure quick turnaround times without compromising on quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about our recruitment services</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How long does the hiring process take?</h3>
+                    <p>Our average placement time is 2 weeks from initial consultation to candidate placement. For urgent positions, we can often deliver qualified candidates within 3-5 business days.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Quality Focused</h3>
-                    <p>We are committed to excellence in every placement, ensuring the perfect match between talent and opportunity.</p>
+                <div class="faq-item">
+                    <h3>What support do you offer post-placement?</h3>
+                    <p>We provide 24/7 ongoing support including 90-day placement guarantees, regular check-ins, and assistance with any integration challenges to ensure long-term success.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you work with remote positions?</h3>
+                    <p>Yes! We specialize in remote, hybrid, and on-site placements across all our industries. Our network includes candidates comfortable with various work arrangements.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What industries do you specialize in?</h3>
+                    <p>We focus on three key areas: Information Technology (software development, cybersecurity, data analysis), Healthcare (nursing, medical administration), and General Staffing (administrative, customer service, operations).</p>
                 </div>
             </div>
         </div>
