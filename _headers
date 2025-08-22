@@ -27,6 +27,16 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
 
+  # Additional Security Headers
+  X-Robots-Tag: index, follow
+  X-UA-Compatible: IE=edge
+  X-Request-ID: netlify-request
+
+  # Rate Limiting Headers (informational)
+  X-RateLimit-Limit: 1000
+  X-RateLimit-Remaining: 999
+  X-RateLimit-Reset: 3600
+
   # Cache Control for HTML - No Cache for Security
   Cache-Control: no-cache, no-store, must-revalidate, private
   Pragma: no-cache
