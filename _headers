@@ -1,0 +1,79 @@
+/*
+  # Security Headers - Enterprise Level Protection
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  X-Permitted-Cross-Domain-Policies: none
+  X-Download-Options: noopen
+  X-DNS-Prefetch-Control: off
+
+  # Referrer Policy - Enhanced Privacy
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Permissions Policy - Disable Unnecessary Features
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=(), vibrate=(), fullscreen=(), sync-xhr=()
+
+  # Content Security Policy - Maximum Protection
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https:; worker-src 'none'; child-src 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content;
+
+  # HSTS (HTTP Strict Transport Security) - Maximum Security
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # Expect-CT - Certificate Transparency
+  Expect-CT: max-age=86400, enforce
+
+  # Cross-Origin Policies
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+  # Cache Control for HTML - No Cache for Security
+  Cache-Control: no-cache, no-store, must-revalidate, private
+  Pragma: no-cache
+  Expires: 0
+
+# Static Assets - Secure Caching
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# Security Files
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400

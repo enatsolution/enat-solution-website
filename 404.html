@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Enat Solution</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to Enat Solution homepage.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0ea5e9 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-content {
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .error-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1e293b;
+            border-color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-description">
+                The page you're looking for doesn't exist or has been moved. 
+                Let's get you back to finding the perfect talent or opportunity.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Go Home
+                </a>
+                <a href="/#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Security: No external scripts or tracking on error pages -->
+</body>
+</html>

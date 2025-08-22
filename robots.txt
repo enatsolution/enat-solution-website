@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://enatsolution.com/sitemap.xml
+
+# Disallow sensitive areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

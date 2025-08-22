@@ -6,6 +6,24 @@
     <title>Enat Solution - Professional Recruitment Services</title>
     <meta name="description" content="Enat Solution - Your trusted partner in talent solutions. Specializing in IT, Healthcare, and General Staffing recruitment services in Maryland.">
     <meta name="keywords" content="recruitment, staffing, IT jobs, healthcare jobs, Maryland recruitment agency">
+    <!-- Security Meta Tags - Enterprise Level -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-Permitted-Cross-Domain-Policies" content="none">
+    <meta http-equiv="X-Download-Options" content="noopen">
+    <meta http-equiv="X-DNS-Prefetch-Control" content="off">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-config" content="none">
+    <meta name="theme-color" content="#1e293b">
+    <meta name="msapplication-TileColor" content="#1e293b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Enat Solution">
+    <meta name="application-name" content="Enat Solution">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="canonical" href="https://enatsolution.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -365,10 +383,12 @@
                         <p>Maryland, USA<br>Nationwide Recruitment Services</p>
                     </div>
                 </div>
-                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" data-netlify-recaptcha="true">
                     <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="timestamp" id="timestamp">
+                    <input type="hidden" name="user-agent" id="user-agent">
                     <p style="display: none;">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
                     </p>
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -640,12 +660,47 @@
         <div class="container">
             <p>&copy; 2024 Enat Solution. All rights reserved.</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- Security and Form Enhancement Script -->
+    <script>
+        // Security monitoring and form enhancement
+        (function() {
+            'use strict';
+
+            // Set timestamp and user agent for form security
+            function setFormSecurity() {
+                const timestampField = document.getElementById('timestamp');
+                const userAgentField = document.getElementById('user-agent');
+
+                if (timestampField) {
+                    timestampField.value = new Date().toISOString();
+                }
+
+                if (userAgentField) {
+                    userAgentField.value = navigator.userAgent.substring(0, 100);
+                }
+            }
+
+            // CSP violation reporting
+            document.addEventListener('securitypolicyviolation', function(e) {
+                console.warn('CSP Violation:', e.violatedDirective, e.blockedURI);
+            });
+
+            // Initialize security features when DOM is loaded
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setFormSecurity);
+            } else {
+                setFormSecurity();
+            }
+
+        })();
+    </script>
 
     <script src="script.js"></script>
 </body>
