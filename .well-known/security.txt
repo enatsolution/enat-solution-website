@@ -1,0 +1,31 @@
+Contact: mailto:security@enatsolution.com
+Contact: https://www.linkedin.com/company/enat-solution/about
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://enatsolution.com/.well-known/security.txt
+
+# Security Policy for Enat Solution
+# 
+# We take security seriously and appreciate responsible disclosure
+# of security vulnerabilities. Please report security issues to
+# security@enatsolution.com
+#
+# What to include in your report:
+# - Description of the vulnerability
+# - Steps to reproduce the issue
+# - Potential impact assessment
+# - Any suggested fixes or mitigations
+#
+# We commit to:
+# - Acknowledge receipt within 24 hours
+# - Provide regular updates on investigation progress
+# - Credit researchers (with permission) for responsible disclosure
+# - Fix verified vulnerabilities in a timely manner
+#
+# Out of scope:
+# - Social engineering attacks
+# - Physical attacks
+# - Denial of service attacks
+# - Issues in third-party services we don't control
+#
+# Thank you for helping keep Enat Solution secure!
