@@ -28,59 +28,88 @@
             }, 1000);
         });
         
-        // 2. Monitor for keyboard shortcuts (developer tools detection)
+        // 2. Monitor for keyboard shortcuts (developer tools detection) - Less aggressive
+        let devToolsAttempts = 0;
         document.addEventListener('keydown', function(e) {
             const suspiciousKeys = [
-                'F12',
-                'I', // Ctrl+Shift+I
-                'J', // Ctrl+Shift+J
-                'C', // Ctrl+Shift+C
-                'U'  // Ctrl+U
+                'F12'
+                // Removed other keys as they're too common in normal usage
             ];
-            
-            if (suspiciousKeys.includes(e.key) && (e.ctrlKey || e.metaKey)) {
-                logSecurityEvent('dev_tools_attempt', {
-                    key: e.key,
-                    ctrlKey: e.ctrlKey,
-                    shiftKey: e.shiftKey,
-                    timestamp: new Date().toISOString()
-                });
+
+            if (suspiciousKeys.includes(e.key)) {
+                devToolsAttempts++;
+                if (devToolsAttempts > 3) { // Only alert after multiple attempts
+                    logSecurityEvent('dev_tools_attempt', {
+                        key: e.key,
+                        attempts: devToolsAttempts,
+                        timestamp: new Date().toISOString()
+                    });
+                    devToolsAttempts = 0; // Reset counter
+                }
             }
         });
         
-        // 3. Monitor for console access attempts
+        // 3. Monitor for console access attempts (less sensitive)
         let devtools = {
             open: false,
-            orientation: null
+            alertSent: false
         };
-        
+
         setInterval(function() {
-            if (window.outerHeight - window.innerHeight > 200 || 
-                window.outerWidth - window.innerWidth > 200) {
-                if (!devtools.open) {
+            const heightDiff = window.outerHeight - window.innerHeight;
+            const widthDiff = window.outerWidth - window.innerWidth;
+
+            // More conservative detection - larger threshold
+            if (heightDiff > 300 || widthDiff > 300) {
+                if (!devtools.open && !devtools.alertSent) {
                     devtools.open = true;
+                    devtools.alertSent = true;
                     logSecurityEvent('dev_tools_opened', {
+                        heightDiff: heightDiff,
+                        widthDiff: widthDiff,
                         timestamp: new Date().toISOString()
                     });
+
+                    // Reset alert flag after 30 seconds
+                    setTimeout(function() {
+                        devtools.alertSent = false;
+                    }, 30000);
                 }
             } else {
                 devtools.open = false;
             }
-        }, 500);
+        }, 2000); // Check less frequently
         
-        // 4. Monitor for form tampering
+        // 4. Monitor for form tampering (improved detection)
         const forms = document.querySelectorAll('form');
         forms.forEach(function(form) {
-            const originalHTML = form.innerHTML;
-            
+            const originalFormStructure = {
+                fieldCount: form.querySelectorAll('input, select, textarea').length,
+                formAction: form.action,
+                formMethod: form.method,
+                formName: form.name
+            };
+
+            // Only check for structural changes, not content changes
             setInterval(function() {
-                if (form.innerHTML !== originalHTML) {
+                const currentStructure = {
+                    fieldCount: form.querySelectorAll('input, select, textarea').length,
+                    formAction: form.action,
+                    formMethod: form.method,
+                    formName: form.name
+                };
+
+                // Only alert if form structure actually changed (not just values)
+                if (JSON.stringify(currentStructure) !== JSON.stringify(originalFormStructure)) {
                     logSecurityEvent('form_tampering', {
                         formName: form.name || 'unknown',
+                        change: 'structure_modified',
                         timestamp: new Date().toISOString()
                     });
+                    // Update baseline to prevent repeated alerts
+                    originalFormStructure = currentStructure;
                 }
-            }, 2000);
+            }, 5000); // Check less frequently
         });
         
         // 5. Monitor for URL manipulation
@@ -135,8 +164,13 @@
             securityEvents.shift();
         }
         
-        // In production, you might want to send this to a security monitoring service
-        console.warn('Security Event:', eventType, data);
+        // Only log significant security events to reduce noise
+        const significantEvents = ['csp_violation', 'resource_load_error', 'form_tampering'];
+        if (significantEvents.includes(eventType)) {
+            console.warn('Security Event:', eventType, data);
+        } else {
+            console.log('Security Monitor:', eventType, data);
+        }
     }
     
     // Initialize when DOM is ready
