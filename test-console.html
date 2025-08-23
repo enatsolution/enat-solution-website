@@ -77,7 +77,15 @@
         <div class="test-result success">
             <strong>✓ Security Monitoring Optimized:</strong> Reduced console noise from security monitoring scripts.
         </div>
-        
+
+        <div class="test-result success">
+            <strong>✓ Permissions-Policy Fixed:</strong> Removed unrecognized 'speaker' and 'vibrate' features from Permissions-Policy headers.
+        </div>
+
+        <div class="test-result success">
+            <strong>✓ IntersectionObserver Fixed:</strong> Updated to use modern parameter pattern instead of deprecated approach.
+        </div>
+
         <div class="test-result info">
             <strong>ℹ Feature Collector Warning:</strong> The "feature_collector.js" warning appears to be from a browser extension or external script, not from the website code.
         </div>
@@ -99,6 +107,8 @@
             <li><strong>Security Monitor Console Noise:</strong> Modified security-monitor.js to only log critical events</li>
             <li><strong>CSP Violation Logging:</strong> Updated security.js to filter out routine script-src violations</li>
             <li><strong>Dev Tools Detection:</strong> Made dev tools detection less aggressive and silent</li>
+            <li><strong>Permissions-Policy Errors:</strong> Removed unrecognized 'speaker' and 'vibrate' features from both _headers and .htaccess files</li>
+            <li><strong>IntersectionObserver Deprecated Parameters:</strong> Updated script.js to use modern single object parameter pattern</li>
         </ul>
         
         <h2>Remaining Items:</h2>
