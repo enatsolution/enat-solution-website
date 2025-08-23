@@ -13,6 +13,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-config" content="none">
     <meta name="theme-color" content="#1e293b">
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
     <meta name="msapplication-TileColor" content="#1e293b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -388,7 +390,7 @@
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <div class="phone-input-group">
-                        <select name="country_code" class="country-code-select" id="countrySelect" required>
+                        <select name="country_code" class="country-code-select" id="countrySelect" required aria-label="Select country code" title="Select your country code">
                             <option value="+1" selected>🇺🇸 +1 United States</option>
                             <option value="+93">🇦🇫 +93 Afghanistan</option>
                             <option value="+355">🇦🇱 +355 Albania</option>
@@ -637,7 +639,7 @@
                         </select>
                         <input type="tel" name="phone" id="phoneInput" placeholder="Phone Number" required>
                     </div>
-                    <select name="service" required>
+                    <select name="service" required aria-label="Select service type" title="How can we help you?">
                         <option value="">How can we help you?</option>
                         <option value="employer">I need to hire talent</option>
                         <option value="jobseeker">I'm looking for opportunities</option>
@@ -655,9 +657,9 @@
         <div class="container">
             <p>&copy; 2024 Enat Solution. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/security-policy.html">Security Policy</a></p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="Follow Enat Solution on Twitter" aria-label="Follow Enat Solution on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Follow Enat Solution on Facebook" aria-label="Follow Enat Solution on Facebook"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>

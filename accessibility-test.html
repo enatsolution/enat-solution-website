@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility & Compatibility Test - Enat Solution</title>
+    <meta name="description" content="Test page for accessibility and browser compatibility fixes for Enat Solution website.">
+    
+    <!-- Theme color with Firefox compatibility -->
+    <meta name="theme-color" content="#1e293b">
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
+    <meta name="msapplication-TileColor" content="#1e293b">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+        .test-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .social-test {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .social-test a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #1e293b;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .social-test a:hover {
+            background: #1e40af;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Accessibility & Compatibility Test Page</h1>
+        <p>This page tests all the accessibility and browser compatibility fixes applied to the Enat Solution website.</p>
+        
+        <div class="test-section">
+            <h2>✅ Issues Fixed</h2>
+            
+            <div class="test-result success">
+                <strong>✓ Select Elements Accessibility:</strong> Added aria-label and title attributes to all select elements for screen reader compatibility.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Social Links Accessibility:</strong> Added title and aria-label attributes to all social media icon links for better accessibility.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Firefox Theme Color Support:</strong> Added media queries for theme-color to ensure Firefox compatibility.
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🧪 Test Form Elements</h2>
+            <p>Test the accessibility improvements on form elements:</p>
+            
+            <div class="test-form">
+                <div class="form-group">
+                    <label for="test-country">Country Code Selection:</label>
+                    <select id="test-country" name="country_code" aria-label="Select country code" title="Select your country code" required>
+                        <option value="+1" selected>🇺🇸 +1 United States</option>
+                        <option value="+44">🇬🇧 +44 United Kingdom</option>
+                        <option value="+33">🇫🇷 +33 France</option>
+                        <option value="+49">🇩🇪 +49 Germany</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="test-service">Service Type:</label>
+                    <select id="test-service" name="service" aria-label="Select service type" title="How can we help you?" required>
+                        <option value="">How can we help you?</option>
+                        <option value="employer">I need to hire talent</option>
+                        <option value="jobseeker">I'm looking for opportunities</option>
+                        <option value="partnership">Partnership inquiry</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔗 Test Social Links</h2>
+            <p>Test the accessibility improvements on social media links:</p>
+            
+            <div class="social-test">
+                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" title="Follow Enat Solution on Twitter" aria-label="Follow Enat Solution on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" title="Follow Enat Solution on Facebook" aria-label="Follow Enat Solution on Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🌈 Theme Color Test</h2>
+            <p>The page now includes Firefox-compatible theme color meta tags:</p>
+            
+            <div class="code-block">&lt;meta name="theme-color" content="#1e293b"&gt;
+&lt;meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: light)"&gt;
+&lt;meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)"&gt;</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Summary of Changes</h2>
+            
+            <h3>Accessibility Improvements:</h3>
+            <ul>
+                <li><strong>Select Elements:</strong> Added <code>aria-label</code> and <code>title</code> attributes to country code and service type selectors</li>
+                <li><strong>Social Links:</strong> Added <code>title</code> and <code>aria-label</code> attributes to all social media icon links</li>
+                <li><strong>Screen Reader Support:</strong> All form controls now have accessible names for assistive technologies</li>
+            </ul>
+            
+            <h3>Browser Compatibility:</h3>
+            <ul>
+                <li><strong>Firefox Theme Color:</strong> Added media query variants of theme-color meta tag for Firefox support</li>
+                <li><strong>Cross-Browser Support:</strong> Maintained compatibility with Chrome, Safari, and Edge while adding Firefox support</li>
+            </ul>
+            
+            <h3>Files Modified:</h3>
+            <ul>
+                <li><code>index.html</code> - Updated select elements and social links with accessibility attributes</li>
+                <li><code>thank-you.html</code> - Updated social links with accessibility attributes</li>
+                <li><code>index.html</code> - Added Firefox-compatible theme-color meta tags</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔍 Testing Instructions</h2>
+            
+            <div class="test-result info">
+                <strong>Screen Reader Testing:</strong> Use NVDA, JAWS, or VoiceOver to verify that select elements and social links are properly announced.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Browser Testing:</strong> Test theme color in Firefox to verify it now appears in the browser UI (address bar, tabs).
+            </div>
+            
+            <div class="test-result info">
+                <strong>Edge Inspector:</strong> Re-run Edge browser inspect to verify all accessibility and compatibility issues are resolved.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
