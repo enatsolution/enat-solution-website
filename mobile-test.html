@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Mobile Responsiveness Test - Enat Solution</title>
+    <meta name="description" content="Test page for mobile responsiveness improvements for Enat Solution website.">
+    
+    <!-- Theme color with Firefox compatibility -->
+    <meta name="theme-color" content="#1e293b">
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .mobile-test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+        .mobile-demo {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            background: #f8f9fa;
+        }
+        .device-frame {
+            max-width: 375px;
+            margin: 0 auto;
+            border: 8px solid #333;
+            border-radius: 25px;
+            padding: 20px 10px;
+            background: white;
+            position: relative;
+        }
+        .device-frame::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+        }
+        .mini-nav {
+            background: #1e293b;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+        .mini-hero {
+            text-align: center;
+            padding: 20px 10px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .mini-hero h1 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .mini-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .mini-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            background: #3b82f6;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .mini-form {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .mini-form input, .mini-form select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .improvement-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .improvement-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .improvement-list li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-test-container">
+        <h1>📱 Mobile Responsiveness Test</h1>
+        <p>This page demonstrates the mobile-friendly improvements made to the Enat Solution website.</p>
+        
+        <div class="test-section">
+            <h2>✅ Mobile Improvements Applied</h2>
+            
+            <div class="test-result success">
+                <strong>✓ Viewport Optimization:</strong> Enhanced viewport meta tag for better mobile scaling and zoom control.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Overflow Prevention:</strong> Added CSS rules to prevent horizontal scrolling on mobile devices.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Touch-Friendly Design:</strong> Improved button sizes and form elements for better touch interaction.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Responsive Typography:</strong> Optimized font sizes and spacing for mobile readability.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Enhanced Mobile Navigation:</strong> Improved hamburger menu and mobile navigation experience.
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📱 Mobile Layout Preview</h2>
+            <p>Here's how the website now looks on mobile devices:</p>
+            
+            <div class="mobile-demo">
+                <div class="device-frame">
+                    <div class="mini-nav">
+                        <span>enat solution</span>
+                        <span>☰</span>
+                    </div>
+                    
+                    <div class="mini-hero">
+                        <h1>Connecting Exceptional Talent</h1>
+                        <p style="font-size: 12px; margin: 10px 0;">Across IT, Healthcare & More</p>
+                        <div class="mini-buttons">
+                            <button class="mini-btn">Find Talent</button>
+                            <button class="mini-btn">Find Jobs</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mini-form">
+                        <h3 style="font-size: 14px; margin: 0 0 10px 0;">Contact Form</h3>
+                        <input type="text" placeholder="Your Name" />
+                        <input type="email" placeholder="Your Email" />
+                        <select>
+                            <option>🇺🇸 +1 United States</option>
+                        </select>
+                        <input type="tel" placeholder="Phone Number" />
+                        <select>
+                            <option>How can we help you?</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔧 Technical Improvements</h2>
+            
+            <div class="improvement-list">
+                <h3>CSS Enhancements:</h3>
+                <ul>
+                    <li><strong>Box-sizing:</strong> Applied <code>box-sizing: border-box</code> to all elements</li>
+                    <li><strong>Overflow control:</strong> Added <code>overflow-x: hidden</code> to prevent horizontal scroll</li>
+                    <li><strong>Responsive containers:</strong> Improved padding and max-width for mobile screens</li>
+                    <li><strong>Touch targets:</strong> Ensured buttons and links are at least 44px for easy tapping</li>
+                    <li><strong>Font sizing:</strong> Used relative units and prevented iOS zoom on form inputs</li>
+                </ul>
+            </div>
+            
+            <div class="improvement-list">
+                <h3>Viewport Improvements:</h3>
+                <ul>
+                    <li><strong>Enhanced viewport:</strong> <code>width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes</code></li>
+                    <li><strong>Zoom control:</strong> Allows users to zoom up to 5x while maintaining usability</li>
+                    <li><strong>Accessibility:</strong> Maintains user control over zoom for accessibility needs</li>
+                </ul>
+            </div>
+            
+            <div class="improvement-list">
+                <h3>Responsive Breakpoints:</h3>
+                <ul>
+                    <li><strong>Tablet (≤768px):</strong> Optimized layout for tablet devices</li>
+                    <li><strong>Mobile (≤480px):</strong> Extra small device optimizations</li>
+                    <li><strong>Form improvements:</strong> Stack form elements vertically on mobile</li>
+                    <li><strong>Navigation:</strong> Hamburger menu with improved touch targets</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Files Modified</h2>
+            
+            <div class="test-result info">
+                <strong>style.css:</strong> Enhanced mobile responsiveness with better overflow control, improved typography, and touch-friendly elements.
+            </div>
+            
+            <div class="test-result info">
+                <strong>index.html:</strong> Updated viewport meta tag for better mobile scaling control.
+            </div>
+            
+            <div class="test-result info">
+                <strong>thank-you.html:</strong> Updated viewport meta tag for consistency across all pages.
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🧪 Testing Instructions</h2>
+            
+            <div class="test-result info">
+                <strong>Mobile Testing:</strong> Test the website on various mobile devices (iPhone, Android) and screen sizes.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Browser DevTools:</strong> Use Chrome/Edge DevTools device emulation to test different screen sizes.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Touch Testing:</strong> Verify that all buttons, links, and form elements are easily tappable on touch devices.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Orientation Testing:</strong> Test both portrait and landscape orientations on mobile devices.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

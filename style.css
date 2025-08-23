@@ -970,7 +970,24 @@ body {
     margin-top: 2rem;
 }
 
-/* Responsive Design */
+/* Enhanced Mobile Responsiveness */
+
+/* Prevent horizontal overflow */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.container {
+    padding: 0 16px;
+    max-width: 100%;
+}
+
+/* Mobile-first responsive design */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -986,129 +1003,250 @@ body {
         flex-direction: column;
         padding: 1rem 0;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
     }
 
     .nav-menu.active {
         display: flex;
     }
 
+    .nav-container {
+        padding: 0 16px;
+    }
+
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 16px;
+        margin-bottom: 2rem;
     }
 
     .nav-logo {
-        gap: 10px;
+        gap: 8px;
     }
 
     .logo-img {
-        height: 35px;
-        max-width: 120px;
+        height: 32px;
+        max-width: 100px;
     }
 
     .company-name {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .tagline {
-        font-size: 0.6rem;
-        letter-spacing: 0.5px;
+        font-size: 0.55rem;
+        letter-spacing: 0.3px;
     }
 
     .hero-logo-img {
-        height: 80px;
-        max-width: 250px;
+        height: 70px;
+        max-width: 200px;
+        margin-bottom: 1rem;
     }
 
     .hero-company-name {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .hero-tagline {
-        font-size: 0.9rem;
-        letter-spacing: 1px;
+        font-size: 0.8rem;
+        letter-spacing: 0.8px;
+        margin-bottom: 1.5rem;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
     }
 
     .section-header h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
     }
 
     .section-header p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding: 0 16px;
+    }
+
+    .section-padding {
+        padding: 3rem 0;
     }
 
     .features-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 16px;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+        text-align: center;
     }
 
     .industries-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 16px;
+    }
+
+    .industry-card {
+        padding: 1.5rem;
     }
 
     .process-steps {
         flex-direction: column;
         gap: 2rem;
+        padding: 0 16px;
     }
 
     .step-arrow {
         transform: rotate(90deg);
+        margin: 1rem 0;
     }
 
     .step {
         min-width: auto;
         max-width: none;
+        padding: 0 16px;
     }
 
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 16px;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
     }
 
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 0 16px;
     }
 
     .about-stats {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+        padding: 0 16px;
     }
 
     .stat-card {
-        padding: 1.5rem 1rem;
+        padding: 1.2rem 0.8rem;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .faq-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 0 16px;
+    }
+
+    .faq-item {
+        padding: 1.5rem;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 16px;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 100%;
+        font-size: 16px; /* Prevents zoom on iOS */
     }
 
     .phone-input-group {
         flex-direction: column;
+        gap: 0;
     }
 
     .country-code-select {
         min-width: 100%;
         border-right: none;
         border-bottom: 1px solid #e5e7eb;
+        border-radius: 8px 8px 0 0;
+    }
+
+    #phoneInput {
+        border-radius: 0 0 8px 8px;
+        border-top: none;
+    }
+
+    .jobs-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 16px;
+    }
+
+    .job-card {
+        padding: 1.5rem;
     }
 
     .footer .container {
         flex-direction: column;
         gap: 1rem;
+        text-align: center;
+        padding: 0 16px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-company-name {
+        font-size: 1.4rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .nav-container {
+        padding: 0 12px;
     }
 }
