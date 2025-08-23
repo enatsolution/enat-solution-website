@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Navigation Button Test - Enat Solution</title>
+    <meta name="description" content="Test page for the improved Get Started button in navigation.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .test-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+        .nav-demo {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .demo-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .demo-logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .demo-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .demo-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .demo-cta {
+            margin-left: 2rem;
+        }
+        .demo-btn {
+            padding: 10px 20px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+        .demo-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        .responsive-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .device-demo {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+        }
+        .device-demo h4 {
+            margin: 0 0 15px 0;
+            text-align: center;
+            color: #666;
+        }
+        .mobile-nav {
+            background: #1e293b;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+        .mobile-btn {
+            padding: 6px 12px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .tablet-btn {
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .responsive-demo {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Actual Navigation (for testing) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Enat Solution - Connecting Talent with Care" class="logo-img">
+                <div class="logo-text">
+                    <div class="company-name">enat solution</div>
+                    <div class="tagline">CONNECTING TALENT WITH CARE</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#services">Industries</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="test-container">
+        <h1>🔧 Navigation Button Improvements</h1>
+        <p>This page demonstrates the fixes applied to the "Get Started" button in the navigation.</p>
+        
+        <div class="test-section">
+            <h2>✅ Issues Fixed</h2>
+            
+            <div class="test-result success">
+                <strong>✓ Button Alignment:</strong> Improved alignment and spacing of the Get Started button in the navigation.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Mobile Responsiveness:</strong> Added proper mobile styling for different screen sizes.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Touch-Friendly:</strong> Optimized button size and padding for better touch interaction.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Visual Consistency:</strong> Ensured the button looks consistent across all devices.
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📱 Responsive Button Behavior</h2>
+            
+            <div class="responsive-demo">
+                <div class="device-demo">
+                    <h4>Desktop (>768px)</h4>
+                    <div class="nav-demo">
+                        <div class="demo-nav">
+                            <span class="demo-logo">enat solution</span>
+                            <ul class="demo-menu">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <div class="demo-cta">
+                                <a href="#" class="demo-btn">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="device-demo">
+                    <h4>Tablet (≤768px)</h4>
+                    <div class="mobile-nav">
+                        <span>enat solution</span>
+                        <a href="#" class="tablet-btn">Get Started</a>
+                        <span>☰</span>
+                    </div>
+                </div>
+                
+                <div class="device-demo">
+                    <h4>Mobile (≤480px)</h4>
+                    <div class="mobile-nav">
+                        <span>enat solution</span>
+                        <a href="#" class="mobile-btn">Get Started</a>
+                        <span>☰</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔧 Technical Changes</h2>
+            
+            <h3>CSS Improvements:</h3>
+            <div class="code-block">/* Base nav-cta styling */
+.nav-cta {
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-cta .btn {
+    white-space: nowrap;
+}
+
+/* Mobile styling (≤768px) */
+@media (max-width: 768px) {
+    .nav-cta {
+        margin-left: 1rem;
+    }
+    
+    .nav-cta .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        border-radius: 25px;
+    }
+}
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+    .nav-cta .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Very small devices (≤360px) */
+@media (max-width: 360px) {
+    .nav-cta {
+        display: none; /* Hide if too cramped */
+    }
+}</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Summary of Improvements</h2>
+            
+            <div class="test-result info">
+                <strong>Better Alignment:</strong> Added flexbox properties to ensure proper vertical alignment with other nav elements.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Responsive Sizing:</strong> Button size adapts to screen size - larger on desktop, smaller on mobile.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Smart Hiding:</strong> Button hides on very small screens (≤360px) to prevent overcrowding.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Touch Optimization:</strong> Proper touch target sizes for mobile devices.
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🧪 Testing Instructions</h2>
+            
+            <div class="test-result info">
+                <strong>Desktop Testing:</strong> Check that the button aligns properly with the navigation menu.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Mobile Testing:</strong> Verify the button scales appropriately and remains easily tappable.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Responsive Testing:</strong> Test at various screen sizes to ensure smooth transitions.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

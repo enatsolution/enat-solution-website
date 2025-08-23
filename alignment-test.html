@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Alignment Improvements Test - Enat Solution</title>
+    <meta name="description" content="Test page showing all alignment improvements across the website.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .test-section {
+            background: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .info {
+            background-color: #d1ecf1;
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .demo-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .demo-card h4 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        .demo-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .demo-tag {
+            background: #f97316;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        .before, .after {
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .before {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+        }
+        .after {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+        .before h4, .after h4 {
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        .old-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .new-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        .responsive-demo {
+            margin: 20px 0;
+        }
+        .screen-size {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .screen-size h5 {
+            margin: 0 0 10px 0;
+            color: #495057;
+        }
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🎯 Alignment Improvements Test</h1>
+        <p>This page demonstrates all the alignment fixes applied across the Enat Solution website.</p>
+        
+        <div class="test-section">
+            <h2>✅ Alignment Issues Fixed</h2>
+            
+            <div class="test-result success">
+                <strong>✓ Jobs Section:</strong> Fixed IT, Healthcare, and General job cards to display in perfect 3-column alignment.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Features Grid:</strong> Improved 4-column layout with proper responsive breakpoints.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Industries Grid:</strong> Enhanced 3-column layout for IT, Healthcare, and General Staffing sections.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Testimonials:</strong> Aligned testimonial cards in consistent 3-column grid.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ FAQ Section:</strong> Improved 2-column layout for better readability.
+            </div>
+            
+            <div class="test-result success">
+                <strong>✓ Responsive Design:</strong> All grids now have proper mobile breakpoints for perfect alignment on all devices.
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📱 Current Opportunities - Fixed Layout</h2>
+            <p>The job cards now display in perfect alignment:</p>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h4>Software Developer</h4>
+                    <p>Full-time • Remote/Hybrid • Competitive Salary</p>
+                    <span class="demo-tag">IT</span>
+                </div>
+                <div class="demo-card">
+                    <h4>Healthcare Professional</h4>
+                    <p>Full-time • Various Locations • Excellent Benefits</p>
+                    <span class="demo-tag">Healthcare</span>
+                </div>
+                <div class="demo-card">
+                    <h4>Administrative Specialist</h4>
+                    <p>Full/Part-time • Flexible Schedule • Growth Opportunities</p>
+                    <span class="demo-tag">General</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔄 Before vs After Comparison</h2>
+            
+            <div class="before-after">
+                <div class="before">
+                    <h4>❌ Before (Uneven Alignment)</h4>
+                    <div class="old-grid">
+                        <div class="grid-item">Item 1</div>
+                        <div class="grid-item">Item 2</div>
+                        <div class="grid-item">Item 3</div>
+                    </div>
+                    <p><small>Used: <code>repeat(auto-fit, minmax(300px, 1fr))</code><br>
+                    Result: Uneven spacing and poor alignment</small></p>
+                </div>
+                
+                <div class="after">
+                    <h4>✅ After (Perfect Alignment)</h4>
+                    <div class="new-grid">
+                        <div class="grid-item">Item 1</div>
+                        <div class="grid-item">Item 2</div>
+                        <div class="grid-item">Item 3</div>
+                    </div>
+                    <p><small>Uses: <code>repeat(3, 1fr)</code><br>
+                    Result: Perfect equal-width columns</small></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📐 Technical Improvements</h2>
+            
+            <div class="test-result info">
+                <strong>Grid Layout Changes:</strong> Replaced <code>auto-fit</code> with fixed column counts for consistent alignment.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Max-Width Control:</strong> Added container max-widths to prevent overstretching on large screens.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Responsive Breakpoints:</strong> Custom breakpoints for each section based on content needs.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Center Alignment:</strong> All grids are now centered with <code>margin: 0 auto</code>.
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📱 Responsive Behavior</h2>
+            
+            <div class="responsive-demo">
+                <div class="screen-size">
+                    <h5>🖥️ Desktop (>1000px)</h5>
+                    <p><strong>Jobs:</strong> 3 columns | <strong>Features:</strong> 4 columns | <strong>Industries:</strong> 3 columns</p>
+                </div>
+                
+                <div class="screen-size">
+                    <h5>💻 Tablet (900px - 1000px)</h5>
+                    <p><strong>Jobs:</strong> 1 column | <strong>Features:</strong> 2 columns | <strong>Industries:</strong> 1 column</p>
+                </div>
+                
+                <div class="screen-size">
+                    <h5>📱 Mobile (≤900px)</h5>
+                    <p><strong>All sections:</strong> Single column layout for optimal mobile experience</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔧 CSS Changes Summary</h2>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+                <h4>Jobs Section:</h4>
+                <p><strong>Before:</strong> <code>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))</code></p>
+                <p><strong>After:</strong> <code>grid-template-columns: repeat(3, 1fr)</code></p>
+                
+                <h4>Features Section:</h4>
+                <p><strong>Before:</strong> <code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))</code></p>
+                <p><strong>After:</strong> <code>grid-template-columns: repeat(4, 1fr)</code></p>
+                
+                <h4>Industries Section:</h4>
+                <p><strong>Before:</strong> <code>grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))</code></p>
+                <p><strong>After:</strong> <code>grid-template-columns: repeat(3, 1fr)</code></p>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📋 Files Modified</h2>
+            
+            <div class="test-result info">
+                <strong>style.css:</strong> Updated all grid layouts with fixed column counts and proper responsive breakpoints.
+            </div>
+            
+            <div class="test-result info">
+                <strong>Sections Improved:</strong> Jobs, Features, Industries, Testimonials, FAQ, and all other grid-based layouts.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
