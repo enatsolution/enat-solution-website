@@ -73,11 +73,6 @@ window.addEventListener('scroll', () => {
 });
 
 // Add animation on scroll for service cards
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -85,7 +80,10 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.transform = 'translateY(0)';
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
 
 // Observe service cards and job cards for animation
 document.addEventListener('DOMContentLoaded', () => {
