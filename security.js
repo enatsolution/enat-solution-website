@@ -16,9 +16,12 @@
         }
     }
     
-    // CSP violation reporting
+    // CSP violation reporting - Silent logging to reduce console noise
     document.addEventListener('securitypolicyviolation', function(e) {
-        console.warn('CSP Violation:', e.violatedDirective, e.blockedURI);
+        // Only log critical violations, not routine ones
+        if (e.violatedDirective && !e.violatedDirective.includes('script-src')) {
+            console.warn('CSP Violation:', e.violatedDirective, e.blockedURI);
+        }
         // In production, you might want to report this to your security monitoring service
     });
     

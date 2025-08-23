@@ -49,7 +49,7 @@
             }
         });
         
-        // 3. Monitor for console access attempts (less sensitive)
+        // 3. Monitor for console access attempts (very conservative)
         let devtools = {
             open: false,
             alertSent: false
@@ -59,26 +59,33 @@
             const heightDiff = window.outerHeight - window.innerHeight;
             const widthDiff = window.outerWidth - window.innerWidth;
 
-            // More conservative detection - larger threshold
-            if (heightDiff > 300 || widthDiff > 300) {
+            // Very conservative detection - only alert for very large differences
+            if (heightDiff > 500 || widthDiff > 500) {
                 if (!devtools.open && !devtools.alertSent) {
                     devtools.open = true;
                     devtools.alertSent = true;
-                    logSecurityEvent('dev_tools_opened', {
-                        heightDiff: heightDiff,
-                        widthDiff: widthDiff,
+                    // Silent tracking - no console output for dev tools detection
+                    securityEvents.push({
+                        type: 'dev_tools_opened',
+                        data: {
+                            heightDiff: heightDiff,
+                            widthDiff: widthDiff,
+                            timestamp: new Date().toISOString()
+                        },
+                        userAgent: navigator.userAgent.substring(0, 100),
+                        url: window.location.href,
                         timestamp: new Date().toISOString()
                     });
 
-                    // Reset alert flag after 30 seconds
+                    // Reset alert flag after 60 seconds
                     setTimeout(function() {
                         devtools.alertSent = false;
-                    }, 30000);
+                    }, 60000);
                 }
             } else {
                 devtools.open = false;
             }
-        }, 2000); // Check less frequently
+        }, 5000); // Check even less frequently
         
         // 4. Monitor for form tampering (improved detection)
         const forms = document.querySelectorAll('form');
@@ -125,14 +132,17 @@
             }
         }, 1000);
         
-        // 6. Monitor for CSP violations
+        // 6. Monitor for CSP violations (silent tracking)
         document.addEventListener('securitypolicyviolation', function(e) {
-            logSecurityEvent('csp_violation', {
-                violatedDirective: e.violatedDirective,
-                blockedURI: e.blockedURI,
-                documentURI: e.documentURI,
-                timestamp: new Date().toISOString()
-            });
+            // Only track significant violations, not routine script-src ones
+            if (e.violatedDirective && !e.violatedDirective.includes('script-src')) {
+                logSecurityEvent('csp_violation', {
+                    violatedDirective: e.violatedDirective,
+                    blockedURI: e.blockedURI,
+                    documentURI: e.documentURI,
+                    timestamp: new Date().toISOString()
+                });
+            }
         });
         
         // 7. Monitor for network errors (potential attacks)
@@ -164,13 +174,12 @@
             securityEvents.shift();
         }
         
-        // Only log significant security events to reduce noise
-        const significantEvents = ['csp_violation', 'resource_load_error', 'form_tampering'];
-        if (significantEvents.includes(eventType)) {
+        // Only log critical security events to reduce console noise
+        const criticalEvents = ['resource_load_error', 'form_tampering'];
+        if (criticalEvents.includes(eventType)) {
             console.warn('Security Event:', eventType, data);
-        } else {
-            console.log('Security Monitor:', eventType, data);
         }
+        // Silent logging for other events - they're still tracked in securityEvents array
     }
     
     // Initialize when DOM is ready
