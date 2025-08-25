@@ -441,6 +441,173 @@ body {
     border-bottom: none;
 }
 
+/* Consulting Services Section */
+.consulting-services {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.consulting-services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="consulting-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23e2e8f0" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23consulting-pattern)"/></svg>');
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.consulting-services .container {
+    position: relative;
+    z-index: 2;
+}
+
+.consulting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.consulting-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.consulting-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #f97316);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.consulting-card:hover::before {
+    transform: scaleX(1);
+}
+
+.consulting-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.consulting-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.consulting-card:hover .consulting-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.consulting-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.consulting-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.consulting-card p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.consulting-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.consulting-features li {
+    color: #475569;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.consulting-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.consulting-cta {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.consulting-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.consulting-cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.consulting-cta h3 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.consulting-cta p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* How It Works Section */
 .how-it-works {
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
@@ -816,6 +983,22 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+/* Mobile fix for job type overlap */
+@media (max-width: 768px) {
+    .job-type {
+        position: static;
+        display: inline-block;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+
+    .job-card h3 {
+        margin-top: 0;
+        padding-right: 0;
+    }
 }
 
 .jobs .btn {
@@ -1278,10 +1461,59 @@ html, body {
 
     .jobs-grid {
         padding: 0 16px;
+        gap: 1.5rem;
     }
 
     .job-card {
         padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .job-card h3 {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+
+    .job-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Consulting Services Mobile */
+    .consulting-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .consulting-card {
+        padding: 1.5rem;
+    }
+
+    .consulting-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+
+    .consulting-icon i {
+        font-size: 1.2rem;
+    }
+
+    .consulting-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .consulting-cta {
+        padding: 2rem 1.5rem;
+    }
+
+    .consulting-cta h3 {
+        font-size: 1.5rem;
+    }
+
+    .consulting-cta p {
+        font-size: 1rem;
     }
 
     .footer .container {
