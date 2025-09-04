@@ -43,11 +43,37 @@
     </section>
 
     <script>
-        // Set confirmation time
-        document.getElementById('confirmation-time').textContent = new Date().toLocaleString();
+        // Ensure DOM is loaded before setting time
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeElement = document.getElementById('confirmation-time');
 
-        // Log for debugging
-        console.log('Thank you page loaded at:', new Date().toISOString());
+            if (timeElement) {
+                // Set confirmation time with better formatting
+                const now = new Date();
+                const formattedTime = now.toLocaleDateString() + ' at ' + now.toLocaleTimeString();
+                timeElement.textContent = formattedTime;
+
+                console.log('Confirmation time set to:', formattedTime);
+            } else {
+                console.error('Could not find confirmation-time element');
+            }
+
+            // Log for debugging
+            console.log('Thank you page loaded at:', new Date().toISOString());
+        });
+
+        // Fallback - set time immediately if DOM is already loaded
+        if (document.readyState === 'loading') {
+            // DOM is still loading, wait for DOMContentLoaded
+        } else {
+            // DOM is already loaded
+            const timeElement = document.getElementById('confirmation-time');
+            if (timeElement && !timeElement.textContent) {
+                const now = new Date();
+                const formattedTime = now.toLocaleDateString() + ' at ' + now.toLocaleTimeString();
+                timeElement.textContent = formattedTime;
+            }
+        }
     </script>
 
     <!-- Footer -->

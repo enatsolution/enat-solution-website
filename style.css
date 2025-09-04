@@ -1234,6 +1234,28 @@ body {
     margin-top: 2rem;
 }
 
+.confirmation-details {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.confirmation-details p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.confirmation-details small {
+    opacity: 0.9;
+}
+
+#confirmation-time {
+    font-weight: bold;
+    color: #fbbf24;
+}
+
 /* Enhanced Mobile Responsiveness */
 
 /* Prevent horizontal overflow */
