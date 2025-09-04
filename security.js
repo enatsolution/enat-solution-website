@@ -32,28 +32,6 @@
         setFormSecurity();
     }
     
-    // Basic form validation enhancement
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Additional client-side validation can go here
-            const name = contactForm.querySelector('input[name="name"]');
-            const email = contactForm.querySelector('input[name="email"]');
-            
-            if (name && name.value.trim().length < 2) {
-                e.preventDefault();
-                name.focus();
-                name.style.borderColor = '#ef4444';
-                return false;
-            }
-
-            if (email && !email.value.includes('@')) {
-                e.preventDefault();
-                email.focus();
-                email.style.borderColor = '#ef4444';
-                return false;
-            }
-        });
-    }
+    // Form validation removed to prevent interference with Netlify form submission
     
 })();
