@@ -29,37 +29,47 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// Contact form submission
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+// Contact form submission - Enhanced for Netlify
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+    const timestampField = document.getElementById('timestamp');
+    const userAgentField = document.getElementById('user-agent');
 
-    const form = this;
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    const formData = new FormData(form);
+    // Set initial values
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
 
-    // Show loading state
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    if (userAgentField) {
+        userAgentField.value = navigator.userAgent;
+    }
 
-    // Submit to Netlify
-    fetch('/', {
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-    })
-    .then(() => {
-        // Redirect to thank you page
-        window.location.href = '/thank-you.html';
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('There was an error sending your message. Please try again or email us directly at info@enatsolution.com');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
 
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    });
+            // Update timestamp on submission
+            if (timestampField) {
+                timestampField.value = new Date().toISOString();
+            }
+
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Log for debugging
+            console.log('Form submitted at:', new Date().toISOString());
+
+            // Let Netlify handle the form submission naturally
+            // Don't prevent default - let the form submit normally
+            setTimeout(() => {
+                // Reset button in case of any issues
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 5000);
+        });
+    }
 });
 
 // Add scroll effect to navbar

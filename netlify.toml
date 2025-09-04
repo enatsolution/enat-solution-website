@@ -62,29 +62,13 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 
-[form]
+# Form handling configuration
+[[forms]]
   name = "contact"
-  action = "/thank-you.html"
-  
-[[form.fields]]
-  name = "name"
-  type = "text"
-  required = true
-  
-[[form.fields]]
-  name = "email"
-  type = "email"
-  required = true
-  
-[[form.fields]]
-  name = "service"
-  type = "select"
-  required = true
-  
-[[form.fields]]
-  name = "message"
-  type = "textarea"
-  required = true
+
+# Form notifications - Configure in Netlify dashboard
+# Go to Site Settings > Forms > Form notifications
+# Add email notification to: info@enatsolution.com
 
 [context.production.environment]
   TOML_ENV = "production"
