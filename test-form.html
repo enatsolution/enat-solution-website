@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form - Enat Solution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-form">
+        <h1>🧪 Test Form - Enat Solution</h1>
+        <p>This is a simple test form to verify Netlify form submission is working.</p>
+        
+        <form name="test-contact" method="POST" data-netlify="true" action="thank-you.html">
+            <input type="hidden" name="form-name" value="test-contact">
+            
+            <div class="form-group">
+                <label for="test-name">Name:</label>
+                <input type="text" id="test-name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="test-email">Email:</label>
+                <input type="email" id="test-email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="test-message">Message:</label>
+                <textarea id="test-message" name="message" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" id="test-submit">Send Test Message</button>
+        </form>
+        
+        <div id="status" class="status"></div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+            <p><strong>Instructions:</strong></p>
+            <ol>
+                <li>Fill out this simple form</li>
+                <li>Click "Send Test Message"</li>
+                <li>You should be redirected to the thank-you page</li>
+                <li>Check your Netlify dashboard for form submissions</li>
+            </ol>
+            <p><a href="index.html">← Back to Main Site</a></p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form[name="test-contact"]');
+        const submitBtn = document.getElementById('test-submit');
+        const status = document.getElementById('status');
+        
+        form.addEventListener('submit', function(e) {
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Show status
+            status.style.display = 'block';
+            status.className = 'status';
+            status.textContent = 'Submitting form...';
+            
+            console.log('Test form submitted at:', new Date().toISOString());
+            
+            // Let the form submit naturally to Netlify
+            // Don't prevent default
+        });
+    </script>
+</body>
+</html>

@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default to handle manually
+
             const form = this;
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
@@ -59,17 +61,48 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            // For debugging - let's try the natural form submission first
             console.log('Form submission started at:', new Date().toISOString());
 
-            // Don't prevent default - let Netlify handle it naturally
-            // The form will submit to the action URL (/thank-you.html)
+            // Get form data
+            const formData = new FormData(form);
 
-            // Reset button after a delay in case something goes wrong
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 10000); // 10 second timeout
+            // Log form data for debugging
+            console.log('Form data being submitted:');
+            for (let [key, value] of formData.entries()) {
+                console.log(key + ': ' + value);
+            }
+
+            // Try submitting with fetch
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(response => {
+                console.log('Response received:', response.status, response.statusText);
+
+                if (response.ok || response.status === 200) {
+                    // Success - show immediate feedback
+                    alert('✅ Message sent successfully! You will be redirected to the confirmation page.');
+
+                    // Redirect to thank you page
+                    setTimeout(() => {
+                        window.location.href = 'thank-you.html';
+                    }, 1500);
+                } else {
+                    throw new Error('Form submission failed with status: ' + response.status);
+                }
+            })
+            .catch((error) => {
+                console.error('Form submission error:', error);
+
+                // Try alternative method - direct form submission
+                alert('⚠️ Trying alternative submission method...');
+
+                // Remove the event listener temporarily and submit naturally
+                form.removeEventListener('submit', arguments.callee);
+                form.submit();
+            });
         });
     }
 });
