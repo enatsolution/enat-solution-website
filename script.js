@@ -29,7 +29,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// Contact form submission - Enhanced for Netlify
+// Contact form submission - Netlify compatible
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.querySelector('.contact-form');
     const timestampField = document.getElementById('timestamp');
@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            const submitBtn = this.querySelector('button[type="submit"]');
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
 
             // Update timestamp on submission
@@ -58,16 +59,17 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            // Log for debugging
-            console.log('Form submitted at:', new Date().toISOString());
+            // For debugging - let's try the natural form submission first
+            console.log('Form submission started at:', new Date().toISOString());
 
-            // Let Netlify handle the form submission naturally
-            // Don't prevent default - let the form submit normally
+            // Don't prevent default - let Netlify handle it naturally
+            // The form will submit to the action URL (/thank-you.html)
+
+            // Reset button after a delay in case something goes wrong
             setTimeout(() => {
-                // Reset button in case of any issues
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 5000);
+            }, 10000); // 10 second timeout
         });
     }
 });
