@@ -42,13 +42,15 @@
             
             if (name && name.value.trim().length < 2) {
                 e.preventDefault();
-                alert('Please enter a valid name (at least 2 characters).');
+                name.focus();
+                name.style.borderColor = '#ef4444';
                 return false;
             }
-            
+
             if (email && !email.value.includes('@')) {
                 e.preventDefault();
-                alert('Please enter a valid email address.');
+                email.focus();
+                email.style.borderColor = '#ef4444';
                 return false;
             }
         });
