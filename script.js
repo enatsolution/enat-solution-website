@@ -50,6 +50,88 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
 
+            // Get form fields for validation
+            const nameField = form.querySelector('input[name="name"]');
+            const emailField = form.querySelector('input[name="email"]');
+            const phoneField = form.querySelector('input[name="phone"]');
+            const messageField = form.querySelector('textarea[name="message"]');
+
+            // Clear any previous error styling
+            [nameField, emailField, phoneField, messageField].forEach(field => {
+                if (field) {
+                    field.style.borderColor = '';
+                    field.style.backgroundColor = '';
+                }
+            });
+
+            // Validation functions
+            function showError(field, message) {
+                field.style.borderColor = '#ef4444';
+                field.style.backgroundColor = '#fef2f2';
+                field.focus();
+
+                // Show error message
+                let errorDiv = field.parentNode.querySelector('.error-message');
+                if (!errorDiv) {
+                    errorDiv = document.createElement('div');
+                    errorDiv.className = 'error-message';
+                    errorDiv.style.color = '#ef4444';
+                    errorDiv.style.fontSize = '0.875rem';
+                    errorDiv.style.marginTop = '0.25rem';
+                    field.parentNode.appendChild(errorDiv);
+                }
+                errorDiv.textContent = message;
+
+                // Remove error message after 5 seconds
+                setTimeout(() => {
+                    if (errorDiv && errorDiv.parentNode) {
+                        errorDiv.remove();
+                    }
+                    field.style.borderColor = '';
+                    field.style.backgroundColor = '';
+                }, 5000);
+
+                return false;
+            }
+
+            function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            function validatePhone(phone) {
+                // Remove all non-digit characters for validation
+                const cleanPhone = phone.replace(/\D/g, '');
+                // Check if it's between 7-15 digits (international standard)
+                return cleanPhone.length >= 7 && cleanPhone.length <= 15;
+            }
+
+            // Perform validation
+            if (nameField && nameField.value.trim().length < 2) {
+                e.preventDefault();
+                showError(nameField, 'Please enter a valid name (at least 2 characters)');
+                return false;
+            }
+
+            if (emailField && !validateEmail(emailField.value.trim())) {
+                e.preventDefault();
+                showError(emailField, 'Please enter a valid email address (e.g., name@example.com)');
+                return false;
+            }
+
+            if (phoneField && phoneField.value.trim() && !validatePhone(phoneField.value.trim())) {
+                e.preventDefault();
+                showError(phoneField, 'Please enter a valid phone number (7-15 digits)');
+                return false;
+            }
+
+            if (messageField && messageField.value.trim().length < 10) {
+                e.preventDefault();
+                showError(messageField, 'Please enter a message with at least 10 characters');
+                return false;
+            }
+
+            // If validation passes, proceed with submission
             // Update timestamp on submission
             if (timestampField) {
                 timestampField.value = new Date().toISOString();
