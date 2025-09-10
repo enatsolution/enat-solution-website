@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Candidate Submissions | Enat Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .admin-header {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .submissions-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .submission-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #0ea5e9;
+        }
+        
+        .submission-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .candidate-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .submission-date {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .submission-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+        
+        .detail-value {
+            color: #6b7280;
+        }
+        
+        .no-submissions {
+            text-align: center;
+            padding: 3rem;
+            color: #64748b;
+        }
+        
+        .export-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        
+        .export-btn:hover {
+            background: #059669;
+        }
+        
+        .clear-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        
+        .clear-btn:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1><i class="fas fa-users"></i> Candidate Submissions</h1>
+            <p>View and manage candidate profile submissions stored locally</p>
+            <div style="margin-top: 1rem;">
+                <button onclick="exportSubmissions()" class="export-btn">
+                    <i class="fas fa-download"></i> Export CSV
+                </button>
+                <button onclick="clearSubmissions()" class="clear-btn">
+                    <i class="fas fa-trash"></i> Clear All
+                </button>
+                <a href="index.html" class="btn btn-secondary" style="margin-left: 1rem;">
+                    <i class="fas fa-home"></i> Back to Website
+                </a>
+            </div>
+        </div>
+        
+        <div id="submissionsContainer" class="submissions-grid">
+            <!-- Submissions will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSubmissions();
+        });
+
+        function loadSubmissions() {
+            const container = document.getElementById('submissionsContainer');
+            
+            try {
+                const submissions = JSON.parse(localStorage.getItem('candidateSubmissions') || '[]');
+                
+                if (submissions.length === 0) {
+                    container.innerHTML = `
+                        <div class="no-submissions">
+                            <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; color: #cbd5e1;"></i>
+                            <h3>No submissions yet</h3>
+                            <p>Candidate submissions will appear here when they submit their profiles.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = submissions.map(submission => `
+                    <div class="submission-card">
+                        <div class="submission-header">
+                            <div class="candidate-name">${submission.firstName} ${submission.lastName}</div>
+                            <div class="submission-date">${new Date(submission.submittedAt || submission.submissionDate).toLocaleString()}</div>
+                        </div>
+                        <div class="submission-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Email</div>
+                                <div class="detail-value">${submission.email}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Phone</div>
+                                <div class="detail-value">${submission.phone}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Location</div>
+                                <div class="detail-value">${submission.location}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Industry</div>
+                                <div class="detail-value">${submission.industry}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Job Title</div>
+                                <div class="detail-value">${submission.jobTitle}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Experience</div>
+                                <div class="detail-value">${submission.experience}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Work Type</div>
+                                <div class="detail-value">${submission.workType}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Skills</div>
+                                <div class="detail-value">${submission.skills}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Availability</div>
+                                <div class="detail-value">${submission.availability}</div>
+                            </div>
+                            ${submission.linkedinUrl ? `
+                            <div class="detail-item">
+                                <div class="detail-label">LinkedIn</div>
+                                <div class="detail-value"><a href="${submission.linkedinUrl}" target="_blank">${submission.linkedinUrl}</a></div>
+                            </div>
+                            ` : ''}
+                            ${submission.resumeFile ? `
+                            <div class="detail-item">
+                                <div class="detail-label">Resume</div>
+                                <div class="detail-value">${submission.resumeFile.name} (${(submission.resumeFile.size / 1024 / 1024).toFixed(2)} MB)</div>
+                            </div>
+                            ` : ''}
+                            ${submission.additionalInfo ? `
+                            <div class="detail-item" style="grid-column: 1 / -1;">
+                                <div class="detail-label">Additional Information</div>
+                                <div class="detail-value">${submission.additionalInfo}</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error loading submissions:', error);
+                container.innerHTML = `
+                    <div class="no-submissions">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem; color: #ef4444;"></i>
+                        <h3>Error loading submissions</h3>
+                        <p>There was an error loading the submissions data.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function exportSubmissions() {
+            try {
+                const submissions = JSON.parse(localStorage.getItem('candidateSubmissions') || '[]');
+                
+                if (submissions.length === 0) {
+                    alert('No submissions to export');
+                    return;
+                }
+                
+                // Create CSV content
+                const headers = ['Date', 'First Name', 'Last Name', 'Email', 'Phone', 'Location', 'Industry', 'Job Title', 'Experience', 'Work Type', 'Skills', 'Availability', 'LinkedIn', 'Resume File', 'Additional Info'];
+                const csvContent = [
+                    headers.join(','),
+                    ...submissions.map(sub => [
+                        new Date(sub.submittedAt || sub.submissionDate).toLocaleDateString(),
+                        sub.firstName,
+                        sub.lastName,
+                        sub.email,
+                        sub.phone,
+                        sub.location,
+                        sub.industry,
+                        sub.jobTitle,
+                        sub.experience,
+                        sub.workType,
+                        `"${sub.skills}"`,
+                        sub.availability,
+                        sub.linkedinUrl || '',
+                        sub.resumeFile ? sub.resumeFile.name : '',
+                        `"${sub.additionalInfo || ''}"`
+                    ].join(','))
+                ].join('\n');
+                
+                // Download CSV
+                const blob = new Blob([csvContent], { type: 'text/csv' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `candidate-submissions-${new Date().toISOString().split('T')[0]}.csv`;
+                a.click();
+                window.URL.revokeObjectURL(url);
+                
+            } catch (error) {
+                console.error('Error exporting submissions:', error);
+                alert('Error exporting submissions');
+            }
+        }
+
+        function clearSubmissions() {
+            if (confirm('Are you sure you want to clear all submissions? This action cannot be undone.')) {
+                localStorage.removeItem('candidateSubmissions');
+                loadSubmissions();
+                alert('All submissions have been cleared');
+            }
+        }
+    </script>
+</body>
+</html>

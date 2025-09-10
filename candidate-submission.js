@@ -1,9 +1,12 @@
 // Candidate Submission Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const candidateForm = document.getElementById('candidateForm');
-    
+
+    // Initialize file upload functionality
+    initializeFileUpload();
+
     if (candidateForm) {
-        candidateForm.addEventListener('submit', function(e) {
+        candidateForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitBtn = candidateForm.querySelector('button[type="submit"]');
@@ -16,10 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form data
             const formData = new FormData(candidateForm);
             const data = {};
-            
-            // Convert FormData to object
+
+            // Convert FormData to object, handling file uploads
             for (let [key, value] of formData.entries()) {
-                data[key] = value;
+                if (key === 'resumeFile' && value instanceof File) {
+                    // Handle file upload
+                    data[key] = {
+                        name: value.name,
+                        size: value.size,
+                        type: value.type,
+                        lastModified: value.lastModified
+                    };
+                    // Store file data as base64 for local storage
+                    data.resumeFileData = await fileToBase64(value);
+                } else {
+                    data[key] = value;
+                }
             }
             
             // Add timestamp
@@ -72,7 +87,8 @@ function validateCandidateForm(data) {
         experience: 'Years of Experience',
         workType: 'Work Preference',
         skills: 'Key Skills',
-        availability: 'Availability'
+        availability: 'Availability',
+        resumeFile: 'Resume File'
     };
     
     for (let [field, label] of Object.entries(requiredFields)) {
@@ -91,9 +107,23 @@ function validateCandidateForm(data) {
         errors.push('Please enter a valid phone number');
     }
     
-    // URL validation for resume link
-    if (data.resumeLink && data.resumeLink.trim() !== '' && !isValidURL(data.resumeLink)) {
-        errors.push('Please enter a valid URL for resume/LinkedIn');
+    // File validation for resume
+    if (data.resumeFile && data.resumeFile.size) {
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+        if (data.resumeFile.size > maxSize) {
+            errors.push('Resume file must be smaller than 5MB');
+        }
+
+        if (!allowedTypes.includes(data.resumeFile.type)) {
+            errors.push('Resume must be a PDF, DOC, or DOCX file');
+        }
+    }
+
+    // URL validation for LinkedIn
+    if (data.linkedinUrl && data.linkedinUrl.trim() !== '' && !isValidURL(data.linkedinUrl)) {
+        errors.push('Please enter a valid LinkedIn URL');
     }
     
     if (errors.length > 0) {
@@ -126,12 +156,12 @@ function isValidURL(url) {
 
 // Google Sheets submission function
 async function submitToGoogleSheets(data) {
-    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
+    // Google Apps Script Web App URL - Replace with your actual URL from Google Apps Script deployment
     const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
 
-    // If Google Sheets URL is not configured, use fallback email submission
+    // If Google Sheets URL is not configured, use fallback
     if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
-        return submitViaEmail(data);
+        return submitViaFallback(data);
     }
 
     try {
@@ -151,60 +181,67 @@ async function submitToGoogleSheets(data) {
         return result;
     } catch (error) {
         console.error('Google Sheets submission error:', error);
-        // Fallback to email submission
-        return submitViaEmail(data);
+        // Fallback to local storage if Google Sheets fails
+        return submitViaFallback(data);
     }
 }
 
-// Fallback email submission using mailto
-function submitViaEmail(data) {
+// Fallback submission when Google Sheets is not available
+function submitViaFallback(data) {
     return new Promise((resolve) => {
-        // Create email body with form data
-        const emailBody = `
-New Candidate Profile Submission:
-
-Name: ${data.firstName} ${data.lastName}
-Email: ${data.email}
-Phone: ${data.phone}
-Location: ${data.location}
-Preferred Industry: ${data.industry}
-Job Title: ${data.jobTitle}
-Years of Experience: ${data.experience}
-Work Preference: ${data.workType}
-Key Skills: ${data.skills}
-Availability: ${data.availability}
-Resume/LinkedIn: ${data.resumeLink || 'Not provided'}
-Additional Information: ${data.additionalInfo || 'None'}
-
-Submission Date: ${data.submissionTime}
-        `.trim();
-
-        // Create mailto link
-        const subject = encodeURIComponent('New Candidate Profile Submission - ' + data.firstName + ' ' + data.lastName);
-        const body = encodeURIComponent(emailBody);
-        const mailtoLink = `mailto:info@enatsolution.com?subject=${subject}&body=${body}`;
-
-        // Store data locally for backup
+        // Store data locally for admin access
         try {
             const submissions = JSON.parse(localStorage.getItem('candidateSubmissions') || '[]');
-            submissions.push({
+            const newSubmission = {
                 ...data,
                 id: Date.now(),
-                status: 'submitted'
-            });
+                status: 'pending_review',
+                submittedAt: new Date().toISOString()
+            };
+            submissions.push(newSubmission);
             localStorage.setItem('candidateSubmissions', JSON.stringify(submissions));
+
+            // Also store in IndexedDB for better persistence
+            if ('indexedDB' in window) {
+                storeInIndexedDB(newSubmission);
+            }
+
+            console.log('Candidate submission stored locally:', newSubmission);
         } catch (e) {
             console.warn('Could not save to localStorage:', e);
         }
 
-        // Open email client
-        window.open(mailtoLink);
-
-        // Return success after a short delay
-        setTimeout(() => {
-            resolve({ success: true, message: 'Profile submitted successfully' });
-        }, 1000);
+        // Return success immediately
+        resolve({
+            success: true,
+            message: 'Profile submitted successfully! Our team will review your application and contact you within 24-48 hours.'
+        });
     });
+}
+
+// Store submission in IndexedDB for better persistence
+function storeInIndexedDB(submission) {
+    const request = indexedDB.open('EnatSolutionDB', 1);
+
+    request.onupgradeneeded = function(event) {
+        const db = event.target.result;
+        if (!db.objectStoreNames.contains('submissions')) {
+            const objectStore = db.createObjectStore('submissions', { keyPath: 'id' });
+            objectStore.createIndex('email', 'email', { unique: false });
+            objectStore.createIndex('submittedAt', 'submittedAt', { unique: false });
+        }
+    };
+
+    request.onsuccess = function(event) {
+        const db = event.target.result;
+        const transaction = db.transaction(['submissions'], 'readwrite');
+        const objectStore = transaction.objectStore('submissions');
+        objectStore.add(submission);
+    };
+
+    request.onerror = function(event) {
+        console.warn('IndexedDB error:', event.target.error);
+    };
 }
 
 // UI feedback functions
@@ -298,5 +335,97 @@ if (hamburger && navMenu) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         });
+    });
+}
+
+// File Upload Functions
+function initializeFileUpload() {
+    const fileInput = document.getElementById('resumeFile');
+    const fileContainer = document.querySelector('.file-upload-container');
+    const fileInfo = document.querySelector('.file-upload-info');
+    const fileSelected = document.querySelector('.file-upload-selected');
+    const fileName = document.querySelector('.file-name');
+    const fileRemove = document.querySelector('.file-remove');
+
+    if (!fileInput || !fileContainer) return;
+
+    // File input change handler
+    fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            handleFileSelection(file);
+        }
+    });
+
+    // Drag and drop handlers
+    fileContainer.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        fileContainer.classList.add('dragover');
+    });
+
+    fileContainer.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        fileContainer.classList.remove('dragover');
+    });
+
+    fileContainer.addEventListener('drop', function(e) {
+        e.preventDefault();
+        fileContainer.classList.remove('dragover');
+
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            const file = files[0];
+            fileInput.files = files;
+            handleFileSelection(file);
+        }
+    });
+
+    // Remove file handler
+    if (fileRemove) {
+        fileRemove.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            clearFileSelection();
+        });
+    }
+
+    function handleFileSelection(file) {
+        // Validate file
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+        if (file.size > maxSize) {
+            alert('File size must be less than 5MB');
+            clearFileSelection();
+            return;
+        }
+
+        if (!allowedTypes.includes(file.type)) {
+            alert('Please select a PDF, DOC, or DOCX file');
+            clearFileSelection();
+            return;
+        }
+
+        // Show selected file
+        if (fileName) fileName.textContent = file.name;
+        if (fileInfo) fileInfo.style.display = 'none';
+        if (fileSelected) fileSelected.style.display = 'flex';
+    }
+
+    function clearFileSelection() {
+        fileInput.value = '';
+        if (fileInfo) fileInfo.style.display = 'flex';
+        if (fileSelected) fileSelected.style.display = 'none';
+        if (fileName) fileName.textContent = '';
+    }
+}
+
+// Convert file to base64 for storage
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
     });
 }

@@ -1849,6 +1849,117 @@ html, body {
     .candidate-submission {
         padding-top: 120px;
     }
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    position: relative;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+.file-upload-container:hover {
+    border-color: #0ea5e9;
+    background: #f0f9ff;
+}
+
+.file-upload-container.dragover {
+    border-color: #0ea5e9;
+    background: #e0f2fe;
+    transform: scale(1.02);
+}
+
+.file-upload-container input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-upload-info i {
+    font-size: 2rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.file-upload-text {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.file-upload-formats {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.file-upload-selected {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #e0f2fe;
+    border-radius: 6px;
+    border: 1px solid #0ea5e9;
+}
+
+.file-upload-selected i {
+    color: #0ea5e9;
+    font-size: 1.2rem;
+}
+
+.file-upload-selected .file-name {
+    flex: 1;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.file-remove {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.file-remove:hover {
+    background: #fee2e2;
+}
+
+/* Mobile file upload styles */
+@media (max-width: 768px) {
+    .file-upload-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .file-upload-info i {
+        font-size: 1.5rem;
+    }
+
+    .file-upload-text {
+        font-size: 1rem;
+    }
+
+    .file-upload-formats {
+        font-size: 0.8rem;
+    }
 
     .footer .container {
         flex-direction: column;
