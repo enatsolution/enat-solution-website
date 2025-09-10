@@ -27,38 +27,34 @@ document.addEventListener('DOMContentLoaded', function() {
             data.submissionTime = new Date().toLocaleString();
             
             // Validate form data
+            console.log('Validating form data:', data);
             if (!validateCandidateForm(data)) {
+                console.log('Form validation failed');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 return;
             }
+            console.log('Form validation passed');
             
             // Submit to Google Sheets
-            try {
-                const response = await submitToGoogleSheets(data);
-                console.log('Submission response:', response);
-
-                if (response.success) {
-                    // Success - show confirmation
-                    showSuccessMessage();
-                    candidateForm.reset();
-
-                    // Clear file upload display
-                    const fileInfo = document.querySelector('.file-upload-info');
-                    const fileSelected = document.querySelector('.file-upload-selected');
-                    if (fileInfo) fileInfo.style.display = 'flex';
-                    if (fileSelected) fileSelected.style.display = 'none';
-                } else {
-                    throw new Error(response.message || 'Submission failed');
-                }
-            } catch (error) {
-                console.error('Submission error:', error);
-                showErrorMessage(error.message || 'An unexpected error occurred');
-            } finally {
-                // Reset button state
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
+            submitToGoogleSheets(data)
+                .then(response => {
+                    if (response.success) {
+                        // Success - show confirmation
+                        showSuccessMessage();
+                        candidateForm.reset();
+                    } else {
+                        throw new Error(response.message || 'Submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Submission error:', error);
+                    showErrorMessage(error.message);
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 });
@@ -133,16 +129,9 @@ function isValidURL(url) {
 
 // Google Sheets submission function
 async function submitToGoogleSheets(data) {
-    // Google Apps Script Web App URL - Replace with your actual URL from Google Apps Script deployment
-    // To set this up, follow the instructions in google-sheets-setup.md
+    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
     const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
-
-    // If Google Sheets URL is not configured, use fallback
-    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
-        console.log('Google Sheets not configured, using fallback storage');
-        return submitViaFallback(data);
-    }
-
+    
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
@@ -151,22 +140,22 @@ async function submitToGoogleSheets(data) {
             },
             body: JSON.stringify(data)
         });
-
+        
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-
+        
         const result = await response.json();
         return result;
     } catch (error) {
         console.error('Google Sheets submission error:', error);
-        // Fallback to local storage if Google Sheets fails
-        return submitViaFallback(data);
+        throw error;
     }
 }
 
 // UI feedback functions
 function showSuccessMessage() {
+    console.log('Showing success message');
     const message = document.createElement('div');
     message.className = 'success-message';
     message.innerHTML = `
