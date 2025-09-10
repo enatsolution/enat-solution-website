@@ -17,29 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(candidateForm);
             const data = {};
             
-            // Convert FormData to object, handling file uploads
+            // Convert FormData to object
             for (let [key, value] of formData.entries()) {
-                if (key === 'resumeFile' && value instanceof File && value.size > 0) {
-                    // Handle file upload
-                    data[key] = {
-                        name: value.name,
-                        size: value.size,
-                        type: value.type,
-                        lastModified: value.lastModified
-                    };
-                    // Store file data as base64 for local storage
-                    try {
-                        data.resumeFileData = await fileToBase64(value);
-                    } catch (error) {
-                        console.error('Error converting file to base64:', error);
-                        alert('Error processing resume file. Please try again.');
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                        return;
-                    }
-                } else {
-                    data[key] = value;
-                }
+                data[key] = value;
             }
             
             // Add timestamp
@@ -54,24 +34,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Submit to Google Sheets
-            submitToGoogleSheets(data)
-                .then(response => {
-                    if (response.success) {
-                        // Success - show confirmation
-                        showSuccessMessage();
-                        candidateForm.reset();
-                    } else {
-                        throw new Error(response.message || 'Submission failed');
-                    }
-                })
-                .catch(error => {
-                    console.error('Submission error:', error);
-                    showErrorMessage(error.message);
-                })
-                .finally(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
+            try {
+                const response = await submitToGoogleSheets(data);
+                console.log('Submission response:', response);
+
+                if (response.success) {
+                    // Success - show confirmation
+                    showSuccessMessage();
+                    candidateForm.reset();
+
+                    // Clear file upload display
+                    const fileInfo = document.querySelector('.file-upload-info');
+                    const fileSelected = document.querySelector('.file-upload-selected');
+                    if (fileInfo) fileInfo.style.display = 'flex';
+                    if (fileSelected) fileSelected.style.display = 'none';
+                } else {
+                    throw new Error(response.message || 'Submission failed');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                showErrorMessage(error.message || 'An unexpected error occurred');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 });
@@ -111,23 +98,9 @@ function validateCandidateForm(data) {
         errors.push('Please enter a valid phone number');
     }
     
-    // File validation for resume
-    if (data.resumeFile && data.resumeFile.size) {
-        const maxSize = 5 * 1024 * 1024; // 5MB
-        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-
-        if (data.resumeFile.size > maxSize) {
-            errors.push('Resume file must be smaller than 5MB');
-        }
-
-        if (!allowedTypes.includes(data.resumeFile.type)) {
-            errors.push('Resume must be a PDF, DOC, or DOCX file');
-        }
-    }
-
-    // URL validation for LinkedIn
-    if (data.linkedinUrl && data.linkedinUrl.trim() !== '' && !isValidURL(data.linkedinUrl)) {
-        errors.push('Please enter a valid LinkedIn URL');
+    // URL validation for resume link
+    if (data.resumeLink && data.resumeLink.trim() !== '' && !isValidURL(data.resumeLink)) {
+        errors.push('Please enter a valid URL for resume/LinkedIn');
     }
     
     if (errors.length > 0) {
@@ -160,9 +133,16 @@ function isValidURL(url) {
 
 // Google Sheets submission function
 async function submitToGoogleSheets(data) {
-    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
+    // Google Apps Script Web App URL - Replace with your actual URL from Google Apps Script deployment
+    // To set this up, follow the instructions in google-sheets-setup.md
     const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
-    
+
+    // If Google Sheets URL is not configured, use fallback
+    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+        console.log('Google Sheets not configured, using fallback storage');
+        return submitViaFallback(data);
+    }
+
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
@@ -171,16 +151,17 @@ async function submitToGoogleSheets(data) {
             },
             body: JSON.stringify(data)
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const result = await response.json();
         return result;
     } catch (error) {
         console.error('Google Sheets submission error:', error);
-        throw error;
+        // Fallback to local storage if Google Sheets fails
+        return submitViaFallback(data);
     }
 }
 
