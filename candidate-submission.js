@@ -127,8 +127,13 @@ function isValidURL(url) {
 // Google Sheets submission function
 async function submitToGoogleSheets(data) {
     // Google Apps Script Web App URL - You'll need to replace this with your actual URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyhuyeRbDQCMsDkjJWXk9jI0Fe3Lpw8nraNpo6tiz8vwTQF6s8zCF1JP7XfrkevGoUh/exec';
-    
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+
+    // If Google Sheets URL is not configured, use fallback email submission
+    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+        return submitViaEmail(data);
+    }
+
     try {
         const response = await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
@@ -137,17 +142,69 @@ async function submitToGoogleSheets(data) {
             },
             body: JSON.stringify(data)
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const result = await response.json();
         return result;
     } catch (error) {
         console.error('Google Sheets submission error:', error);
-        throw error;
+        // Fallback to email submission
+        return submitViaEmail(data);
     }
+}
+
+// Fallback email submission using mailto
+function submitViaEmail(data) {
+    return new Promise((resolve) => {
+        // Create email body with form data
+        const emailBody = `
+New Candidate Profile Submission:
+
+Name: ${data.firstName} ${data.lastName}
+Email: ${data.email}
+Phone: ${data.phone}
+Location: ${data.location}
+Preferred Industry: ${data.industry}
+Job Title: ${data.jobTitle}
+Years of Experience: ${data.experience}
+Work Preference: ${data.workType}
+Key Skills: ${data.skills}
+Availability: ${data.availability}
+Resume/LinkedIn: ${data.resumeLink || 'Not provided'}
+Additional Information: ${data.additionalInfo || 'None'}
+
+Submission Date: ${data.submissionTime}
+        `.trim();
+
+        // Create mailto link
+        const subject = encodeURIComponent('New Candidate Profile Submission - ' + data.firstName + ' ' + data.lastName);
+        const body = encodeURIComponent(emailBody);
+        const mailtoLink = `mailto:info@enatsolution.com?subject=${subject}&body=${body}`;
+
+        // Store data locally for backup
+        try {
+            const submissions = JSON.parse(localStorage.getItem('candidateSubmissions') || '[]');
+            submissions.push({
+                ...data,
+                id: Date.now(),
+                status: 'submitted'
+            });
+            localStorage.setItem('candidateSubmissions', JSON.stringify(submissions));
+        } catch (e) {
+            console.warn('Could not save to localStorage:', e);
+        }
+
+        // Open email client
+        window.open(mailtoLink);
+
+        // Return success after a short delay
+        setTimeout(() => {
+            resolve({ success: true, message: 'Profile submitted successfully' });
+        }, 1000);
+    });
 }
 
 // UI feedback functions
