@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Candidate Submission - Enat Solution</title>
-    <meta name="description" content="Submit your profile to Enat Solution for exciting career opportunities in IT, Healthcare, and General Staffing.">
-    <link rel="canonical" href="https://enatsolution.com/candidate-submission">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Profile - Enat Solution</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -14,12 +12,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Enat Solution Logo" class="nav-logo-img">
-                    <div class="logo-text">
-                        <div class="company-name">enat solution</div>
-                        <div class="tagline">CONNECTING TALENT WITH CARE</div>
-                    </div>
+                <img src="logo.png" alt="Enat Solution - Connecting Talent with Care" class="logo-img">
+                <div class="logo-text">
+                    <div class="company-name">enat solution</div>
+                    <div class="tagline">CONNECTING TALENT WITH CARE</div>
                 </div>
             </div>
             <ul class="nav-menu">
@@ -41,7 +37,7 @@
         </div>
     </nav>
 
-    <!-- Candidate Submission Section -->
+    <!-- Form Section -->
     <section class="candidate-submission section-padding">
         <div class="container">
             <div class="section-header">
@@ -50,142 +46,31 @@
             </div>
             
             <div class="submission-content">
-                <div class="submission-info">
-                    <div class="info-card">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Fast Placement</h3>
-                        <p>Get matched with opportunities in an average of 2 weeks</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Personal Support</h3>
-                        <p>24/7 candidate support throughout your job search journey</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-star"></i>
-                        <h3>Top Companies</h3>
-                        <p>Access to exclusive opportunities with leading employers</p>
-                    </div>
+                <!-- REPLACE THIS URL WITH YOUR GOOGLE FORM URL -->
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true" 
+                    width="100%" 
+                    height="1200" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                    Loading…
+                </iframe>
+                
+                <div class="form-fallback" style="text-align: center; margin-top: 2rem; padding: 2rem; background: #f8fafc; border-radius: 12px;">
+                    <h3>Can't see the form?</h3>
+                    <p>If the form doesn't load, you can access it directly:</p>
+                    <a href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform" 
+                       target="_blank" 
+                       class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        Open Form in New Tab
+                    </a>
+                    <p style="margin-top: 1rem; color: #6b7280; font-size: 0.9rem;">
+                        Or contact us directly at <a href="mailto:info@enatsolution.com">info@enatsolution.com</a>
+                    </p>
                 </div>
-
-                <form class="candidate-form" id="candidateForm">
-                    <div class="form-section">
-                        <h3><i class="fas fa-user"></i> Personal Information</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="location">Current Location *</label>
-                            <input type="text" id="location" name="location" placeholder="City, State" required>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h3><i class="fas fa-briefcase"></i> Professional Information</h3>
-                        <div class="form-group">
-                            <label for="industry">Preferred Industry *</label>
-                            <select id="industry" name="industry" required>
-                                <option value="">Select Industry</option>
-                                <option value="Information Technology">Information Technology</option>
-                                <option value="Healthcare">Healthcare</option>
-                                <option value="General Staffing">General Staffing</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="jobTitle">Current/Desired Job Title *</label>
-                            <input type="text" id="jobTitle" name="jobTitle" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="experience">Years of Experience *</label>
-                                <select id="experience" name="experience" required>
-                                    <option value="">Select Experience</option>
-                                    <option value="0-1">0-1 years</option>
-                                    <option value="2-3">2-3 years</option>
-                                    <option value="4-5">4-5 years</option>
-                                    <option value="6-10">6-10 years</option>
-                                    <option value="10+">10+ years</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="workType">Work Preference *</label>
-                                <select id="workType" name="workType" required>
-                                    <option value="">Select Preference</option>
-                                    <option value="Remote">Remote</option>
-                                    <option value="Hybrid">Hybrid</option>
-                                    <option value="On-site">On-site</option>
-                                    <option value="Flexible">Flexible</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="skills">Key Skills *</label>
-                            <textarea id="skills" name="skills" rows="3" placeholder="List your key skills, technologies, or areas of expertise" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h3><i class="fas fa-file-alt"></i> Additional Information</h3>
-                        <div class="form-group">
-                            <label for="resumeFile">Upload Resume *</label>
-                            <div class="file-upload-wrapper">
-                                <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" required>
-                                <label for="resumeFile" class="file-upload-label">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <span class="file-upload-text">Choose file or drag and drop</span>
-                                    <span class="file-upload-info">PDF, DOC, DOCX (Max 5MB)</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="resumeLink">Resume/LinkedIn URL (Optional)</label>
-                            <input type="url" id="resumeLink" name="resumeLink" placeholder="https://linkedin.com/in/yourprofile or resume link">
-                        </div>
-                        <div class="form-group">
-                            <label for="availability">Availability *</label>
-                            <select id="availability" name="availability" required>
-                                <option value="">Select Availability</option>
-                                <option value="Immediately">Immediately</option>
-                                <option value="2 weeks">2 weeks notice</option>
-                                <option value="1 month">1 month notice</option>
-                                <option value="2+ months">2+ months</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="additionalInfo">Additional Information</label>
-                            <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your career goals, salary expectations, or any other relevant information"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-large">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Profile
-                        </button>
-                        <p class="form-note">
-                            <i class="fas fa-shield-alt"></i>
-                            Your information is secure and will only be shared with potential employers with your consent.
-                        </p>
-                    </div>
-                </form>
             </div>
         </div>
     </section>
@@ -193,18 +78,38 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Enat Solution. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/security-policy.html">Security Policy</a></p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Enat Solution</h3>
+                    <p>Connecting talent with care. Your trusted partner in professional recruitment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#jobs">Current Opportunities</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> info@enatsolution.com</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Maryland, USA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Enat Solution. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="#" title="Follow Enat Solution on Twitter" aria-label="Follow Enat Solution on Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" title="Follow Enat Solution on Facebook" aria-label="Follow Enat Solution on Facebook"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- External JavaScript Files -->
-    <script src="security.js"></script>
-    <script src="security-monitor.js"></script>
-    <script src="candidate-submission.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

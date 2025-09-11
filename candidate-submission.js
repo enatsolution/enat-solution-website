@@ -19,7 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Convert FormData to object
             for (let [key, value] of formData.entries()) {
-                data[key] = value;
+                if (key === 'resumeFile' && value instanceof File && value.size > 0) {
+                    // Handle file upload
+                    data[key] = {
+                        name: value.name,
+                        size: value.size,
+                        type: value.type,
+                        lastModified: value.lastModified
+                    };
+                    // In a real application, you would upload the file to a server
+                    // For demo purposes, we'll just store the file info
+                } else {
+                    data[key] = value;
+                }
             }
             
             // Add timestamp
@@ -72,11 +84,29 @@ function validateCandidateForm(data) {
         experience: 'Years of Experience',
         workType: 'Work Preference',
         skills: 'Key Skills',
-        availability: 'Availability'
+        availability: 'Availability',
+        resumeFile: 'Resume File'
     };
     
     for (let [field, label] of Object.entries(requiredFields)) {
-        if (!data[field] || data[field].trim() === '') {
+        if (field === 'resumeFile') {
+            // Special validation for file upload
+            const fileInput = document.getElementById('resumeFile');
+            if (!fileInput.files || fileInput.files.length === 0) {
+                errors.push(`${label} is required`);
+            } else {
+                const file = fileInput.files[0];
+                // Validate file size (5MB max)
+                if (file.size > 5 * 1024 * 1024) {
+                    errors.push('Resume file must be smaller than 5MB');
+                }
+                // Validate file type
+                const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                if (!allowedTypes.includes(file.type)) {
+                    errors.push('Resume must be a PDF, DOC, or DOCX file');
+                }
+            }
+        } else if (!data[field] || data[field].trim() === '') {
             errors.push(`${label} is required`);
         }
     }
@@ -275,6 +305,31 @@ function showValidationErrors(errors) {
     const errorMessage = 'Please fix the following errors:\n\n' + errors.join('\n');
     alert(errorMessage);
 }
+
+// File upload UI feedback
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('resumeFile');
+    const fileLabel = document.querySelector('.file-upload-label');
+    const fileText = document.querySelector('.file-upload-text');
+    const fileInfo = document.querySelector('.file-upload-info');
+
+    if (fileInput && fileLabel) {
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                fileText.textContent = file.name;
+                fileInfo.textContent = `${(file.size / 1024 / 1024).toFixed(2)} MB`;
+                fileLabel.style.borderColor = '#10b981';
+                fileLabel.style.backgroundColor = '#f0fdf4';
+            } else {
+                fileText.textContent = 'Choose file or drag and drop';
+                fileInfo.textContent = 'PDF, DOC, DOCX (Max 5MB)';
+                fileLabel.style.borderColor = '#cbd5e1';
+                fileLabel.style.backgroundColor = '#f8fafc';
+            }
+        });
+    }
+});
 
 // Mobile menu toggle for candidate submission page
 const hamburger = document.querySelector('.hamburger');
