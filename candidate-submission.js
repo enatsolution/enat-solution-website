@@ -16,24 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form data
             const formData = new FormData(candidateForm);
             const data = {};
-
+            
             // Convert FormData to object
             for (let [key, value] of formData.entries()) {
-                if (key === 'resumeFile' && value instanceof File && value.size > 0) {
-                    // Handle file upload
-                    data[key] = {
-                        name: value.name,
-                        size: value.size,
-                        type: value.type,
-                        lastModified: value.lastModified
-                    };
-                    // In a real application, you would upload the file to a server
-                    // For demo purposes, we'll just store the file info
-                } else {
-                    data[key] = value;
-                }
+                data[key] = value;
             }
-
+            
             // Add timestamp
             data.submissionDate = new Date().toISOString();
             data.submissionTime = new Date().toLocaleString();
@@ -84,29 +72,11 @@ function validateCandidateForm(data) {
         experience: 'Years of Experience',
         workType: 'Work Preference',
         skills: 'Key Skills',
-        availability: 'Availability',
-        resumeFile: 'Resume File'
+        availability: 'Availability'
     };
     
     for (let [field, label] of Object.entries(requiredFields)) {
-        if (field === 'resumeFile') {
-            // Special validation for file upload
-            const fileInput = document.getElementById('resumeFile');
-            if (!fileInput.files || fileInput.files.length === 0) {
-                errors.push(`${label} is required`);
-            } else {
-                const file = fileInput.files[0];
-                // Validate file size (5MB max)
-                if (file.size > 5 * 1024 * 1024) {
-                    errors.push('Resume file must be smaller than 5MB');
-                }
-                // Validate file type
-                const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-                if (!allowedTypes.includes(file.type)) {
-                    errors.push('Resume must be a PDF, DOC, or DOCX file');
-                }
-            }
-        } else if (!data[field] || data[field].trim() === '') {
+        if (!data[field] || data[field].trim() === '') {
             errors.push(`${label} is required`);
         }
     }
@@ -154,11 +124,50 @@ function isValidURL(url) {
     }
 }
 
-// Local storage submission function (for demo purposes)
+// Google Sheets submission function
 async function submitToGoogleSheets(data) {
-    // For demo purposes, we'll simulate a successful submission
-    // In production, you would replace this with your actual Google Sheets API endpoint
+    // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnFd1wr09xj1gScVxjf9R0fcvf6XZgj9UCDyURqvpZBIAzaVjbLql32afwXwc4O8iLew/exec';
 
+    // Check if Google Sheets is configured
+    if (GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxnFd1wr09xj1gScVxjf9R0fcvf6XZgj9UCDyURqvpZBIAzaVjbLql32afwXwc4O8iLew/exec') {
+        // Fallback to local storage for demo
+        console.log('Google Sheets not configured, using local storage demo');
+        return await submitToLocalStorage(data);
+    }
+
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+            return result;
+        } else {
+            throw new Error(result.message || 'Submission failed');
+        }
+
+    } catch (error) {
+        console.error('Google Sheets submission error:', error);
+
+        // Fallback to local storage if Google Sheets fails
+        console.log('Falling back to local storage...');
+        return await submitToLocalStorage(data);
+    }
+}
+
+// Fallback local storage function
+async function submitToLocalStorage(data) {
     try {
         // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 1500));
@@ -182,12 +191,12 @@ async function submitToGoogleSheets(data) {
         // Return success response
         return {
             success: true,
-            message: 'Profile submitted successfully',
+            message: 'Profile submitted successfully (demo mode)',
             submissionId: submissionId
         };
 
     } catch (error) {
-        console.error('Submission error:', error);
+        console.error('Local storage error:', error);
         throw new Error('Failed to submit profile. Please try again.');
     }
 }
@@ -266,31 +275,6 @@ function showValidationErrors(errors) {
     const errorMessage = 'Please fix the following errors:\n\n' + errors.join('\n');
     alert(errorMessage);
 }
-
-// File upload UI feedback
-document.addEventListener('DOMContentLoaded', function() {
-    const fileInput = document.getElementById('resumeFile');
-    const fileLabel = document.querySelector('.file-upload-label');
-    const fileText = document.querySelector('.file-upload-text');
-    const fileInfo = document.querySelector('.file-upload-info');
-
-    if (fileInput && fileLabel) {
-        fileInput.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                fileText.textContent = file.name;
-                fileInfo.textContent = `${(file.size / 1024 / 1024).toFixed(2)} MB`;
-                fileLabel.style.borderColor = '#10b981';
-                fileLabel.style.backgroundColor = '#f0fdf4';
-            } else {
-                fileText.textContent = 'Choose file or drag and drop';
-                fileInfo.textContent = 'PDF, DOC, DOCX (Max 5MB)';
-                fileLabel.style.borderColor = '#cbd5e1';
-                fileLabel.style.backgroundColor = '#f8fafc';
-            }
-        });
-    }
-});
 
 // Mobile menu toggle for candidate submission page
 const hamburger = document.querySelector('.hamburger');

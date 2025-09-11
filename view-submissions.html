@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Demo Submissions - Enat Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .submissions-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .submission-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #f9fafb;
+        }
+        .submission-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .submission-id {
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        .submission-date {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .submission-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .detail-label {
+            font-weight: 500;
+            color: #374151;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .detail-value {
+            color: #1f2937;
+        }
+        .no-submissions {
+            text-align: center;
+            padding: 3rem;
+            color: #6b7280;
+        }
+        .clear-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        .clear-btn:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <div class="submissions-container">
+        <h1>Demo Submissions (Local Storage)</h1>
+        <p>This page shows submissions stored locally in your browser. This is for demonstration only.</p>
+        
+        <button class="clear-btn" onclick="clearSubmissions()">Clear All Submissions</button>
+        
+        <div id="submissions-list">
+            <!-- Submissions will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        function loadSubmissions() {
+            const submissions = JSON.parse(localStorage.getItem('candidateSubmissions') || '[]');
+            const container = document.getElementById('submissions-list');
+            
+            if (submissions.length === 0) {
+                container.innerHTML = '<div class="no-submissions">No submissions found. Submit a profile first!</div>';
+                return;
+            }
+            
+            container.innerHTML = submissions.map(submission => `
+                <div class="submission-item">
+                    <div class="submission-header">
+                        <span class="submission-id">${submission.id}</span>
+                        <span class="submission-date">${new Date(submission.submissionDate).toLocaleString()}</span>
+                    </div>
+                    <div class="submission-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Name</span>
+                            <span class="detail-value">${submission.firstName} ${submission.lastName}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email</span>
+                            <span class="detail-value">${submission.email}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Phone</span>
+                            <span class="detail-value">${submission.phone}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">${submission.location}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Industry</span>
+                            <span class="detail-value">${submission.industry}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Job Title</span>
+                            <span class="detail-value">${submission.jobTitle}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Experience</span>
+                            <span class="detail-value">${submission.experience}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Work Type</span>
+                            <span class="detail-value">${submission.workType}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Skills</span>
+                            <span class="detail-value">${submission.skills}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Availability</span>
+                            <span class="detail-value">${submission.availability}</span>
+                        </div>
+                        ${submission.resumeFile ? `
+                        <div class="detail-item">
+                            <span class="detail-label">Resume File</span>
+                            <span class="detail-value">${submission.resumeFile.name} (${(submission.resumeFile.size / 1024 / 1024).toFixed(2)} MB)</span>
+                        </div>
+                        ` : ''}
+                        ${submission.resumeLink ? `
+                        <div class="detail-item">
+                            <span class="detail-label">Resume Link</span>
+                            <span class="detail-value"><a href="${submission.resumeLink}" target="_blank">${submission.resumeLink}</a></span>
+                        </div>
+                        ` : ''}
+                        ${submission.additionalInfo ? `
+                        <div class="detail-item">
+                            <span class="detail-label">Additional Info</span>
+                            <span class="detail-value">${submission.additionalInfo}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function clearSubmissions() {
+            if (confirm('Are you sure you want to clear all demo submissions?')) {
+                localStorage.removeItem('candidateSubmissions');
+                loadSubmissions();
+            }
+        }
+        
+        // Load submissions on page load
+        loadSubmissions();
+    </script>
+</body>
+</html>
