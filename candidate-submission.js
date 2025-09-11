@@ -124,13 +124,13 @@ function isValidURL(url) {
     }
 }
 
-// Google Sheets submission function
+// Submission function with fallback
 async function submitToGoogleSheets(data) {
     // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnFd1wr09xj1gScVxjf9R0fcvf6XZgj9UCDyURqvpZBIAzaVjbLql32afwXwc4O8iLew/exec';
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
 
     // Check if Google Sheets is configured
-    if (GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxnFd1wr09xj1gScVxjf9R0fcvf6XZgj9UCDyURqvpZBIAzaVjbLql32afwXwc4O8iLew/exec') {
+    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
         // Fallback to local storage for demo
         console.log('Google Sheets not configured, using local storage demo');
         return await submitToLocalStorage(data);
