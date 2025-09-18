@@ -6,53 +6,6 @@
     <title>Submit Your Profile - Enat Solution</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .google-form-container {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            margin: 2rem 0;
-        }
-        
-        .google-form-iframe {
-            width: 100%;
-            height: 1400px;
-            border: none;
-            display: block;
-        }
-        
-        .form-fallback {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: #f8fafc;
-            border-radius: 12px;
-            margin: 2rem 0;
-        }
-        
-        .form-fallback h3 {
-            color: #1e293b;
-            margin-bottom: 1rem;
-        }
-        
-        .form-fallback p {
-            color: #64748b;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-fallback .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .google-form-iframe {
-                height: 1600px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -93,30 +46,50 @@
             </div>
             
             <div class="submission-content">
-                <!-- Google Form Embed -->
-                <div class="google-form-container">
-                    <!-- REPLACE THE URL BELOW WITH YOUR ACTUAL GOOGLE FORM EMBED URL -->
-                    <iframe 
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSdXK2JTaR0lFj81tJ6kgs1DDQIY3zEkrjyRx397m3C7IXCtwQ/viewform?embedded=true" 
-                        class="google-form-iframe"
-                        title="Enat Solution - Candidate Submission Form">
-                        Loading…
-                    </iframe>
+                <div class="submission-info">
+                    <div class="info-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Fast Placement</h3>
+                        <p>Get matched with opportunities in an average of 2 weeks</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Personal Support</h3>
+                        <p>24/7 candidate support throughout your job search journey</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Top Companies</h3>
+                        <p>Access to exclusive opportunities with leading employers</p>
+                    </div>
                 </div>
-                
-                <!-- Fallback for when form doesn't load -->
-                <div class="form-fallback">
-                    <h3><i class="fas fa-exclamation-triangle"></i> Can't see the form?</h3>
-                    <p>If the form doesn't load above, you can access it directly:</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXK2JTaR0lFj81tJ6kgs1DDQIY3zEkrjyRx397m3C7IXCtwQ/viewform" 
+
+                <!-- Google Form Redirect -->
+                <div class="google-form-redirect" style="text-align: center; padding: 3rem 2rem; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+                    <div style="margin-bottom: 2rem;">
+                        <i class="fas fa-file-alt" style="font-size: 4rem; color: #3b82f6; margin-bottom: 1rem;"></i>
+                        <h2 style="color: #1e293b; margin-bottom: 1rem;">Ready to Submit Your Profile?</h2>
+                        <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 2rem;">Click the button below to access our secure application form</p>
+                    </div>
+                    
+                    <!-- REPLACE THIS URL WITH YOUR GOOGLE FORM URL -->
+                    <a href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID_HERE/viewform" 
                        target="_blank" 
-                       class="btn btn-primary">
+                       class="btn btn-primary btn-large"
+                       style="display: inline-flex; align-items: center; gap: 0.75rem; font-size: 1.1rem; padding: 1rem 2rem;">
                         <i class="fas fa-external-link-alt"></i>
-                        Open Form in New Tab
+                        Open Application Form
                     </a>
-                    <p style="margin-top: 1.5rem; color: #6b7280; font-size: 0.9rem;">
-                        Or contact us directly at <a href="mailto:info@enatsolution.com" style="color: #3b82f6;">info@enatsolution.com</a>
-                    </p>
+                    
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-shield-alt"></i>
+                            Your information is secure and will only be shared with potential employers with your consent.
+                        </p>
+                        <p style="color: #6b7280; font-size: 0.9rem;">
+                            Need help? Contact us at <a href="mailto:info@enatsolution.com" style="color: #3b82f6;">info@enatsolution.com</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
