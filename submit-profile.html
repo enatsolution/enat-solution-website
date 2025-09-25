@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Profile - Enat Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .submission-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .submission-card {
+            max-width: 700px;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .submission-icon {
+            font-size: 4rem;
+            color: #3b82f6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .submission-title {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .submission-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .form-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        
+        .option-card {
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .option-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        .option-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .option-title {
+            font-size: 1.3rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .option-description {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .option-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            color: white;
+        }
+        
+        .contact-info {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .contact-title {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .contact-details {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .contact-details a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Enat Solution Logo" class="nav-logo-img">
+                    <div class="logo-text">
+                        <div class="company-name">enat solution</div>
+                        <div class="tagline">CONNECTING TALENT WITH CARE</div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+                <li><a href="index.html#services">Industries</a></li>
+                <li><a href="index.html#consulting">Consulting</a></li>
+                <li><a href="index.html#jobs">Jobs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Submission Section -->
+    <section class="submission-container">
+        <div class="submission-card">
+            <div class="submission-icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <h1 class="submission-title">Join Our Talent Network</h1>
+            <p class="submission-subtitle">
+                Choose your preferred method to submit your profile and get matched with exciting career opportunities in IT, Healthcare, and General Staffing.
+            </p>
+            
+            <div class="form-options">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h3 class="option-title">Online Form</h3>
+                    <p class="option-description">
+                        Complete our comprehensive online form with all your professional details
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXK2JTaR0lFj81tJ6kgs1DDQIY3zEkrjyRx397m3C7IXCtwQ/viewform" 
+                       target="_blank" 
+                       class="option-button">
+                        <i class="fas fa-form"></i>
+                        Fill Out Form
+                    </a>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="option-title">Email Submission</h3>
+                    <p class="option-description">
+                        Send your resume and cover letter directly to our recruitment team
+                    </p>
+                    <a href="mailto:careers@enatsolution.com?subject=Candidate Profile Submission&body=Hi Enat Solution Team,%0D%0A%0D%0AI would like to submit my profile for consideration. Please find my resume attached.%0D%0A%0D%0AName: [Your Name]%0D%0APhone: [Your Phone]%0D%0APreferred Industry: [IT/Healthcare/General Staffing]%0D%0AExperience Level: [Years of Experience]%0D%0A%0D%0AThank you for your consideration.%0D%0A%0D%0ABest regards," 
+                       class="option-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Email
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h3 class="contact-title">Need Assistance?</h3>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> <a href="mailto:info@enatsolution.com">info@enatsolution.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+1234567890">(123) 456-7890</a></p>
+                    <p><strong>Response Time:</strong> We typically respond within 24-48 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Enat Solution. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/security-policy.html">Security Policy</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="Follow Enat Solution on Twitter" aria-label="Follow Enat Solution on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Follow Enat Solution on Facebook" aria-label="Follow Enat Solution on Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Files -->
+    <script src="security.js"></script>
+    <script src="security-monitor.js"></script>
+</body>
+</html>

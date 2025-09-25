@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Profile - Enat Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .form-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 80vh;
+        }
+        
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .form-header h1 {
+            font-size: 3rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .form-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .jotform-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        
+        .jotform-container iframe {
+            width: 100%;
+            min-height: 800px;
+            border: none;
+            display: block;
+        }
+        
+        .form-loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #64748b;
+        }
+        
+        .form-loading i {
+            font-size: 3rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .form-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-title {
+            font-size: 1.3rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .benefit-description {
+            color: #64748b;
+            line-height: 1.5;
+        }
+        
+        .fallback-options {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .fallback-title {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .fallback-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .fallback-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .fallback-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .fallback-btn.secondary {
+            background: #6b7280;
+        }
+        
+        .fallback-btn.secondary:hover {
+            background: #4b5563;
+        }
+        
+        @media (max-width: 768px) {
+            .form-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .jotform-container iframe {
+                min-height: 1000px;
+            }
+            
+            .fallback-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Enat Solution Logo" class="nav-logo-img">
+                    <div class="logo-text">
+                        <div class="company-name">enat solution</div>
+                        <div class="tagline">CONNECTING TALENT WITH CARE</div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+                <li><a href="index.html#services">Industries</a></li>
+                <li><a href="index.html#consulting">Consulting</a></li>
+                <li><a href="index.html#jobs">Jobs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form-header">
+                <h1><i class="fas fa-user-plus"></i> Join Our Talent Network</h1>
+                <p>Submit your professional profile and get matched with exciting career opportunities in IT, Healthcare, and General Staffing.</p>
+            </div>
+            
+            <!-- Benefits Section -->
+            <div class="form-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="benefit-title">Quick Process</h3>
+                    <p class="benefit-description">Complete your profile in just 5-10 minutes with our streamlined form</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Secure & Private</h3>
+                    <p class="benefit-description">Your information is protected and only shared with your consent</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="benefit-title">Fast Matching</h3>
+                    <p class="benefit-description">Get matched with opportunities in an average of 2 weeks</p>
+                </div>
+            </div>
+            
+            <!-- JotForm Container -->
+            <div class="jotform-container">
+                <!-- REPLACE THIS SECTION WITH YOUR JOTFORM EMBED CODE -->
+                <div class="form-loading">
+                    <i class="fas fa-cog"></i>
+                    <h3>Form Setup Required</h3>
+                    <p>Please follow the JotForm setup guide to embed your professional candidate form here.</p>
+                </div>
+                
+                <!-- EXAMPLE OF HOW YOUR JOTFORM WILL LOOK:
+                <iframe
+                    id="JotFormIFrame-123456789"
+                    title="Enat Solution - Candidate Submission"
+                    onload="window.parent.scrollTo(0,0)"
+                    allowtransparency="true"
+                    allowfullscreen="true"
+                    allow="geolocation; microphone; camera"
+                    src="https://form.jotform.com/123456789"
+                    frameborder="0"
+                    style="min-width:100%;max-width:100%;height:539px;border:none;"
+                    scrolling="no">
+                </iframe>
+                -->
+            </div>
+            
+            <!-- Fallback Options -->
+            <div class="fallback-options">
+                <h3 class="fallback-title">
+                    <i class="fas fa-envelope"></i> Alternative Submission Methods
+                </h3>
+                <p>If you prefer, you can also submit your profile through these options:</p>
+                <div class="fallback-buttons">
+                    <a href="mailto:careers@enatsolution.com?subject=Candidate Profile Submission&body=Hi Enat Solution Team,%0D%0A%0D%0AI would like to submit my profile for consideration. Please find my resume attached.%0D%0A%0D%0AName: [Your Name]%0D%0APhone: [Your Phone]%0D%0APreferred Industry: [IT/Healthcare/General Staffing]%0D%0AExperience Level: [Years of Experience]%0D%0A%0D%0AThank you for your consideration.%0D%0A%0D%0ABest regards," 
+                       class="fallback-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Email Your Resume
+                    </a>
+                    <a href="tel:+1234567890" class="fallback-btn secondary">
+                        <i class="fas fa-phone"></i>
+                        Call Us: (123) 456-7890
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Enat Solution. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/security-policy.html">Security Policy</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="Follow Enat Solution on Twitter" aria-label="Follow Enat Solution on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Follow Enat Solution on Facebook" aria-label="Follow Enat Solution on Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Files -->
+    <script src="security.js"></script>
+    <script src="security-monitor.js"></script>
+</body>
+</html>
