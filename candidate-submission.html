@@ -14,12 +14,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Enat Solution Logo" class="nav-logo-img">
-                    <div class="logo-text">
-                        <div class="company-name">enat solution</div>
-                        <div class="tagline">CONNECTING TALENT WITH CARE</div>
-                    </div>
+                <img src="logo.png" alt="Enat Solution - Connecting Talent with Care" class="logo-img">
+                <div class="logo-text">
+                    <div class="company-name">enat solution</div>
+                    <div class="tagline">CONNECTING TALENT WITH CARE</div>
                 </div>
             </div>
             <ul class="nav-menu">
@@ -68,7 +66,7 @@
                     </div>
                 </div>
 
-                <form class="candidate-form" id="candidateForm" action="https://formspree.io/f/xpwywpny" method="POST" enctype="multipart/form-data">
+                <form class="candidate-form" id="candidateForm">
                     <div class="form-section">
                         <h3><i class="fas fa-user"></i> Personal Information</h3>
                         <div class="form-row">
@@ -162,6 +160,14 @@
                             <label for="additionalInfo">Additional Information</label>
                             <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your career goals, salary expectations, or any other relevant information"></textarea>
                         </div>
+
+                        <div class="form-group">
+                            <label for="resume">Upload Resume (PDF, DOC, DOCX, TXT - Max 5MB)</label>
+                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.txt" style="padding: 0.75rem; border: 2px dashed #3b82f6; border-radius: 8px; background: #f8fafc;">
+                            <small style="color: #64748b; font-size: 0.9rem; margin-top: 0.5rem; display: block;">
+                                <i class="fas fa-info-circle"></i> Supported formats: PDF, Word Document (.doc, .docx), Text (.txt)
+                            </small>
+                        </div>
                     </div>
 
                     <div class="form-actions">
@@ -194,6 +200,53 @@
     <!-- External JavaScript Files -->
     <script src="security.js"></script>
     <script src="security-monitor.js"></script>
-    <script src="candidate-submission.js"></script>
+
+    <script>
+        document.getElementById('candidateForm').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submitBtn');
+            const fileInput = document.getElementById('resume');
+
+            // Check file size (5MB limit)
+            if (fileInput.files[0] && fileInput.files[0].size > 5 * 1024 * 1024) {
+                e.preventDefault();
+                alert('File size must be less than 5MB. Please choose a smaller file.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Profile';
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+            // Let the form submit naturally to Formspree
+            // Don't prevent default - let it submit normally
+        });
+
+        // File upload feedback
+        document.getElementById('resume').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const fileSize = (file.size / 1024 / 1024).toFixed(2);
+                const fileName = file.name;
+
+                // Create feedback element
+                let feedback = document.getElementById('file-feedback');
+                if (!feedback) {
+                    feedback = document.createElement('div');
+                    feedback.id = 'file-feedback';
+                    feedback.style.marginTop = '0.5rem';
+                    feedback.style.fontSize = '0.9rem';
+                    e.target.parentNode.appendChild(feedback);
+                }
+
+                if (file.size > 5 * 1024 * 1024) {
+                    feedback.innerHTML = `<span style="color: #ef4444;"><i class="fas fa-exclamation-triangle"></i> File too large: ${fileName} (${fileSize}MB). Max 5MB allowed.</span>`;
+                } else {
+                    feedback.innerHTML = `<span style="color: #10b981;"><i class="fas fa-check-circle"></i> File selected: ${fileName} (${fileSize}MB)</span>`;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
