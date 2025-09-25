@@ -2,24 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Candidate Submission - Enat Solution</title>
-    <meta name="description" content="Submit your profile to Enat Solution for exciting career opportunities in IT, Healthcare, and General Staffing.">
-    <link rel="canonical" href="https://enatsolution.com/candidate-submission">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Profile - Enat Solution</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            display: none;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed #3b82f6;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .file-upload-area:hover {
+            border-color: #1d4ed8;
+            background: #eff6ff;
+        }
+        
+        .file-upload-icon {
+            font-size: 3rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .file-upload-text {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .file-upload-hint {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        .file-selected {
+            background: #ecfdf5;
+            border-color: #10b981;
+        }
+        
+        .file-selected .file-upload-icon {
+            color: #10b981;
+        }
+        
+        .file-info {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f3f4f6;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .file-info.show {
+            display: block;
+        }
+        
+        .form-group input[type="file"] {
+            display: none;
+        }
+        
+        .resume-requirement {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .resume-requirement .alert-icon {
+            color: #92400e;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-requirement h4 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .resume-requirement p {
+            color: #92400e;
+            margin: 0;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Enat Solution Logo" class="nav-logo-img">
-                    <div class="logo-text">
-                        <div class="company-name">enat solution</div>
-                        <div class="tagline">CONNECTING TALENT WITH CARE</div>
-                    </div>
+                <img src="logo.png" alt="Enat Solution - Connecting Talent with Care" class="logo-img">
+                <div class="logo-text">
+                    <div class="company-name">enat solution</div>
+                    <div class="tagline">CONNECTING TALENT WITH CARE</div>
                 </div>
             </div>
             <ul class="nav-menu">
@@ -49,6 +140,17 @@
                 <p>Join our talent network and get matched with exciting career opportunities</p>
             </div>
             
+            <!-- Resume Requirement Alert -->
+            <div class="resume-requirement">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h4>Word Resume Required</h4>
+                <p>
+                    You MUST upload your resume in Word format (.doc or .docx). Applications without Word resumes will not be processed.
+                </p>
+            </div>
+            
             <div class="submission-content">
                 <div class="submission-info">
                     <div class="info-card">
@@ -76,11 +178,7 @@
                         <h3>Thank You!</h3>
                         <p>Your profile has been submitted successfully. We'll contact you within 24-48 hours at the email address you provided.</p>
                     </div>
-
-                    <!-- Hidden fields for Netlify -->
-                    <input type="hidden" name="_subject" value="New Candidate Submission - Enat Solution">
-                    <input type="hidden" name="_next" value="thank-you.html">
-
+                    
                     <div class="form-section">
                         <h3><i class="fas fa-user"></i> Personal Information</h3>
                         <div class="form-row">
@@ -155,11 +253,25 @@
                     </div>
 
                     <div class="form-section">
-                        <h3><i class="fas fa-file-alt"></i> Additional Information</h3>
+                        <h3><i class="fas fa-file-alt"></i> Resume & Additional Information</h3>
+                        
                         <div class="form-group">
-                            <label for="resumeLink">Resume/LinkedIn URL</label>
-                            <input type="url" id="resumeLink" name="resumeLink" placeholder="https://linkedin.com/in/yourprofile or resume link">
+                            <label for="resume">Upload Resume (Word Document Only - Required) *</label>
+                            <div class="file-upload-area" id="fileUploadArea">
+                                <div class="file-upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="file-upload-text">Click to upload or drag and drop</div>
+                                <div class="file-upload-hint">Word documents only (.doc, .docx) - Max 10MB</div>
+                                <input type="file" id="resume" name="resume" accept=".doc,.docx" required>
+                            </div>
+                            <div class="file-info" id="fileInfo">
+                                <i class="fas fa-file-word"></i>
+                                <span id="fileName"></span>
+                                <span id="fileSize"></span>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="availability">Availability *</label>
                             <select id="availability" name="availability" required>
@@ -170,6 +282,7 @@
                                 <option value="2+ months">2+ months</option>
                             </select>
                         </div>
+                        
                         <div class="form-group">
                             <label for="additionalInfo">Additional Information</label>
                             <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your career goals, salary expectations, or any other relevant information"></textarea>
@@ -177,7 +290,7 @@
                     </div>
 
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-large">
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
                             <i class="fas fa-paper-plane"></i>
                             Submit Profile
                         </button>
@@ -203,9 +316,95 @@
         </div>
     </footer>
 
-    <!-- External JavaScript Files -->
-    <script src="security.js"></script>
-    <script src="security-monitor.js"></script>
-    <script src="candidate-submission.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('candidateForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const fileUploadArea = document.getElementById('fileUploadArea');
+            const fileInput = document.getElementById('resume');
+            const fileInfo = document.getElementById('fileInfo');
+            const fileName = document.getElementById('fileName');
+            const fileSize = document.getElementById('fileSize');
+            const successMessage = document.getElementById('successMessage');
+
+            // File upload handling
+            fileUploadArea.addEventListener('click', () => fileInput.click());
+
+            fileUploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                fileUploadArea.classList.add('dragover');
+            });
+
+            fileUploadArea.addEventListener('dragleave', () => {
+                fileUploadArea.classList.remove('dragover');
+            });
+
+            fileUploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                fileUploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileSelect(files[0]);
+                }
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFileSelect(e.target.files[0]);
+                }
+            });
+
+            function handleFileSelect(file) {
+                const fileExtension = file.name.split('.').pop().toLowerCase();
+                const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2);
+
+                if (!['doc', 'docx'].includes(fileExtension)) {
+                    alert('Please upload only Word documents (.doc or .docx)');
+                    fileInput.value = '';
+                    return;
+                }
+
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('File size must be less than 10MB');
+                    fileInput.value = '';
+                    return;
+                }
+
+                fileUploadArea.classList.add('file-selected');
+                fileUploadArea.querySelector('.file-upload-text').textContent = 'File selected successfully!';
+                fileUploadArea.querySelector('.file-upload-hint').textContent = 'Click to change file';
+
+                fileName.textContent = file.name;
+                fileSize.textContent = `(${fileSizeInMB} MB)`;
+                fileInfo.classList.add('show');
+            }
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                // Validate file upload
+                if (!fileInput.files.length) {
+                    e.preventDefault();
+                    alert('Please upload your resume in Word format (.doc or .docx)');
+                    return;
+                }
+
+                const file = fileInput.files[0];
+                const fileExtension = file.name.split('.').pop().toLowerCase();
+
+                if (!['doc', 'docx'].includes(fileExtension)) {
+                    e.preventDefault();
+                    alert('Please upload only Word documents (.doc or .docx)');
+                    return;
+                }
+
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+                // Note: Netlify will handle the actual form submission
+                // The success message will be shown after redirect or via Netlify's success page
+            });
+        });
+    </script>
 </body>
 </html>
