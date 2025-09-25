@@ -8,69 +8,6 @@
     <link rel="canonical" href="https://enatsolution.com/candidate-submission">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .file-upload-area {
-            border: 2px dashed #3b82f6;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            background: #f8fafc;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .file-upload-area:hover {
-            border-color: #1d4ed8;
-            background: #eff6ff;
-        }
-
-        .file-upload-area.dragover {
-            border-color: #10b981;
-            background: #ecfdf5;
-        }
-
-        .file-upload-icon {
-            font-size: 3rem;
-            color: #3b82f6;
-            margin-bottom: 1rem;
-        }
-
-        .file-upload-text {
-            font-size: 1.1rem;
-            color: #374151;
-            margin-bottom: 0.5rem;
-        }
-
-        .file-upload-hint {
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-
-        .file-selected {
-            background: #ecfdf5;
-            border-color: #10b981;
-        }
-
-        .file-selected .file-upload-icon {
-            color: #10b981;
-        }
-
-        .file-info {
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #f3f4f6;
-            border-radius: 8px;
-            display: none;
-        }
-
-        .file-info.show {
-            display: block;
-        }
-
-        .form-group input[type="file"] {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -254,9 +191,98 @@
         </div>
     </footer>
 
-    <!-- External JavaScript Files -->
-    <script src="security.js"></script>
-    <script src="security-monitor.js"></script>
-    <script src="candidate-submission.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('candidateForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const fileUploadArea = document.getElementById('fileUploadArea');
+            const fileInput = document.getElementById('resume');
+            const fileInfo = document.getElementById('fileInfo');
+            const fileName = document.getElementById('fileName');
+            const fileSize = document.getElementById('fileSize');
+
+            // File upload handling
+            if (fileUploadArea && fileInput) {
+                fileUploadArea.addEventListener('click', () => fileInput.click());
+
+                fileUploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    fileUploadArea.classList.add('dragover');
+                });
+
+                fileUploadArea.addEventListener('dragleave', () => {
+                    fileUploadArea.classList.remove('dragover');
+                });
+
+                fileUploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    fileUploadArea.classList.remove('dragover');
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        handleFileSelect(files[0]);
+                    }
+                });
+
+                fileInput.addEventListener('change', (e) => {
+                    if (e.target.files.length > 0) {
+                        handleFileSelect(e.target.files[0]);
+                    }
+                });
+            }
+
+            function handleFileSelect(file) {
+                const fileExtension = file.name.split('.').pop().toLowerCase();
+                const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2);
+
+                if (!['doc', 'docx'].includes(fileExtension)) {
+                    alert('Please upload only Word documents (.doc or .docx)');
+                    fileInput.value = '';
+                    return;
+                }
+
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('File size must be less than 10MB');
+                    fileInput.value = '';
+                    return;
+                }
+
+                fileUploadArea.classList.add('file-selected');
+                fileUploadArea.querySelector('.file-upload-text').textContent = 'File selected successfully!';
+                fileUploadArea.querySelector('.file-upload-hint').textContent = 'Click to change file';
+
+                if (fileName) fileName.textContent = file.name;
+                if (fileSize) fileSize.textContent = `(${fileSizeInMB} MB)`;
+                if (fileInfo) fileInfo.classList.add('show');
+            }
+
+            // Form submission
+            if (form && submitBtn) {
+                form.addEventListener('submit', function(e) {
+                    // Validate file upload
+                    if (!fileInput || !fileInput.files.length) {
+                        e.preventDefault();
+                        alert('Please upload your resume in Word format (.doc or .docx)');
+                        return;
+                    }
+
+                    const file = fileInput.files[0];
+                    const fileExtension = file.name.split('.').pop().toLowerCase();
+
+                    if (!['doc', 'docx'].includes(fileExtension)) {
+                        e.preventDefault();
+                        alert('Please upload only Word documents (.doc or .docx)');
+                        return;
+                    }
+
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+                    // Let Netlify handle the actual form submission
+                    // The form will submit normally after this
+                });
+            }
+        });
+    </script>
 </body>
 </html>
