@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Profile - Enat Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            display: none;
+        }
+        
+        .file-feedback {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input[type="file"] {
+            padding: 0.75rem;
+            border: 2px dashed #3b82f6;
+            border-radius: 8px;
+            background: #f8fafc;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Enat Solution - Connecting Talent with Care" class="logo-img">
+                <div class="logo-text">
+                    <div class="company-name">enat solution</div>
+                    <div class="tagline">CONNECTING TALENT WITH CARE</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+                <li><a href="index.html#services">Industries</a></li>
+                <li><a href="index.html#consulting">Consulting</a></li>
+                <li><a href="index.html#jobs">Jobs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Candidate Submission Section -->
+    <section class="candidate-submission section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h1>Submit Your Profile</h1>
+                <p>Join our talent network and get matched with exciting career opportunities</p>
+            </div>
+            
+            <div class="submission-content">
+                <div class="submission-info">
+                    <div class="info-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Fast Placement</h3>
+                        <p>Get matched with opportunities in an average of 2 weeks</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Personal Support</h3>
+                        <p>24/7 candidate support throughout your job search journey</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Top Companies</h3>
+                        <p>Access to exclusive opportunities with leading employers</p>
+                    </div>
+                </div>
+
+                <!-- Netlify Form - Works on any hosting -->
+                <form name="candidate-submission" method="POST" data-netlify="true" enctype="multipart/form-data" class="candidate-form" id="candidateForm">
+                    <!-- Success message will show here -->
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Thank You!</h3>
+                        <p>Your profile has been submitted successfully. We'll contact you within 24-48 hours.</p>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Current Location *</label>
+                            <input type="text" id="location" name="location" placeholder="City, State" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-briefcase"></i> Professional Information</h3>
+                        <div class="form-group">
+                            <label for="industry">Preferred Industry *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="General Staffing">General Staffing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobTitle">Current/Desired Job Title *</label>
+                            <input type="text" id="jobTitle" name="jobTitle" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="experience">Years of Experience *</label>
+                                <select id="experience" name="experience" required>
+                                    <option value="">Select Experience</option>
+                                    <option value="0-1">0-1 years</option>
+                                    <option value="2-3">2-3 years</option>
+                                    <option value="4-5">4-5 years</option>
+                                    <option value="6-10">6-10 years</option>
+                                    <option value="10+">10+ years</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="workType">Work Preference *</label>
+                                <select id="workType" name="workType" required>
+                                    <option value="">Select Preference</option>
+                                    <option value="Remote">Remote</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                    <option value="On-site">On-site</option>
+                                    <option value="Flexible">Flexible</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="skills">Key Skills *</label>
+                            <textarea id="skills" name="skills" rows="3" placeholder="List your key skills, technologies, or areas of expertise" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-file-alt"></i> Additional Information</h3>
+                        <div class="form-group">
+                            <label for="resumeLink">Resume/LinkedIn URL</label>
+                            <input type="url" id="resumeLink" name="resumeLink" placeholder="https://linkedin.com/in/yourprofile or resume link">
+                        </div>
+                        <div class="form-group">
+                            <label for="availability">Availability *</label>
+                            <select id="availability" name="availability" required>
+                                <option value="">Select Availability</option>
+                                <option value="Immediately">Immediately</option>
+                                <option value="2 weeks">2 weeks notice</option>
+                                <option value="1 month">1 month notice</option>
+                                <option value="2+ months">2+ months</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalInfo">Additional Information</label>
+                            <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your career goals, salary expectations, or any other relevant information"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="resume">Upload Resume (Word Document Only - Max 5MB) *</label>
+                            <input type="file" id="resume" name="resume" accept=".doc,.docx" required>
+                            <small style="color: #64748b; font-size: 0.9rem; margin-top: 0.5rem; display: block;">
+                                <i class="fas fa-info-circle"></i> Only Word documents (.doc, .docx) are accepted
+                            </small>
+                            <div id="file-feedback" class="file-feedback"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Profile
+                        </button>
+                        <p class="form-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Your information is secure and will only be shared with potential employers with your consent.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Enat Solution. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/security-policy.html">Security Policy</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="Follow Enat Solution on Twitter" aria-label="Follow Enat Solution on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Follow Enat Solution on Facebook" aria-label="Follow Enat Solution on Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('candidateForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const resumeInput = document.getElementById('resume');
+            const fileFeedback = document.getElementById('file-feedback');
+            const successMessage = document.getElementById('successMessage');
+            
+            // File upload feedback
+            if (resumeInput) {
+                resumeInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const fileSize = (file.size / 1024 / 1024).toFixed(2);
+                        const fileName = file.name;
+                        const fileExtension = fileName.split('.').pop().toLowerCase();
+                        
+                        if (!['doc', 'docx'].includes(fileExtension)) {
+                            fileFeedback.innerHTML = `<span style="color: #ef4444;"><i class="fas fa-exclamation-triangle"></i> Invalid file type. Only Word documents (.doc, .docx) are allowed.</span>`;
+                            e.target.value = '';
+                        } else if (file.size > 5 * 1024 * 1024) {
+                            fileFeedback.innerHTML = `<span style="color: #ef4444;"><i class="fas fa-exclamation-triangle"></i> File too large: ${fileName} (${fileSize}MB). Max 5MB allowed.</span>`;
+                            e.target.value = '';
+                        } else {
+                            fileFeedback.innerHTML = `<span style="color: #10b981;"><i class="fas fa-check-circle"></i> File selected: ${fileName} (${fileSize}MB)</span>`;
+                        }
+                    }
+                });
+            }
+            
+            // Form submission
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // Check file validation
+                    if (resumeInput && resumeInput.files[0]) {
+                        const file = resumeInput.files[0];
+                        const fileExtension = file.name.split('.').pop().toLowerCase();
+                        
+                        if (!['doc', 'docx'].includes(fileExtension)) {
+                            e.preventDefault();
+                            alert('Please upload only Word documents (.doc or .docx)');
+                            return;
+                        }
+                        
+                        if (file.size > 5 * 1024 * 1024) {
+                            e.preventDefault();
+                            alert('File size must be less than 5MB. Please choose a smaller file.');
+                            return;
+                        }
+                    }
+                    
+                    // Show loading state
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                    }
+                    
+                    // Show success message after a delay (simulating submission)
+                    setTimeout(function() {
+                        successMessage.style.display = 'block';
+                        form.style.display = 'none';
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    }, 2000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
