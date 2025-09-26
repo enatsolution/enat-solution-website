@@ -20,13 +20,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // File upload handling
     if (fileUploadArea && fileInput) {
         console.log('Setting up file upload handlers...');
-        
+
+        // Hide the file input since we have the upload area working
+        fileInput.style.display = 'none';
+
         // Click handler
         fileUploadArea.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             console.log('File upload area clicked - opening file dialog');
-            fileInput.click();
+
+            // Try multiple methods to trigger file dialog
+            try {
+                fileInput.click();
+                console.log('File input click triggered successfully');
+            } catch (error) {
+                console.error('Error triggering file input:', error);
+                // Fallback: show the file input
+                fileInput.style.display = 'block';
+                fileInput.focus();
+            }
         });
         
         // File input change handler
