@@ -8,106 +8,18 @@
     <link rel="canonical" href="https://enatsolution.com/candidate-submission">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .file-upload-area {
-            border: 2px dashed #3b82f6;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            background: #f8fafc;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .file-upload-area:hover {
-            border-color: #1d4ed8;
-            background: #eff6ff;
-        }
-
-        .file-upload-area.dragover {
-            border-color: #10b981;
-            background: #ecfdf5;
-        }
-
-        .file-upload-icon {
-            font-size: 3rem;
-            color: #3b82f6;
-            margin-bottom: 1rem;
-        }
-
-        .file-upload-text {
-            font-size: 1.1rem;
-            color: #374151;
-            margin-bottom: 0.5rem;
-        }
-
-        .file-upload-hint {
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-
-        .file-selected {
-            background: #ecfdf5;
-            border-color: #10b981;
-        }
-
-        .file-selected .file-upload-icon {
-            color: #10b981;
-        }
-
-        .file-info {
-            margin-top: 1rem;
-            padding: 1rem;
-            background: #f3f4f6;
-            border-radius: 8px;
-            display: none;
-        }
-
-        .file-info.show {
-            display: block;
-        }
-
-        .form-group input[type="file"] {
-            display: none;
-        }
-
-        .resume-requirement {
-            background: #fef3c7;
-            border: 2px solid #f59e0b;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .resume-requirement .alert-icon {
-            color: #92400e;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .resume-requirement h4 {
-            color: #92400e;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .resume-requirement p {
-            color: #92400e;
-            margin: 0;
-            font-weight: 500;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="logo.png" alt="Enat Solution - Connecting Talent with Care" class="logo-img">
-                <div class="logo-text">
-                    <div class="company-name">enat solution</div>
-                    <div class="tagline">CONNECTING TALENT WITH CARE</div>
+                <div class="logo-container">
+                    <img src="logo.png" alt="Enat Solution Logo" class="nav-logo-img">
+                    <div class="logo-text">
+                        <div class="company-name">enat solution</div>
+                        <div class="tagline">CONNECTING TALENT WITH CARE</div>
+                    </div>
                 </div>
             </div>
             <ul class="nav-menu">
@@ -136,18 +48,7 @@
                 <h1>Submit Your Profile</h1>
                 <p>Join our talent network and get matched with exciting career opportunities</p>
             </div>
-
-            <!-- Resume Requirement Alert -->
-            <div class="resume-requirement">
-                <div class="alert-icon">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </div>
-                <h4>Word Resume Required</h4>
-                <p>
-                    You MUST upload your resume in Word format (.doc or .docx). Applications without Word resumes will not be processed.
-                </p>
-            </div>
-
+            
             <div class="submission-content">
                 <div class="submission-info">
                     <div class="info-card">
@@ -167,10 +68,7 @@
                     </div>
                 </div>
 
-                <!-- Netlify Form - Works when deployed to Netlify -->
-                <form name="candidate-submission" method="POST" data-netlify="true" enctype="multipart/form-data" class="candidate-form" id="candidateForm" action="/thank-you.html">
-                    <!-- Hidden field for Netlify form detection -->
-                    <input type="hidden" name="form-name" value="candidate-submission">
+                <form class="candidate-form" id="candidateForm">
                     <div class="form-section">
                         <h3><i class="fas fa-user"></i> Personal Information</h3>
                         <div class="form-row">
@@ -249,15 +147,15 @@
 
                         <div class="form-group">
                             <label for="resume">Upload Resume (Word Document Only - Required) *</label>
-                            <div class="file-upload-area" id="fileUploadArea">
-                                <div class="file-upload-icon">
+                            <div class="file-upload-area" id="fileUploadArea" style="border: 2px dashed #3b82f6; border-radius: 12px; padding: 2rem; text-align: center; background: #f8fafc; transition: all 0.3s ease; cursor: pointer;">
+                                <div class="file-upload-icon" style="font-size: 3rem; color: #3b82f6; margin-bottom: 1rem;">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                 </div>
-                                <div class="file-upload-text">Click to upload or drag and drop</div>
-                                <div class="file-upload-hint">Word documents only (.doc, .docx) - Max 10MB</div>
-                                <input type="file" id="resume" name="resume" accept=".doc,.docx" required>
+                                <div class="file-upload-text" style="font-size: 1.1rem; color: #374151; margin-bottom: 0.5rem;">Click to upload or drag and drop</div>
+                                <div class="file-upload-hint" style="font-size: 0.9rem; color: #6b7280;">Word documents only (.doc, .docx) - Max 10MB</div>
+                                <input type="file" id="resume" name="resume" accept=".doc,.docx" required style="display: none;">
                             </div>
-                            <div class="file-info" id="fileInfo">
+                            <div class="file-info" id="fileInfo" style="margin-top: 1rem; padding: 1rem; background: #f3f4f6; border-radius: 8px; display: none;">
                                 <i class="fas fa-file-word"></i>
                                 <span id="fileName"></span>
                                 <span id="fileSize"></span>
@@ -280,7 +178,7 @@
                     </div>
 
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                        <button type="submit" class="btn btn-primary btn-large">
                             <i class="fas fa-paper-plane"></i>
                             Submit Profile
                         </button>
@@ -309,36 +207,53 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('candidateForm');
-            const submitBtn = document.getElementById('submitBtn');
+            const submitBtn = document.querySelector('button[type="submit"]');
             const fileUploadArea = document.getElementById('fileUploadArea');
             const fileInput = document.getElementById('resume');
             const fileInfo = document.getElementById('fileInfo');
             const fileName = document.getElementById('fileName');
             const fileSize = document.getElementById('fileSize');
 
-            // File upload handling
+            // File upload handling with immediate response
             if (fileUploadArea && fileInput) {
-                fileUploadArea.addEventListener('click', () => fileInput.click());
-
-                fileUploadArea.addEventListener('dragover', (e) => {
+                // Click handler
+                fileUploadArea.addEventListener('click', function(e) {
                     e.preventDefault();
-                    fileUploadArea.classList.add('dragover');
+                    e.stopPropagation();
+                    console.log('File upload area clicked');
+                    fileInput.click();
                 });
 
-                fileUploadArea.addEventListener('dragleave', () => {
-                    fileUploadArea.classList.remove('dragover');
+                // Drag and drop handlers
+                fileUploadArea.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    fileUploadArea.style.borderColor = '#10b981';
+                    fileUploadArea.style.background = '#ecfdf5';
                 });
 
-                fileUploadArea.addEventListener('drop', (e) => {
+                fileUploadArea.addEventListener('dragleave', function(e) {
                     e.preventDefault();
-                    fileUploadArea.classList.remove('dragover');
+                    e.stopPropagation();
+                    fileUploadArea.style.borderColor = '#3b82f6';
+                    fileUploadArea.style.background = '#f8fafc';
+                });
+
+                fileUploadArea.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    fileUploadArea.style.borderColor = '#3b82f6';
+                    fileUploadArea.style.background = '#f8fafc';
+
                     const files = e.dataTransfer.files;
                     if (files.length > 0) {
                         handleFileSelect(files[0]);
                     }
                 });
 
-                fileInput.addEventListener('change', (e) => {
+                // File input change handler
+                fileInput.addEventListener('change', function(e) {
+                    console.log('File input changed');
                     if (e.target.files.length > 0) {
                         handleFileSelect(e.target.files[0]);
                     }
@@ -346,6 +261,7 @@
             }
 
             function handleFileSelect(file) {
+                console.log('File selected:', file.name);
                 const fileExtension = file.name.split('.').pop().toLowerCase();
                 const fileSizeInMB = (file.size / 1024 / 1024).toFixed(2);
 
@@ -361,13 +277,23 @@
                     return;
                 }
 
-                fileUploadArea.classList.add('file-selected');
-                fileUploadArea.querySelector('.file-upload-text').textContent = 'File selected successfully!';
-                fileUploadArea.querySelector('.file-upload-hint').textContent = 'Click to change file';
+                // Update UI to show file selected
+                fileUploadArea.style.background = '#ecfdf5';
+                fileUploadArea.style.borderColor = '#10b981';
 
+                const uploadIcon = fileUploadArea.querySelector('.file-upload-icon');
+                if (uploadIcon) uploadIcon.style.color = '#10b981';
+
+                const uploadText = fileUploadArea.querySelector('.file-upload-text');
+                if (uploadText) uploadText.textContent = 'File selected successfully!';
+
+                const uploadHint = fileUploadArea.querySelector('.file-upload-hint');
+                if (uploadHint) uploadHint.textContent = 'Click to change file';
+
+                // Show file info
                 if (fileName) fileName.textContent = file.name;
-                if (fileSize) fileSize.textContent = `(${fileSizeInMB} MB)`;
-                if (fileInfo) fileInfo.classList.add('show');
+                if (fileSize) fileSize.textContent = ` (${fileSizeInMB} MB)`;
+                if (fileInfo) fileInfo.style.display = 'block';
             }
 
             // Form submission handling
@@ -403,10 +329,19 @@
 
                             // Reset form
                             form.reset();
-                            fileUploadArea.classList.remove('file-selected');
-                            fileUploadArea.querySelector('.file-upload-text').textContent = 'Click to upload or drag and drop';
-                            fileUploadArea.querySelector('.file-upload-hint').textContent = 'Word documents only (.doc, .docx) - Max 10MB';
-                            if (fileInfo) fileInfo.classList.remove('show');
+                            fileUploadArea.style.background = '#f8fafc';
+                            fileUploadArea.style.borderColor = '#3b82f6';
+
+                            const uploadIcon = fileUploadArea.querySelector('.file-upload-icon');
+                            if (uploadIcon) uploadIcon.style.color = '#3b82f6';
+
+                            const uploadText = fileUploadArea.querySelector('.file-upload-text');
+                            if (uploadText) uploadText.textContent = 'Click to upload or drag and drop';
+
+                            const uploadHint = fileUploadArea.querySelector('.file-upload-hint');
+                            if (uploadHint) uploadHint.textContent = 'Word documents only (.doc, .docx) - Max 10MB';
+
+                            if (fileInfo) fileInfo.style.display = 'none';
 
                             // Reset button
                             submitBtn.disabled = false;
@@ -417,7 +352,6 @@
                     }
 
                     // Let Netlify handle the actual form submission when deployed
-                    // The form will submit normally after this
                 });
             }
         });
