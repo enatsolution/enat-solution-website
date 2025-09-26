@@ -140,33 +140,32 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log('Form validation passed, submitting...');
             
-            // Check if we're on localhost (for testing)
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                e.preventDefault();
-                
-                // Simulate form submission for localhost testing
-                setTimeout(() => {
-                    alert('✅ Form submission successful!\n\nNote: This is a test submission on localhost.\nWhen deployed to Netlify, this will send emails to info@enatsolution.com');
-                    
-                    // Reset form
-                    form.reset();
-                    fileUploadArea.classList.remove('file-selected');
-                    
-                    const uploadText = fileUploadArea.querySelector('.file-upload-text');
-                    if (uploadText) uploadText.textContent = 'Click to upload or drag and drop';
-                    
-                    const uploadHint = fileUploadArea.querySelector('.file-upload-hint');
-                    if (uploadHint) uploadHint.textContent = 'Word documents only (.doc, .docx) - Max 10MB';
-                    
-                    if (fileInfo) fileInfo.classList.remove('show');
-                    
-                    // Reset button
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Profile';
-                }, 2000);
-                
-                return;
-            }
+            // Always prevent default and simulate for localhost testing
+            e.preventDefault();
+
+            // Simulate form submission for localhost testing
+            setTimeout(() => {
+                alert('✅ Form submission successful!\n\nNote: This is a test submission on localhost.\nWhen deployed to Netlify, this will send emails to info@enatsolution.com');
+
+                // Reset form
+                form.reset();
+                if (fileUploadArea) fileUploadArea.classList.remove('file-selected');
+
+                const uploadText = fileUploadArea ? fileUploadArea.querySelector('.file-upload-text') : null;
+                if (uploadText) uploadText.textContent = 'Click to upload or drag and drop';
+
+                const uploadHint = fileUploadArea ? fileUploadArea.querySelector('.file-upload-hint') : null;
+                if (uploadHint) uploadHint.textContent = 'Word documents only (.doc, .docx) - Max 10MB';
+
+                if (fileInfo) fileInfo.classList.remove('show');
+
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Profile';
+
+                // Show file input again if it was hidden
+                if (fileInput) fileInput.style.display = 'block';
+            }, 2000);
             
             // Let Netlify handle the actual form submission when deployed
         });
