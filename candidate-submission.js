@@ -45,9 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitBtn.disabled = false;
                 }, 1500);
             } else {
-                // For production - use native form submission to Netlify
+                // For production - submit to Netlify Forms naturally
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
+
+                // Allow the form to submit naturally to Netlify
                 candidateForm.submit();
             }
         });
