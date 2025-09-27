@@ -104,7 +104,51 @@ function validateCandidateForm(data) {
     return true;
 }
 
+// Helper validation functions
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
 
+function isValidPhone(phone) {
+    const cleanPhone = phone.replace(/\D/g, '');
+    return cleanPhone.length >= 7 && cleanPhone.length <= 15;
+}
+
+function isValidURL(url) {
+    try {
+        new URL(url);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+// Google Sheets submission function
+async function submitToGoogleSheets(data) {
+    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('Google Sheets submission error:', error);
+        throw error;
+    }
+}
 
 // UI feedback functions
 function showSuccessMessage() {
@@ -128,7 +172,7 @@ function showSuccessMessage() {
                 </ul>
             </div>
             <button class="success-btn" onclick="this.closest('.success-modal-overlay').remove()">
-                <i class="fas fa-arrow-left"></i> Back to Home
+                <i class="fas fa-check"></i> OK
             </button>
         </div>
     `;
@@ -310,10 +354,7 @@ function showErrorMessage(errorText) {
     alert(`Submission Error: ${errorText}\n\nPlease try again or contact us directly at info@enatsolution.com`);
 }
 
-function showValidationErrors(errors) {
-    const errorMessage = 'Please fix the following errors:\n\n' + errors.join('\n');
-    alert(errorMessage);
-}
+
 
 // Mobile menu toggle for candidate submission page
 const hamburger = document.querySelector('.hamburger');
