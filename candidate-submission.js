@@ -4,15 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (candidateForm) {
         candidateForm.addEventListener('submit', function(e) {
-            // For production - let Netlify handle the form submission naturally
-            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                // Don't prevent default - let the form submit naturally to Netlify
-                return;
-            }
-
-            // Only prevent default for localhost testing
-            e.preventDefault();
-
             const submitBtn = candidateForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
 
@@ -20,20 +11,30 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
             submitBtn.disabled = true;
 
-            // Collect form data for localhost testing
-            const formData = new FormData(candidateForm);
-            const data = Object.fromEntries(formData.entries());
+            // For localhost testing - prevent default and show success
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                e.preventDefault();
 
-            console.log('Localhost testing mode - simulating successful submission');
-            console.log('Form data:', data);
+                setTimeout(() => {
+                    showSuccessMessage();
+                    candidateForm.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 1500);
+                return;
+            }
 
-            setTimeout(() => {
-                showSuccessMessage();
-                candidateForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+            // For production - let form submit to Netlify naturally
+            // The form will redirect to a thank you page or reload
         });
+    }
+
+    // Check URL parameters for success message
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        setTimeout(() => {
+            showSuccessMessage();
+        }, 500);
     }
 });
 
@@ -105,8 +106,31 @@ function isValidURL(url) {
     }
 }
 
-// Form submission is now handled by Netlify Forms
-// No additional submission functions needed
+// Google Sheets submission function
+async function submitToGoogleSheets(data) {
+    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('Google Sheets submission error:', error);
+        throw error;
+    }
+}
 
 // UI feedback functions
 function showSuccessMessage() {
