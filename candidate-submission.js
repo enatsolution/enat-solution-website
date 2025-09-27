@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(candidateForm);
 
             // Validate required fields
-            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'location', 'industry', 'jobTitle', 'experience', 'workPreference', 'skills', 'availability', 'resume'];
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'location', 'industry', 'jobTitle', 'experience', 'workType', 'skills', 'availability', 'resume'];
             let isValid = true;
 
             for (const field of requiredFields) {
@@ -65,53 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Validation function
-function validateCandidateForm(data) {
-    const errors = [];
-    
-    // Required field validation
-    const requiredFields = {
-        firstName: 'First Name',
-        lastName: 'Last Name',
-        email: 'Email Address',
-        phone: 'Phone Number',
-        location: 'Current Location',
-        industry: 'Preferred Industry',
-        jobTitle: 'Job Title',
-        experience: 'Years of Experience',
-        workType: 'Work Preference',
-        skills: 'Key Skills',
-        availability: 'Availability'
-    };
-    
-    for (let [field, label] of Object.entries(requiredFields)) {
-        if (!data[field] || data[field].trim() === '') {
-            errors.push(`${label} is required`);
-        }
-    }
-    
-    // Email validation
-    if (data.email && !isValidEmail(data.email)) {
-        errors.push('Please enter a valid email address');
-    }
-    
-    // Phone validation
-    if (data.phone && !isValidPhone(data.phone)) {
-        errors.push('Please enter a valid phone number');
-    }
-    
-    // URL validation for resume link
-    if (data.resumeLink && data.resumeLink.trim() !== '' && !isValidURL(data.resumeLink)) {
-        errors.push('Please enter a valid URL for resume/LinkedIn');
-    }
-    
-    if (errors.length > 0) {
-        showValidationErrors(errors);
-        return false;
-    }
-    
-    return true;
-}
+
 
 // Helper validation functions
 function isValidEmail(email) {
@@ -164,7 +118,7 @@ function showSuccessMessage() {
 
     // Add comprehensive styles
     const style = document.createElement('style');
-    style.textContent = `
+    style.textContent = \`
         .success-modal-overlay {
             position: fixed;
             top: 0;
@@ -321,7 +275,7 @@ function showSuccessMessage() {
                 font-size: 1rem;
             }
         }
-    `;
+    \`;
 
     document.head.appendChild(style);
     document.body.appendChild(modal);
