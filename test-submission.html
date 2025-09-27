@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Submission Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Results</h2>
+        <div id="testResults">Click the test button to run tests...</div>
+    </div>
+    
+    <button onclick="runTests()">Run Form Tests</button>
+    
+    <script>
+        function runTests() {
+            const results = document.getElementById('testResults');
+            results.innerHTML = '<p>Running tests...</p>';
+            
+            // Test 1: Check if candidate submission page loads
+            fetch('candidate-submission.html')
+                .then(response => {
+                    if (response.ok) {
+                        results.innerHTML += '<p class="success">✓ Candidate submission page loads correctly</p>';
+                    } else {
+                        results.innerHTML += '<p class="error">✗ Candidate submission page failed to load</p>';
+                    }
+                })
+                .catch(error => {
+                    results.innerHTML += '<p class="error">✗ Error loading candidate submission page: ' + error.message + '</p>';
+                });
+            
+            // Test 2: Check if JavaScript files load
+            const scripts = ['candidate-submission.js', 'security.js', 'security-monitor.js'];
+            scripts.forEach(script => {
+                fetch(script)
+                    .then(response => {
+                        if (response.ok) {
+                            results.innerHTML += `<p class="success">✓ ${script} loads correctly</p>`;
+                        } else {
+                            results.innerHTML += `<p class="error">✗ ${script} failed to load</p>`;
+                        }
+                    })
+                    .catch(error => {
+                        results.innerHTML += `<p class="error">✗ Error loading ${script}: ${error.message}</p>`;
+                    });
+            });
+            
+            // Test 3: Simulate form submission
+            setTimeout(() => {
+                const testData = {
+                    firstName: 'Test',
+                    lastName: 'User',
+                    email: 'test@example.com',
+                    phone: '555-0123',
+                    location: 'Test City, TS',
+                    industry: 'Information Technology',
+                    jobTitle: 'Software Developer',
+                    experience: '2-3',
+                    workType: 'Remote',
+                    skills: 'JavaScript, HTML, CSS',
+                    availability: 'Immediately'
+                };
+                
+                results.innerHTML += '<p class="success">✓ Test form data created successfully</p>';
+                results.innerHTML += '<p>Form submission test completed. Check the actual form for real testing.</p>';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -2069,3 +2069,76 @@ html, body {
         display: none;
     }
 }
+
+/* Enhanced File Upload Styles */
+.file-input {
+    display: none;
+}
+
+.file-upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    margin-top: 0.5rem;
+}
+
+.file-upload-area:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.file-upload-area i {
+    font-size: 2rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.file-upload-area p {
+    margin: 0.5rem 0;
+    color: #475569;
+    font-weight: 500;
+}
+
+.file-upload-area small {
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+/* Success Message Button Styles */
+.message-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.message-actions .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.message-actions .btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.message-actions .btn-primary:hover {
+    background: #2563eb;
+}
+
+.message-actions .btn-secondary {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.message-actions .btn-secondary:hover {
+    background: #cbd5e1;
+}

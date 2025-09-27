@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Submit to Google Sheets
-            submitToGoogleSheets(data)
+            // Submit to Netlify Forms
+            submitToNetlify(candidateForm)
                 .then(response => {
                     if (response.success) {
                         // Success - show confirmation
@@ -124,15 +124,12 @@ function isValidURL(url) {
     }
 }
 
-// Google Sheets submission function
-async function submitToGoogleSheets(data) {
-    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
-    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
-
-    // For localhost testing - simulate successful submission
-    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+// Netlify Forms submission function
+async function submitToNetlify(form) {
+    // Check if we're on localhost for testing
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         console.log('Localhost testing mode - simulating successful submission');
-        console.log('Form data:', data);
+        console.log('Form data would be submitted to Netlify Forms');
 
         // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 1500));
@@ -143,23 +140,26 @@ async function submitToGoogleSheets(data) {
         };
     }
 
+    // For production - let Netlify handle the form submission
     try {
-        const response = await fetch(GOOGLE_SCRIPT_URL, {
+        const formData = new FormData(form);
+
+        const response = await fetch('/', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.ok) {
+            return {
+                success: true,
+                message: 'Profile submitted successfully'
+            };
+        } else {
+            throw new Error('Form submission failed');
         }
-
-        const result = await response.json();
-        return result;
     } catch (error) {
-        console.error('Google Sheets submission error:', error);
+        console.error('Netlify form submission error:', error);
         throw error;
     }
 }
