@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Candidate Submission - Enat Solution</title>
-    <meta name="description" content="Submit your profile to Enat Solution for exciting career opportunities in IT, Healthcare, and General Staffing.">
-    <link rel="canonical" href="https://enatsolution.com/candidate-submission">
+    <title>Submit Your Profile - Enat Solution</title>
+    <meta name="description" content="Submit your profile to Enat Solution - Join our talent network for IT, Healthcare, and General Staffing opportunities.">
+    <link rel="canonical" href="https://enatsolution.com/apply-now">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation - EXACT COPY FROM INDEX.HTML -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Enat Solution Logo" class="nav-logo-img">
-                    <div class="logo-text">
-                        <div class="company-name">enat solution</div>
-                        <div class="tagline">CONNECTING TALENT WITH CARE</div>
-                    </div>
+                <img src="logo.png" alt="Enat Solution - Connecting Talent with Care" class="logo-img">
+                <div class="logo-text">
+                    <div class="company-name">enat solution</div>
+                    <div class="tagline">CONNECTING TALENT WITH CARE</div>
                 </div>
             </div>
             <ul class="nav-menu">
@@ -41,166 +39,272 @@
         </div>
     </nav>
 
-    <!-- Candidate Submission Section -->
-    <section class="candidate-submission section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h1>Submit Your Profile</h1>
-                <p>Join our talent network and get matched with exciting career opportunities</p>
-            </div>
-            
-            <div class="submission-content">
-                <div class="submission-info">
-                    <div class="info-card">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Fast Placement</h3>
-                        <p>Get matched with opportunities in an average of 2 weeks</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Personal Support</h3>
-                        <p>24/7 candidate support throughout your job search journey</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-star"></i>
-                        <h3>Top Companies</h3>
-                        <p>Access to exclusive opportunities with leading employers</p>
-                    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section candidate-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Submit Your Profile</h1>
+                    <p>Join our talent network and get matched with exciting career opportunities in IT, Healthcare, and General Staffing.</p>
                 </div>
-
-                <form class="candidate-form" id="candidateForm" name="candidate-submission" method="POST" data-netlify="true" enctype="multipart/form-data">
-                    <!-- Netlify hidden fields -->
-                    <input type="hidden" name="form-name" value="candidate-submission">
-                    <div class="form-section">
-                        <h3><i class="fas fa-user"></i> Personal Information</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="location">Current Location *</label>
-                            <input type="text" id="location" name="location" placeholder="City, State" required>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h3><i class="fas fa-briefcase"></i> Professional Information</h3>
-                        <div class="form-group">
-                            <label for="industry">Preferred Industry *</label>
-                            <select id="industry" name="industry" required>
-                                <option value="">Select Industry</option>
-                                <option value="Information Technology">Information Technology</option>
-                                <option value="Healthcare">Healthcare</option>
-                                <option value="General Staffing">General Staffing</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="jobTitle">Current/Desired Job Title *</label>
-                            <input type="text" id="jobTitle" name="jobTitle" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="experience">Years of Experience *</label>
-                                <select id="experience" name="experience" required>
-                                    <option value="">Select Experience</option>
-                                    <option value="0-1">0-1 years</option>
-                                    <option value="2-3">2-3 years</option>
-                                    <option value="4-5">4-5 years</option>
-                                    <option value="6-10">6-10 years</option>
-                                    <option value="10+">10+ years</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="workType">Work Preference *</label>
-                                <select id="workType" name="workType" required>
-                                    <option value="">Select Preference</option>
-                                    <option value="Remote">Remote</option>
-                                    <option value="Hybrid">Hybrid</option>
-                                    <option value="On-site">On-site</option>
-                                    <option value="Flexible">Flexible</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="skills">Key Skills *</label>
-                            <textarea id="skills" name="skills" rows="3" placeholder="List your key skills, technologies, or areas of expertise" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h3><i class="fas fa-file-alt"></i> Resume & Additional Information</h3>
-                        <div class="form-group">
-                            <label for="resume">Upload Resume *</label>
-                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                            <small class="file-note">Accepted formats: PDF, Word (.doc, .docx)</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="linkedinUrl">LinkedIn Profile URL (Optional)</label>
-                            <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://linkedin.com/in/yourprofile">
-                        </div>
-                        <div class="form-group">
-                            <label for="availability">Availability *</label>
-                            <select id="availability" name="availability" required>
-                                <option value="">Select Availability</option>
-                                <option value="Immediately">Immediately</option>
-                                <option value="2 weeks">2 weeks notice</option>
-                                <option value="1 month">1 month notice</option>
-                                <option value="2+ months">2+ months</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="additionalInfo">Additional Information</label>
-                            <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your career goals, salary expectations, or any other relevant information"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-large">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Profile
-                        </button>
-                        <p class="form-note">
-                            <i class="fas fa-shield-alt"></i>
-                            Your information is secure and will only be shared with potential employers with your consent.
-                        </p>
-                    </div>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Candidate Form Section -->
+        <section class="candidate-form-section section-padding">
+            <div class="container">
+                <div class="form-container">
+                    <!-- NETLIFY FORM WITH ALL REQUIRED ATTRIBUTES -->
+                    <form class="candidate-form" id="candidateForm" name="candidate-submission" method="POST" data-netlify="true" enctype="multipart/form-data">
+                        <!-- Netlify hidden fields -->
+                        <input type="hidden" name="form-name" value="candidate-submission">
+                        
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Current Location *</label>
+                                <input type="text" id="location" name="location" placeholder="City, State" required>
+                            </div>
+                        </div>
+
+                        <!-- Professional Information -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-briefcase"></i> Professional Information</h3>
+                            <div class="form-group">
+                                <label for="industry">Preferred Industry *</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="General Staffing">General Staffing</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="jobTitle">Current/Desired Job Title *</label>
+                                <input type="text" id="jobTitle" name="jobTitle" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="experience">Years of Experience *</label>
+                                    <select id="experience" name="experience" required>
+                                        <option value="">Select Experience</option>
+                                        <option value="0-1">0-1 years</option>
+                                        <option value="2-3">2-3 years</option>
+                                        <option value="4-5">4-5 years</option>
+                                        <option value="6-10">6-10 years</option>
+                                        <option value="10+">10+ years</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="workType">Work Preference *</label>
+                                    <select id="workType" name="workType" required>
+                                        <option value="">Select Preference</option>
+                                        <option value="Remote">Remote</option>
+                                        <option value="Hybrid">Hybrid</option>
+                                        <option value="On-site">On-site</option>
+                                        <option value="Flexible">Flexible</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="skills">Key Skills *</label>
+                                <textarea id="skills" name="skills" rows="3" placeholder="List your key skills, technologies, or areas of expertise" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- RESUME UPLOAD SECTION - ALWAYS VISIBLE -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Resume & Additional Information</h3>
+                            <div class="form-group">
+                                <label for="resume">Upload Resume *</label>
+                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                                <small class="file-note">Accepted formats: PDF, Word (.doc, .docx)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedinUrl">LinkedIn Profile URL (Optional)</label>
+                                <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://linkedin.com/in/yourprofile">
+                            </div>
+                            <div class="form-group">
+                                <label for="availability">Availability *</label>
+                                <select id="availability" name="availability" required>
+                                    <option value="">Select Availability</option>
+                                    <option value="Immediately">Immediately</option>
+                                    <option value="2 weeks">2 weeks notice</option>
+                                    <option value="1 month">1 month notice</option>
+                                    <option value="2+ months">2+ months</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="additionalInfo">Additional Information</label>
+                                <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your career goals, salary expectations, or any other relevant information"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Profile
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Enat Solution. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/security-policy.html">Security Policy</a></p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/company/enat-solution/about" target="_blank" rel="noopener noreferrer" title="Follow Enat Solution on LinkedIn" aria-label="Follow Enat Solution on LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Follow Enat Solution on Twitter" aria-label="Follow Enat Solution on Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="Follow Enat Solution on Facebook" aria-label="Follow Enat Solution on Facebook"><i class="fab fa-facebook"></i></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Enat Solution" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <div class="footer-company-name">enat solution</div>
+                            <div class="footer-tagline">CONNECTING TALENT WITH CARE</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">Your trusted partner in talent solutions, connecting exceptional professionals with leading organizations.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Industries</a></li>
+                        <li><a href="index.html#jobs">Jobs</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@enatsolution.com</p>
+                        <p><i class="fas fa-phone"></i> (240) 813-4248</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Maryland, USA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Enat Solution. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- External JavaScript Files -->
-    <script src="security.js"></script>
-    <script src="security-monitor.js"></script>
-    <script src="candidate-submission.js"></script>
+    <!-- INLINE JAVASCRIPT - NO EXTERNAL FILE TO AVOID CONFLICTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('candidateForm');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    // Show loading state
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                    submitBtn.disabled = true;
+                    
+                    // Get form data
+                    const formData = new FormData(form);
+                    
+                    // Simple validation for required fields
+                    const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'location', 'industry', 'jobTitle', 'experience', 'workType', 'skills', 'availability', 'resume'];
+                    
+                    for (const field of requiredFields) {
+                        const value = formData.get(field);
+                        if (!value || (typeof value === 'string' && value.trim() === '')) {
+                            alert('Please fill in the ' + field.replace(/([A-Z])/g, ' $1').toLowerCase() + ' field.');
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            return;
+                        }
+                    }
+                    
+                    // Submit directly to Netlify - NO GOOGLE SHEETS
+                    fetch('/', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            showSuccessModal();
+                            form.reset();
+                        } else {
+                            throw new Error('Submission failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting your form. Please try again or contact us directly at info@enatsolution.com');
+                    })
+                    .finally(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        });
+
+        // Success modal function - NO TIMEOUT, ONLY OK BUTTON, NO TIMEFRAME MENTIONED
+        function showSuccessModal() {
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; padding: 20px;';
+            
+            modal.innerHTML = '<div style="background: white; border-radius: 15px; padding: 3rem 2rem; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);"><div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-check" style="font-size: 2rem; color: white;"></i></div><h2 style="color: #1e293b; font-size: 1.75rem; margin-bottom: 1rem;">Application Submitted Successfully!</h2><p style="color: #64748b; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">Thank you for submitting your profile to Enat Solution. Our recruitment team will review your information and contact you.</p><button id="okBtn" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">OK</button></div>';
+            
+            document.body.appendChild(modal);
+            
+            // OK button click handler - RESPONSIVE
+            const okBtn = modal.querySelector('#okBtn');
+            okBtn.addEventListener('click', function() {
+                modal.remove();
+            });
+        }
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
