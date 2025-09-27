@@ -15,76 +15,93 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get form data
             const formData = new FormData(candidateForm);
-
-            // Validate required fields
-            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'location', 'industry', 'jobTitle', 'experience', 'workType', 'skills', 'availability', 'resume'];
-            let isValid = true;
-
-            for (const field of requiredFields) {
-                const value = formData.get(field);
-                if (!value || (typeof value === 'string' && value.trim() === '')) {
-                    isValid = false;
-                    const fieldElement = candidateForm.querySelector(`[name="${field}"]`);
-                    if (fieldElement) {
-                        fieldElement.focus();
-                        alert(`Please fill in the ${field.replace(/([A-Z])/g, ' $1').toLowerCase()} field.`);
-                    }
-                    break;
-                }
+            const data = {};
+            
+            // Convert FormData to object
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
             }
-
-            if (!isValid) {
+            
+            // Add timestamp
+            data.submissionDate = new Date().toISOString();
+            data.submissionTime = new Date().toLocaleString();
+            
+            // Validate form data
+            if (!validateCandidateForm(data)) {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 return;
             }
-
-            // Submit directly to Netlify (which will handle the file upload)
-            fetch('/', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Success - show confirmation
-                    showSuccessMessage();
-                    candidateForm.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            })
-            .catch(error => {
-                console.error('Submission error:', error);
-                showErrorMessage('There was an error submitting your form. Please try again or contact us directly.');
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
+            
+            // Submit to Google Sheets
+            submitToGoogleSheets(data)
+                .then(response => {
+                    if (response.success) {
+                        // Success - show confirmation
+                        showSuccessMessage();
+                        candidateForm.reset();
+                    } else {
+                        throw new Error(response.message || 'Submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Submission error:', error);
+                    showErrorMessage(error.message);
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 });
 
-
-
-// Helper validation functions
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function isValidPhone(phone) {
-    const cleanPhone = phone.replace(/\D/g, '');
-    return cleanPhone.length >= 7 && cleanPhone.length <= 15;
-}
-
-function isValidURL(url) {
-    try {
-        new URL(url);
-        return true;
-    } catch {
+// Validation function
+function validateCandidateForm(data) {
+    const errors = [];
+    
+    // Required field validation
+    const requiredFields = {
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Email Address',
+        phone: 'Phone Number',
+        location: 'Current Location',
+        industry: 'Preferred Industry',
+        jobTitle: 'Job Title',
+        experience: 'Years of Experience',
+        workType: 'Work Preference',
+        skills: 'Key Skills',
+        availability: 'Availability'
+    };
+    
+    for (let [field, label] of Object.entries(requiredFields)) {
+        if (!data[field] || data[field].trim() === '') {
+            errors.push(`${label} is required`);
+        }
+    }
+    
+    // Email validation
+    if (data.email && !isValidEmail(data.email)) {
+        errors.push('Please enter a valid email address');
+    }
+    
+    // Phone validation
+    if (data.phone && !isValidPhone(data.phone)) {
+        errors.push('Please enter a valid phone number');
+    }
+    
+    // URL validation for resume link
+    if (data.resumeLink && data.resumeLink.trim() !== '' && !isValidURL(data.resumeLink)) {
+        errors.push('Please enter a valid URL for resume/LinkedIn');
+    }
+    
+    if (errors.length > 0) {
+        showValidationErrors(errors);
         return false;
     }
+    
+    return true;
 }
 
 
@@ -118,7 +135,7 @@ function showSuccessMessage() {
 
     // Add comprehensive styles
     const style = document.createElement('style');
-    style.textContent = \`
+    style.textContent = `
         .success-modal-overlay {
             position: fixed;
             top: 0;
@@ -275,7 +292,7 @@ function showSuccessMessage() {
                 font-size: 1rem;
             }
         }
-    \`;
+    `;
 
     document.head.appendChild(style);
     document.body.appendChild(modal);
