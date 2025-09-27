@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             showSuccessMessage();
         }, 500);
-    }
 });
 
 // Validation function
@@ -106,7 +105,31 @@ function isValidURL(url) {
     }
 }
 
-
+// Google Sheets submission function
+async function submitToGoogleSheets(data) {
+    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('Google Sheets submission error:', error);
+        throw error;
+    }
+}
 
 // UI feedback functions
 function showSuccessMessage() {
@@ -114,116 +137,64 @@ function showSuccessMessage() {
     message.className = 'success-message';
     message.innerHTML = `
         <div class="message-content">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
+            <i class="fas fa-check-circle"></i>
             <h3>Profile Submitted Successfully!</h3>
             <p>Thank you for submitting your profile. Our team will review your information and contact you within 24-48 hours with relevant opportunities.</p>
-            <button class="success-btn" onclick="this.closest('.success-message').remove()">
-                <i class="fas fa-check"></i> OK
-            </button>
         </div>
     `;
-
-    // Add styles with professional gradient background
+    
+    // Add styles
     message.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(16, 185, 129, 0.9));
-        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.8);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 10000;
         padding: 20px;
-        animation: fadeIn 0.3s ease-out;
     `;
-
+    
     message.querySelector('.message-content').style.cssText = `
-        background: linear-gradient(145deg, #ffffff, #f8fafc);
-        padding: 3rem 2.5rem;
-        border-radius: 20px;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
         text-align: center;
-        max-width: 520px;
-        width: 100%;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        position: relative;
-        overflow: hidden;
+        max-width: 500px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     `;
-
-    message.querySelector('.success-icon').style.cssText = `
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, #10b981, #059669);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-    `;
-
+    
     message.querySelector('i').style.cssText = `
-        font-size: 2.5rem;
-        color: white;
+        font-size: 3rem;
+        color: #10b981;
+        margin-bottom: 1rem;
     `;
-
+    
     message.querySelector('h3').style.cssText = `
         color: #1e293b;
         margin-bottom: 1rem;
-        font-size: 1.5rem;
-        font-weight: 600;
     `;
-
+    
     message.querySelector('p').style.cssText = `
         color: #64748b;
         line-height: 1.6;
-        margin-bottom: 2rem;
-        font-size: 1rem;
     `;
-
-    message.querySelector('.success-btn').style.cssText = `
-        background: linear-gradient(135deg, #3b82f6, #2563eb);
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-    `;
-
-    // Add hover effect to button
-    message.querySelector('.success-btn').addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-        this.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.4)';
-    });
-
-    message.querySelector('.success-btn').addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.3)';
-    });
-
+    
     document.body.appendChild(message);
-
-    // Add CSS animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+    
+    // Remove message after 5 seconds or on click
+    setTimeout(() => {
+        if (message.parentNode) {
+            message.remove();
         }
-    `;
-    document.head.appendChild(style);
+    }, 5000);
+    
+    message.addEventListener('click', () => {
+        message.remove();
+    });
 }
 
 function showErrorMessage(errorText) {
