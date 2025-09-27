@@ -1,25 +1,25 @@
 // Candidate Submission Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const candidateForm = document.getElementById('candidateForm');
-    
+
     if (candidateForm) {
         candidateForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const submitBtn = candidateForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            
+
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
             submitBtn.disabled = true;
-            
+
             // Get form data
             const formData = new FormData(candidateForm);
-            
+
             // Validate required fields
             const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'location', 'industry', 'jobTitle', 'experience', 'workType', 'skills', 'availability', 'resume'];
             let isValid = true;
-            
+
             for (const field of requiredFields) {
                 const value = formData.get(field);
                 if (!value || (typeof value === 'string' && value.trim() === '')) {
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     break;
                 }
             }
-            
+
             if (!isValid) {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 return;
             }
-            
+
             // Submit directly to Netlify
             fetch('/', {
                 method: 'POST',
@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Success message function
 function showSuccessMessage() {
-    // Create modal overlay
     const modal = document.createElement('div');
     modal.style.cssText = `
         position: fixed;
@@ -81,7 +80,7 @@ function showSuccessMessage() {
         z-index: 10000;
         padding: 20px;
     `;
-    
+
     modal.innerHTML = `
         <div style="
             background: white;
@@ -125,10 +124,9 @@ function showSuccessMessage() {
             </button>
         </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
-    // Auto-remove after 10 seconds
+
     setTimeout(() => {
         if (modal.parentNode) {
             modal.remove();
@@ -136,7 +134,7 @@ function showSuccessMessage() {
     }, 10000);
 }
 
-// Mobile menu toggle for candidate submission page
+// Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -146,7 +144,6 @@ if (hamburger && navMenu) {
         navMenu.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
