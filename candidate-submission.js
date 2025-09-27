@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Success message function - PROFESSIONAL MODAL
+// Success message function - ONLY CLOSES ON OK BUTTON CLICK
 function showSuccessMessage() {
     const modal = document.createElement('div');
     modal.style.cssText = `
@@ -127,11 +127,7 @@ function showSuccessMessage() {
 
     document.body.appendChild(modal);
 
-    setTimeout(() => {
-        if (modal.parentNode) {
-            modal.remove();
-        }
-    }, 10000);
+    // NO AUTO-DISMISS - Only closes when OK button is clicked
 }
 
 // Mobile menu toggle
