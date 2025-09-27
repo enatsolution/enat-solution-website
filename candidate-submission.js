@@ -1,4 +1,4 @@
-// Candidate Submission Form Handler
+// Candidate Submission Form Handler - CLEAN VERSION WITH NO GOOGLE SHEETS
 document.addEventListener('DOMContentLoaded', function() {
     const candidateForm = document.getElementById('candidateForm');
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Submit directly to Netlify
+            // Submit directly to Netlify - NO GOOGLE SHEETS
             fetch('/', {
                 method: 'POST',
                 body: formData
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Success message function
+// Success message function - PROFESSIONAL MODAL
 function showSuccessMessage() {
     const modal = document.createElement('div');
     modal.style.cssText = `
