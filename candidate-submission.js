@@ -33,25 +33,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Submit to Netlify Forms
-            submitToNetlify(candidateForm)
-                .then(response => {
-                    if (response.success) {
-                        // Success - show confirmation
-                        showSuccessMessage();
-                        candidateForm.reset();
-                    } else {
-                        throw new Error(response.message || 'Submission failed');
-                    }
-                })
-                .catch(error => {
-                    console.error('Submission error:', error);
-                    showErrorMessage(error.message);
-                })
-                .finally(() => {
+            // For localhost testing - just show success
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.log('Localhost testing mode - simulating successful submission');
+                console.log('Form data:', data);
+
+                setTimeout(() => {
+                    showSuccessMessage();
+                    candidateForm.reset();
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
-                });
+                }, 1500);
+            } else {
+                // For production - use native form submission to Netlify
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                candidateForm.submit();
+            }
         });
     }
 });
@@ -124,45 +122,7 @@ function isValidURL(url) {
     }
 }
 
-// Netlify Forms submission function
-async function submitToNetlify(form) {
-    // Check if we're on localhost for testing
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('Localhost testing mode - simulating successful submission');
-        console.log('Form data would be submitted to Netlify Forms');
-
-        // Simulate network delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        return {
-            success: true,
-            message: 'Profile submitted successfully (localhost test mode)'
-        };
-    }
-
-    // For production - let Netlify handle the form submission
-    try {
-        const formData = new FormData(form);
-
-        const response = await fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-            return {
-                success: true,
-                message: 'Profile submitted successfully'
-            };
-        } else {
-            throw new Error('Form submission failed');
-        }
-    } catch (error) {
-        console.error('Netlify form submission error:', error);
-        throw error;
-    }
-}
+// Form submission is handled natively by the browser for Netlify Forms
 
 // UI feedback functions
 function showSuccessMessage() {
