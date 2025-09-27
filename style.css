@@ -2070,42 +2070,21 @@ html, body {
     }
 }
 
-/* Enhanced File Upload Styles */
-.file-input {
-    display: none;
+/* Simple File Upload Styles */
+input[type="file"] {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-.file-upload-area {
-    border: 2px dashed #cbd5e1;
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: #f8fafc;
-    margin-top: 0.5rem;
-}
-
-.file-upload-area:hover {
+input[type="file"]:focus {
+    outline: none;
     border-color: #3b82f6;
-    background: #eff6ff;
-}
-
-.file-upload-area i {
-    font-size: 2rem;
-    color: #3b82f6;
-    margin-bottom: 1rem;
-}
-
-.file-upload-area p {
-    margin: 0.5rem 0;
-    color: #475569;
-    font-weight: 500;
-}
-
-.file-upload-area small {
-    color: #64748b;
-    font-size: 0.875rem;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* Success Message Button Styles */
