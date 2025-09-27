@@ -122,7 +122,31 @@ function isValidURL(url) {
     }
 }
 
-// Form submission is handled natively by the browser for Netlify Forms
+// Google Sheets submission function
+async function submitToGoogleSheets(data) {
+    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('Google Sheets submission error:', error);
+        throw error;
+    }
+}
 
 // UI feedback functions
 function showSuccessMessage() {
@@ -199,21 +223,4 @@ function showValidationErrors(errors) {
     alert(errorMessage);
 }
 
-// Mobile menu toggle for candidate submission page
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-}
+// Navigation is handled by script.js
