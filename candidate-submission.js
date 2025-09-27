@@ -1,70 +1,156 @@
-// Candidate Submission Form Handler - CLEAN VERSION WITH NO GOOGLE SHEETS
+// Candidate Submission Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const candidateForm = document.getElementById('candidateForm');
-
+    
     if (candidateForm) {
         candidateForm.addEventListener('submit', function(e) {
             e.preventDefault();
-
+            
             const submitBtn = candidateForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-
+            
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
             submitBtn.disabled = true;
-
+            
             // Get form data
             const formData = new FormData(candidateForm);
-
-            // Validate required fields
-            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'location', 'industry', 'jobTitle', 'experience', 'workType', 'skills', 'availability', 'resume'];
-            let isValid = true;
-
-            for (const field of requiredFields) {
-                const value = formData.get(field);
-                if (!value || (typeof value === 'string' && value.trim() === '')) {
-                    isValid = false;
-                    const fieldElement = candidateForm.querySelector(`[name="${field}"]`);
-                    if (fieldElement) {
-                        fieldElement.focus();
-                        alert(`Please fill in the ${field.replace(/([A-Z])/g, ' $1').toLowerCase()} field.`);
-                    }
-                    break;
-                }
+            const data = {};
+            
+            // Convert FormData to object
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
             }
-
-            if (!isValid) {
+            
+            // Add timestamp
+            data.submissionDate = new Date().toISOString();
+            data.submissionTime = new Date().toLocaleString();
+            
+            // Validate form data
+            if (!validateCandidateForm(data)) {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 return;
             }
-
-            // Submit directly to Netlify - NO GOOGLE SHEETS
-            fetch('/', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    showSuccessMessage();
-                    candidateForm.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            })
-            .catch(error => {
-                console.error('Submission error:', error);
-                alert('There was an error submitting your form. Please try again or contact us directly at info@enatsolution.com');
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
+            
+            // Submit to Google Sheets
+            submitToGoogleSheets(data)
+                .then(response => {
+                    if (response.success) {
+                        // Success - show confirmation
+                        showSuccessMessage();
+                        candidateForm.reset();
+                    } else {
+                        throw new Error(response.message || 'Submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Submission error:', error);
+                    showErrorMessage(error.message);
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 });
 
-// Success message function - ONLY CLOSES ON OK BUTTON CLICK
+// Validation function
+function validateCandidateForm(data) {
+    const errors = [];
+    
+    // Required field validation
+    const requiredFields = {
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Email Address',
+        phone: 'Phone Number',
+        location: 'Current Location',
+        industry: 'Preferred Industry',
+        jobTitle: 'Job Title',
+        experience: 'Years of Experience',
+        workType: 'Work Preference',
+        skills: 'Key Skills',
+        availability: 'Availability'
+    };
+    
+    for (let [field, label] of Object.entries(requiredFields)) {
+        if (!data[field] || data[field].trim() === '') {
+            errors.push(`${label} is required`);
+        }
+    }
+    
+    // Email validation
+    if (data.email && !isValidEmail(data.email)) {
+        errors.push('Please enter a valid email address');
+    }
+    
+    // Phone validation
+    if (data.phone && !isValidPhone(data.phone)) {
+        errors.push('Please enter a valid phone number');
+    }
+    
+    // URL validation for resume link
+    if (data.resumeLink && data.resumeLink.trim() !== '' && !isValidURL(data.resumeLink)) {
+        errors.push('Please enter a valid URL for resume/LinkedIn');
+    }
+    
+    if (errors.length > 0) {
+        showValidationErrors(errors);
+        return false;
+    }
+    
+    return true;
+}
+
+// Helper validation functions
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPhone(phone) {
+    const cleanPhone = phone.replace(/\D/g, '');
+    return cleanPhone.length >= 7 && cleanPhone.length <= 15;
+}
+
+function isValidURL(url) {
+    try {
+        new URL(url);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+// Google Sheets submission function
+async function submitToGoogleSheets(data) {
+    // Google Apps Script Web App URL - You'll need to replace this with your actual URL
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    
+    try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error('Google Sheets submission error:', error);
+        throw error;
+    }
+}
+
+// UI feedback functions
 function showSuccessMessage() {
     const modal = document.createElement('div');
     modal.style.cssText = `
@@ -107,9 +193,9 @@ function showSuccessMessage() {
                 Application Submitted Successfully!
             </h2>
             <p style="color: #64748b; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                Thank you for submitting your profile to Enat Solution. Our recruitment team will review your information and contact you within 24-48 hours.
+                Thank you for submitting your profile to Enat Solution. Our recruitment team will review your information and contact you.
             </p>
-            <button onclick="this.closest('div').remove()" style="
+            <button id="successOkBtn" style="
                 background: linear-gradient(135deg, #3b82f6, #2563eb);
                 color: white;
                 border: none;
@@ -127,10 +213,25 @@ function showSuccessMessage() {
 
     document.body.appendChild(modal);
 
+    // Add click event listener to OK button
+    const okButton = modal.querySelector('#successOkBtn');
+    okButton.addEventListener('click', function() {
+        modal.remove();
+    });
+
     // NO AUTO-DISMISS - Only closes when OK button is clicked
 }
 
-// Mobile menu toggle
+function showErrorMessage(errorText) {
+    alert(`Submission Error: ${errorText}\n\nPlease try again or contact us directly at info@enatsolution.com`);
+}
+
+function showValidationErrors(errors) {
+    const errorMessage = 'Please fix the following errors:\n\n' + errors.join('\n');
+    alert(errorMessage);
+}
+
+// Mobile menu toggle for candidate submission page
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -140,6 +241,7 @@ if (hamburger && navMenu) {
         navMenu.classList.toggle('active');
     });
 
+    // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
