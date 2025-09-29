@@ -107,7 +107,7 @@ function showSuccessMessage() {
                 Application Submitted Successfully!
             </h2>
             <p style="color: #64748b; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                Thank you for submitting your profile to Enat Solution. Our recruitment team will review your information and contact you within 24-48 hours.
+                Thank you for submitting your profile to Enat Solution. Our recruitment team will review your information and contact you back.
             </p>
             <button onclick="this.closest('div').remove()" style="
                 background: linear-gradient(135deg, #3b82f6, #2563eb);
