@@ -152,13 +152,49 @@ async function submitToGoogleSheets(data) {
 
 // UI feedback functions
 function showSuccessMessage() {
-    const message = document.createElement('div');
-    message.className = 'success-message';
-    message.innerHTML = `
-        <div class="message-content">
-            <i class="fas fa-check-circle"></i>
-            <h3>Profile Submitted Successfully!</h3>
-            <p>Thank you for submitting your profile. Our team will review your information and contact you.</p>
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 20px;
+    `;
+
+    modal.innerHTML = `
+        <div style="
+            background: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        ">
+            <div style="
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(135deg, #10b981, #059669);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1.5rem;
+            ">
+                <i class="fas fa-check" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h2 style="color: #1e293b; font-size: 1.75rem; margin-bottom: 1rem;">
+                Application Submitted Successfully!
+            </h2>
+            <p style="color: #64748b; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                Thank you for submitting your profile to Enat Solution. Our recruitment team will review your information and contact you.
+            </p>
             <button id="successOkBtn" style="
                 background: linear-gradient(135deg, #3b82f6, #2563eb);
                 color: white;
@@ -169,60 +205,21 @@ function showSuccessMessage() {
                 font-weight: 600;
                 cursor: pointer;
                 transition: all 0.3s ease;
-                margin-top: 1.5rem;
             ">
                 OK
             </button>
         </div>
     `;
-    
-    // Add styles
-    message.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        padding: 20px;
-    `;
-    
-    message.querySelector('.message-content').style.cssText = `
-        background: white;
-        padding: 2rem;
-        border-radius: 12px;
-        text-align: center;
-        max-width: 500px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    `;
-    
-    message.querySelector('i').style.cssText = `
-        font-size: 3rem;
-        color: #10b981;
-        margin-bottom: 1rem;
-    `;
-    
-    message.querySelector('h3').style.cssText = `
-        color: #1e293b;
-        margin-bottom: 1rem;
-    `;
-    
-    message.querySelector('p').style.cssText = `
-        color: #64748b;
-        line-height: 1.6;
-    `;
-    
-    document.body.appendChild(message);
 
-    // Add click event listener to OK button only
-    const okButton = message.querySelector('#successOkBtn');
+    document.body.appendChild(modal);
+
+    // Add click event listener to OK button
+    const okButton = modal.querySelector('#successOkBtn');
     okButton.addEventListener('click', function() {
-        message.remove();
+        modal.remove();
     });
+
+    // NO AUTO-DISMISS - Only closes when OK button is clicked
 }
 
 function showErrorMessage(errorText) {
