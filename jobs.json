@@ -1,0 +1,98 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Nurse Manager - Home Infusion Pharmacy",
+      "location": "Spokane Valley, Washington",
+      "type": "Healthcare",
+      "employmentType": "Full-Time, Day Shift",
+      "shortDescription": "Lead our Home Infusion Pharmacy team with clinical expertise and compassionate leadership.",
+      "fullDescription": "We are seeking an experienced and compassionate Nurse Manager to lead our Home Infusion Pharmacy team. This individual will oversee clinical operations, ensure high-quality patient care, and support a collaborative work environment for nursing and pharmacy staff serving patients in their homes.\n\nYou will play a key role in coordinating interdisciplinary care, managing staff performance, maintaining compliance with healthcare regulations, and helping improve patient outcomes through innovation and leadership.",
+      "responsibilities": [
+        "Oversee daily operations of the Home Infusion Department",
+        "Supervise and mentor nursing and pharmacy staff",
+        "Coordinate interdisciplinary care for patients receiving home infusion therapy",
+        "Ensure compliance with quality standards, safety protocols, and documentation requirements",
+        "Develop and implement departmental policies, procedures, and performance goals",
+        "Monitor staffing levels and productivity standards",
+        "Support staff development and training initiatives"
+      ],
+      "qualifications": [
+        "Active RN license in Washington State (Oregon license preferred)",
+        "Bachelor's degree in Nursing or related healthcare field (or equivalent experience)",
+        "4+ years of home infusion or home health nursing experience",
+        "2+ years in a supervisory or nurse management role",
+        "Strong leadership, communication, and organizational skills",
+        "Passion for patient-centered, holistic care"
+      ],
+      "benefits": [
+        "Comprehensive medical, dental, and vision coverage",
+        "401(k) with employer match",
+        "Paid time off (vacation, holidays, sick days)",
+        "Tuition reimbursement and professional development support",
+        "Employee wellness and family care programs"
+      ],
+      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs. We are committed to creating an inclusive, supportive environment for both our patients and our team members.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-10-24",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "title": "Software Developer",
+      "location": "Remote/Hybrid",
+      "type": "IT",
+      "employmentType": "Full-Time",
+      "shortDescription": "Join our IT team and drive digital transformation across our healthcare services.",
+      "fullDescription": "We are looking for talented software developers to build innovative solutions for our healthcare platform.",
+      "responsibilities": [
+        "Develop and maintain software applications",
+        "Collaborate with cross-functional teams",
+        "Ensure code quality and best practices"
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Science or related field",
+        "3+ years of software development experience",
+        "Proficiency in modern programming languages"
+      ],
+      "benefits": [
+        "Competitive salary",
+        "Health insurance",
+        "Professional development opportunities"
+      ],
+      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-10-24",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "title": "Administrative Specialist",
+      "location": "Various Locations",
+      "type": "General",
+      "employmentType": "Full/Part-Time",
+      "shortDescription": "Support our operations with excellent organizational and administrative skills.",
+      "fullDescription": "We are seeking detail-oriented administrative specialists to support our growing organization.",
+      "responsibilities": [
+        "Manage administrative tasks and schedules",
+        "Coordinate office operations",
+        "Support multiple departments"
+      ],
+      "qualifications": [
+        "High school diploma or equivalent",
+        "2+ years of administrative experience",
+        "Strong organizational skills"
+      ],
+      "benefits": [
+        "Flexible schedule",
+        "Growth opportunities",
+        "Supportive team environment"
+      ],
+      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-10-24",
+      "status": "active"
+    }
+  ]
+}
+
