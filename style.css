@@ -1254,6 +1254,17 @@ body {
     gap: 1.5rem;
 }
 
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-address p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
 .footer p {
     margin: 0;
     font-size: 0.95rem;
@@ -1268,6 +1279,11 @@ body {
 .footer a:hover {
     color: #38bdf8;
     text-decoration: underline;
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
 
 .social-links {
