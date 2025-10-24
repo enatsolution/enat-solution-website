@@ -1162,14 +1162,16 @@ body {
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .contact-item i {
     font-size: 1.5rem;
     color: #f97316;
-    margin-right: 1rem;
+    margin-bottom: 0.5rem;
     width: 30px;
 }
 
@@ -1273,13 +1275,14 @@ body {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
 }
 
 .contact-social-links a {
-    color: #0ea5e9;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+    color: #ff6b35;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
