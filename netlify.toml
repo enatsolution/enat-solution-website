@@ -41,6 +41,13 @@
   status = 200
   headers = {Content-Type = "text/plain; charset=utf-8"}
 
+# Ensure JSON files are served correctly
+[[redirects]]
+  from = "/*.json"
+  to = "/:splat.json"
+  status = 200
+  force = false
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

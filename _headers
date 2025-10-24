@@ -13,8 +13,8 @@
   # Permissions Policy - Disable Unnecessary Features
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), fullscreen=(), sync-xhr=()
 
-  # Content Security Policy - Maximum Security (No unsafe directives)
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'wasm-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https:; worker-src 'none'; child-src 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content;
+  # Content Security Policy - Allow inline event handlers for buttons
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' 'wasm-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https:; worker-src 'none'; child-src 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content;
 
   # HSTS (HTTP Strict Transport Security) - Maximum Security
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
@@ -77,6 +77,12 @@
 
 /*.ttf
   Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# JSON Data Files
+/*.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600
   X-Content-Type-Options: nosniff
 
 # Security Files
