@@ -7,14 +7,29 @@ async function loadJobs() {
     try {
         // Try multiple paths to handle both local and deployed versions
         let response;
-        try {
-            response = await fetch('./jobs.json');
-        } catch (e) {
-            response = await fetch('/jobs.json');
+        const paths = ['./jobs.json', '/jobs.json', 'jobs.json'];
+        let lastError;
+
+        for (const path of paths) {
+            try {
+                response = await fetch(path, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    break;
+                }
+            } catch (e) {
+                lastError = e;
+                continue;
+            }
         }
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (!response || !response.ok) {
+            throw new Error(`HTTP error! status: ${response?.status || 'unknown'}`);
         }
 
         const data = await response.json();
