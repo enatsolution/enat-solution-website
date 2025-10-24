@@ -1281,7 +1281,7 @@ body {
 }
 
 .contact-social-links a {
-    color: #1e3a8a;
+    color: #1e3a8a !important;
     font-size: 1.5rem;
     transition: color 0.3s ease;
     display: inline-flex;
@@ -1289,8 +1289,16 @@ body {
     justify-content: center;
 }
 
+.contact-social-links a i {
+    color: #1e3a8a !important;
+}
+
 .contact-social-links a:hover {
-    color: #1e3a8a;
+    color: #0ea5e9 !important;
+}
+
+.contact-social-links a:hover i {
+    color: #0ea5e9 !important;
 }
 
 /* Thank You Page */
