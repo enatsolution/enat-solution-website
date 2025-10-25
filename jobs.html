@@ -291,6 +291,7 @@
         .job-detail-actions .btn {
             padding: 0.75rem 2rem;
             min-width: 150px;
+            white-space: nowrap;
         }
 
         .job-detail-actions .btn-primary {
@@ -389,6 +390,14 @@
 
             .job-detail-actions {
                 flex-direction: column;
+                align-items: stretch;
+            }
+
+            .job-detail-actions .btn {
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .filter-section {
