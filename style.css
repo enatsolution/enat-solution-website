@@ -1065,11 +1065,12 @@ body {
         gap: 1rem !important;
         flex-wrap: wrap !important;
         margin-top: 2rem !important;
+        align-items: center !important;
     }
 
     .jobs-actions .btn {
-        width: 100% !important;
-        max-width: 300px !important;
+        width: 90% !important;
+        max-width: 280px !important;
         text-align: center !important;
         padding: 15px 30px !important;
         background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
@@ -1274,7 +1275,7 @@ body {
     display: flex;
     gap: 1.5rem;
     justify-content: flex-start;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     margin-left: 46px;
     width: auto;
     flex-basis: auto;
@@ -1672,6 +1673,7 @@ html, body {
 
     .nav-cta {
         margin-left: 1rem;
+        display: none;
     }
 
     .nav-cta .btn {
@@ -2118,6 +2120,8 @@ html, body {
     .footer .container {
         gap: 1rem;
         padding: 0 16px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .footer p {
@@ -2126,6 +2130,9 @@ html, body {
 
     .social-links {
         gap: 1.2rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
     }
 
     .social-links a {
