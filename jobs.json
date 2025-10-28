@@ -39,6 +39,40 @@
     },
     {
       "id": 2,
+      "title": "Respiratory Care Practitioner",
+      "location": "Spokane, Washington",
+      "type": "Healthcare",
+      "employmentType": "Full-Time, Night Shift (36 hours/week)",
+      "shortDescription": "Join our respiratory therapy team and deliver exceptional patient care in a leading medical center.",
+      "fullDescription": "We are seeking a dedicated and skilled Respiratory Care Practitioner to join a leading medical center in Spokane, WA. The ideal candidate will demonstrate a solid understanding of modern respiratory therapy practices and will work collaboratively with physicians, nurses, and interdisciplinary care teams to deliver exceptional patient care.\n\nIn this role, you'll play a key part in improving patient outcomes through clinical expertise, compassion, and commitment to quality care.",
+      "responsibilities": [
+        "Perform all aspects of respiratory care, including oxygen and aerosol therapy, ventilator management, airway clearance, and emergency interventions",
+        "Collaborate with physicians and nursing staff to plan and implement individualized care plans",
+        "Monitor and evaluate patients' responses to treatment and adjust care accordingly",
+        "Maintain accurate and detailed patient documentation and reports",
+        "Participate in continuing education and maintain all required certifications and competencies",
+        "Adhere to all hospital, departmental, and regulatory policies and standards"
+      ],
+      "qualifications": [
+        "Active Washington State Respiratory Care Practitioner License (required)",
+        "Basic Life Support (BLS) certification through the American Heart Association (AHA)",
+        "Education or training sufficient to meet certification, licensure, or registration requirements",
+        "Strong communication and teamwork skills, with a commitment to compassionate, patient-centered care"
+      ],
+      "benefits": [
+        "Comprehensive health coverage, retirement plan with employer matching",
+        "Generous paid time off (vacation, holidays, sick days)",
+        "Opportunity to work within a respected, mission-driven healthcare organization",
+        "Supportive and inclusive work environment that values growth, collaboration, and diversity",
+        "Relocation assistance may be available for highly qualified candidates"
+      ],
+      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs. We are committed to creating an inclusive, supportive environment for both our patients and our team members.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-10-28",
+      "status": "active"
+    },
+    {
+      "id": 4,
       "title": "Software Developer",
       "location": "Remote/Hybrid",
       "type": "IT",
@@ -66,7 +100,7 @@
       "status": "active"
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "Administrative Specialist",
       "location": "Various Locations",
       "type": "General",
