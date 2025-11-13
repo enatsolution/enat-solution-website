@@ -72,34 +72,6 @@
       "status": "active"
     },
     {
-      "id": 4,
-      "title": "Software Developer",
-      "location": "Remote/Hybrid",
-      "type": "IT",
-      "employmentType": "Full-Time",
-      "shortDescription": "Join our IT team and drive digital transformation across our healthcare services.",
-      "fullDescription": "We are looking for talented software developers to build innovative solutions for our healthcare platform.",
-      "responsibilities": [
-        "Develop and maintain software applications",
-        "Collaborate with cross-functional teams",
-        "Ensure code quality and best practices"
-      ],
-      "qualifications": [
-        "Bachelor's degree in Computer Science or related field",
-        "3+ years of software development experience",
-        "Proficiency in modern programming languages"
-      ],
-      "benefits": [
-        "Competitive salary",
-        "Health insurance",
-        "Professional development opportunities"
-      ],
-      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs.",
-      "applyEmail": "info@enatsolution.com",
-      "postedDate": "2025-10-24",
-      "status": "active"
-    },
-    {
       "id": 5,
       "title": "Administrative Specialist",
       "location": "Various Locations",

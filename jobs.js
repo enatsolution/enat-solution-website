@@ -34,7 +34,19 @@ async function loadJobs() {
 
         const data = await response.json();
         allJobs = data.jobs.filter(job => job.status === 'active');
-        displayJobs();
+
+        // Sort jobs by newest first (most recent posted date first)
+        allJobs.sort((a, b) => new Date(b.postedDate) - new Date(a.postedDate));
+
+        // Check if there's a category filter in URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryFilter = urlParams.get('category');
+
+        if (categoryFilter) {
+            filterJobs(categoryFilter);
+        } else {
+            displayJobs();
+        }
     } catch (error) {
         console.error('Error loading jobs:', error);
         const container = document.getElementById('jobs-container');
@@ -159,7 +171,14 @@ function closeJobDetail() {
 function filterJobs(type) {
     const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+
+    // Find and activate the button that matches the type
+    buttons.forEach(btn => {
+        if (btn.textContent.toLowerCase().includes(type.toLowerCase()) ||
+            (type === 'all' && btn.textContent === 'All Jobs')) {
+            btn.classList.add('active');
+        }
+    });
 
     if (type === 'all') {
         displayJobs();
@@ -167,7 +186,7 @@ function filterJobs(type) {
         const filtered = allJobs.filter(job => job.type.toLowerCase() === type.toLowerCase());
         const container = document.getElementById('jobs-container');
         container.innerHTML = '';
-        
+
         if (filtered.length === 0) {
             container.innerHTML = '<p class="no-jobs">No jobs found in this category.</p>';
             return;
