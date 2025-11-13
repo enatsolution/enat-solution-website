@@ -126,6 +126,43 @@
       "applyEmail": "info@enatsolution.com",
       "postedDate": "2025-10-24",
       "status": "active"
+    },
+    {
+      "id": 6,
+      "title": "Database Engineer / Administrator (PostgreSQL + Retool)",
+      "location": "Remote",
+      "type": "IT",
+      "employmentType": "Contract (30+ hours/week, long-term potential)",
+      "shortDescription": "Build and optimize a scalable PostgreSQL database for a leading automotive manufacturing company's Product Information Management system.",
+      "fullDescription": "Enat Solution is partnering with a leading automotive manufacturing and restoration company that produces custom interior components for classic and vintage vehicles. They're building a powerful Product Information Management (PIM) system that will transform how product data, pricing, and fitment information are managed — and we're looking for an experienced Database Engineer/Administrator to bring this system to life.\n\nThis is your chance to join a growing operation and own the data architecture and tooling behind an entire manufacturing workflow.",
+      "responsibilities": [
+        "Finalize and implement a scalable PostgreSQL / Supabase database",
+        "Optimize performance, indexing, and relational design for complex vehicle fitment data",
+        "Develop Retool interfaces for non-technical users (internal tools for customer service and quoting)",
+        "Handle data migration and ensure data integrity between systems",
+        "Document database schema and architecture for future integration (Shopify, inventory, etc.)",
+        "Build intuitive dashboards and lookup tools for part fitment, pricing, and product configuration"
+      ],
+      "qualifications": [
+        "3+ years of professional experience as a Database Engineer, DBA, or Data Architect",
+        "Expert knowledge of PostgreSQL (schema design, optimization, indexing)",
+        "Experience using Retool to build internal dashboards or tools",
+        "Familiarity with Supabase, SQL, and data migration best practices",
+        "Strong understanding of relational database design and normalization",
+        "Proficiency with Git/GitHub for version control",
+        "English fluency (Spanish a plus)"
+      ],
+      "benefits": [
+        "Compensation: $45 – $60/hour (based on experience)",
+        "Direct collaboration with experienced business owners",
+        "Work on a technically challenging and rewarding project",
+        "Flexible remote schedule with potential for long-term extension",
+        "Join an established U.S.-based company modernizing its operations with cutting-edge tools"
+      ],
+      "aboutCompany": "Our partner is a leading automotive manufacturing and restoration company producing custom interior components for classic and vintage vehicles. They are modernizing their operations with cutting-edge tools and seeking talented professionals to drive their digital transformation.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-11-13",
+      "status": "active"
     }
   ]
 }
