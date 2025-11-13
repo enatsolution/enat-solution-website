@@ -666,9 +666,10 @@ body {
 }
 
 .step-content p {
-    color: #1e293b;
+    color: #1e293b !important;
     line-height: 1.6;
-    font-weight: 600;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
 }
 
 .step-arrow {
