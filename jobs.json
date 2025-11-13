@@ -135,6 +135,42 @@
       "applyEmail": "info@enatsolution.com",
       "postedDate": "2025-11-13",
       "status": "active"
+    },
+    {
+      "id": 7,
+      "title": "Senior Database & Infrastructure Engineer",
+      "location": "Remote",
+      "type": "IT",
+      "employmentType": "Contract (Long-term, Part-time or Full-time)",
+      "shortDescription": "Design and maintain high-availability, cloud-based data systems for a global technology company powering data-driven decision-making in the hospitality industry.",
+      "fullDescription": "Enat Solution is seeking an experienced Senior Database & Infrastructure Engineer on behalf of a global technology company that powers data-driven decision-making for the hospitality industry.\n\nThe ideal candidate is a hands-on technologist who thrives on building and maintaining high-availability, cloud-based data systems that support mission-critical applications across international clients. You'll help design, optimize, and scale infrastructure that enables hotels and hospitality teams worldwide to make smarter, faster business decisions.",
+      "responsibilities": [
+        "Design and implement high-availability database systems ensuring performance, reliability, and scalability",
+        "Manage and optimize cloud infrastructure supporting large-scale, distributed environments",
+        "Monitor and fine-tune database performance to ensure zero downtime operations",
+        "Leverage open-source technologies to automate workflows and improve data delivery",
+        "Collaborate with cross-functional teams to translate business goals into technical solutions",
+        "Continuously evaluate and integrate new technologies to enhance performance and efficiency"
+      ],
+      "qualifications": [
+        "5+ years of professional experience in Database Administration or Infrastructure Engineering",
+        "Deep expertise in PostgreSQL (design, tuning, replication, indexing, query optimization)",
+        "Hands-on experience with cloud platforms (AWS, Azure, or GCP)",
+        "Strong understanding of virtualization, containers, and CI/CD pipelines",
+        "Proven ability to maintain zero-downtime production systems",
+        "Excellent problem-solving skills, documentation discipline, and communication ability"
+      ],
+      "benefits": [
+        "Compensation: $50 - $80/hour (based on experience)",
+        "Work on cutting-edge, global data systems that truly make an impact",
+        "Collaborate with a passionate and highly skilled international team",
+        "Enjoy a flexible remote schedule and long-term project stability",
+        "Partner with a reputable U.S.-based recruiting and consulting agency Enat Solution dedicated to connecting exceptional tech talent with meaningful opportunities"
+      ],
+      "aboutCompany": "Our partner is a global technology company that powers data-driven decision-making for the hospitality industry. They support mission-critical applications across international clients, enabling hotels and hospitality teams worldwide to make smarter, faster business decisions.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-11-13",
+      "status": "active"
     }
   ]
 }
