@@ -1,74 +1,44 @@
 {
   "jobs": [
     {
-      "id": 1,
-      "title": "Nurse Manager - Home Infusion Pharmacy",
-      "location": "Spokane Valley, Washington",
-      "type": "Healthcare",
-      "employmentType": "Full-Time, Day Shift",
-      "shortDescription": "Lead our Home Infusion Pharmacy team with clinical expertise and compassionate leadership.",
-      "fullDescription": "We are seeking an experienced and compassionate Nurse Manager to lead our Home Infusion Pharmacy team. This individual will oversee clinical operations, ensure high-quality patient care, and support a collaborative work environment for nursing and pharmacy staff serving patients in their homes.\n\nYou will play a key role in coordinating interdisciplinary care, managing staff performance, maintaining compliance with healthcare regulations, and helping improve patient outcomes through innovation and leadership.",
+      "id": 9,
+      "title": "Senior Digital Transformation Engineer (Manufacturing | ERP & Automation)",
+      "location": "Ayer, MA (Hybrid)",
+      "type": "IT",
+      "employmentType": "Full-Time",
+      "shortDescription": "Lead enterprise-wide digital transformation initiatives across ERP, automation, and system integrations for a leading manufacturing organization.",
+      "fullDescription": "Enat Solution is partnering with a leading manufacturing organization to hire a Senior Digital Transformation Engineer. This role is ideal for a technical professional who can bridge business and technology leading modern digital initiatives, optimizing systems, and driving automation across enterprise operations.\n\nYou will help transform legacy systems into integrated, scalable, and efficient digital platforms while working closely with leaders across IT, Finance, Operations, and Engineering.",
       "responsibilities": [
-        "Oversee daily operations of the Home Infusion Department",
-        "Supervise and mentor nursing and pharmacy staff",
-        "Coordinate interdisciplinary care for patients receiving home infusion therapy",
-        "Ensure compliance with quality standards, safety protocols, and documentation requirements",
-        "Develop and implement departmental policies, procedures, and performance goals",
-        "Monitor staffing levels and productivity standards",
-        "Support staff development and training initiatives"
+        "Lead enterprise-wide digital transformation initiatives across ERP, order management, fulfillment, eCommerce, and system integrations",
+        "Mentor and guide software developers & digital engineers; support professional development and technical excellence",
+        "Serve as an internal consultant to identify process bottlenecks and deliver scalable automated solutions",
+        "Manage external vendors and offshore development teams ensuring quality delivery and adherence to timelines",
+        "Develop and maintain Python automation tools (Pandas, NumPy) for data workflows, APIs, and reporting",
+        "Partner with Finance/Operations to build reports, reconcile inventory, and improve analytics capabilities",
+        "Evaluate technology platforms (ERP, MES, CMMS, B2B/B2C, analytics, personalization tools) and make recommendations",
+        "Create business cases with ROI analysis for digital investments and transformation initiatives",
+        "Oversee websites, domains, and analytics tools with strong focus on compliance (GDPR, CCPA)",
+        "Collaborate with IT/Help Desk to document infrastructure and ensure business continuity planning"
       ],
       "qualifications": [
-        "Active RN license in Washington State (Oregon license preferred)",
-        "Bachelor's degree in Nursing or related healthcare field (or equivalent experience)",
-        "4+ years of home infusion or home health nursing experience",
-        "2+ years in a supervisory or nurse management role",
-        "Strong leadership, communication, and organizational skills",
-        "Passion for patient-centered, holistic care"
+        "6+ years of digital transformation or IT engineering experience",
+        "Strong background in ERP systems, automation, and digital architecture",
+        "Proficiency with Python (Pandas, NumPy)",
+        "Experience managing development teams and external vendors",
+        "Solid understanding of modern digital platforms and enterprise architectures",
+        "Bachelor's Degree required"
       ],
       "benefits": [
-        "Comprehensive medical, dental, and vision coverage",
-        "401(k) with employer match",
-        "Paid time off (vacation, holidays, sick days)",
-        "Tuition reimbursement and professional development support",
-        "Employee wellness and family care programs"
+        "Performance-based bonus program",
+        "Comprehensive health, dental, and vision coverage",
+        "Paid time off & holidays",
+        "401(k) with company match",
+        "Professional development & advancement opportunities",
+        "Employee discount programs"
       ],
-      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs. We are committed to creating an inclusive, supportive environment for both our patients and our team members.",
+      "aboutCompany": "Our partner is a leading manufacturing organization in the pharmaceuticals and manufacturing industry. They are undergoing digital transformation to modernize legacy systems into integrated, scalable, and efficient digital platforms.",
       "applyEmail": "info@enatsolution.com",
-      "postedDate": "2025-10-24",
-      "status": "active"
-    },
-    {
-      "id": 2,
-      "title": "Respiratory Care Practitioner",
-      "location": "Spokane, Washington",
-      "type": "Healthcare",
-      "employmentType": "Full-Time, Night Shift (36 hours/week)",
-      "shortDescription": "Join our respiratory therapy team and deliver exceptional patient care in a leading medical center.",
-      "fullDescription": "We are seeking a dedicated and skilled Respiratory Care Practitioner to join a leading medical center in Spokane, WA. The ideal candidate will demonstrate a solid understanding of modern respiratory therapy practices and will work collaboratively with physicians, nurses, and interdisciplinary care teams to deliver exceptional patient care.\n\nIn this role, you'll play a key part in improving patient outcomes through clinical expertise, compassion, and commitment to quality care.",
-      "responsibilities": [
-        "Perform all aspects of respiratory care, including oxygen and aerosol therapy, ventilator management, airway clearance, and emergency interventions",
-        "Collaborate with physicians and nursing staff to plan and implement individualized care plans",
-        "Monitor and evaluate patients' responses to treatment and adjust care accordingly",
-        "Maintain accurate and detailed patient documentation and reports",
-        "Participate in continuing education and maintain all required certifications and competencies",
-        "Adhere to all hospital, departmental, and regulatory policies and standards"
-      ],
-      "qualifications": [
-        "Active Washington State Respiratory Care Practitioner License (required)",
-        "Basic Life Support (BLS) certification through the American Heart Association (AHA)",
-        "Education or training sufficient to meet certification, licensure, or registration requirements",
-        "Strong communication and teamwork skills, with a commitment to compassionate, patient-centered care"
-      ],
-      "benefits": [
-        "Comprehensive health coverage, retirement plan with employer matching",
-        "Generous paid time off (vacation, holidays, sick days)",
-        "Opportunity to work within a respected, mission-driven healthcare organization",
-        "Supportive and inclusive work environment that values growth, collaboration, and diversity",
-        "Relocation assistance may be available for highly qualified candidates"
-      ],
-      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs. We are committed to creating an inclusive, supportive environment for both our patients and our team members.",
-      "applyEmail": "info@enatsolution.com",
-      "postedDate": "2025-10-28",
+      "postedDate": "2025-11-14",
       "status": "active"
     },
     {
@@ -125,6 +95,42 @@
       "status": "active"
     },
     {
+      "id": 7,
+      "title": "Senior Database & Infrastructure Engineer",
+      "location": "Remote",
+      "type": "IT",
+      "employmentType": "Contract (Long-term, Part-time or Full-time)",
+      "shortDescription": "Design and maintain high-availability, cloud-based data systems for a global technology company powering data-driven decision-making in the hospitality industry.",
+      "fullDescription": "Enat Solution is seeking an experienced Senior Database & Infrastructure Engineer on behalf of a global technology company that powers data-driven decision-making for the hospitality industry.\n\nThe ideal candidate is a hands-on technologist who thrives on building and maintaining high-availability, cloud-based data systems that support mission-critical applications across international clients. You'll help design, optimize, and scale infrastructure that enables hotels and hospitality teams worldwide to make smarter, faster business decisions.",
+      "responsibilities": [
+        "Design and implement high-availability database systems ensuring performance, reliability, and scalability",
+        "Manage and optimize cloud infrastructure supporting large-scale, distributed environments",
+        "Monitor and fine-tune database performance to ensure zero downtime operations",
+        "Leverage open-source technologies to automate workflows and improve data delivery",
+        "Collaborate with cross-functional teams to translate business goals into technical solutions",
+        "Continuously evaluate and integrate new technologies to enhance performance and efficiency"
+      ],
+      "qualifications": [
+        "5+ years of professional experience in Database Administration or Infrastructure Engineering",
+        "Deep expertise in PostgreSQL (design, tuning, replication, indexing, query optimization)",
+        "Hands-on experience with cloud platforms (AWS, Azure, or GCP)",
+        "Strong understanding of virtualization, containers, and CI/CD pipelines",
+        "Proven ability to maintain zero-downtime production systems",
+        "Excellent problem-solving skills, documentation discipline, and communication ability"
+      ],
+      "benefits": [
+        "Compensation: $50 - $80/hour (based on experience)",
+        "Work on cutting-edge, global data systems that truly make an impact",
+        "Collaborate with a passionate and highly skilled international team",
+        "Enjoy a flexible remote schedule and long-term project stability",
+        "Partner with a reputable U.S.-based recruiting and consulting agency Enat Solution dedicated to connecting exceptional tech talent with meaningful opportunities"
+      ],
+      "aboutCompany": "Our partner is a global technology company that powers data-driven decision-making for the hospitality industry. They support mission-critical applications across international clients, enabling hotels and hospitality teams worldwide to make smarter, faster business decisions.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-11-13",
+      "status": "active"
+    },
+    {
       "id": 6,
       "title": "Database Engineer / Administrator (PostgreSQL + Retool)",
       "location": "Remote",
@@ -162,80 +168,74 @@
       "status": "active"
     },
     {
-      "id": 7,
-      "title": "Senior Database & Infrastructure Engineer",
-      "location": "Remote",
-      "type": "IT",
-      "employmentType": "Contract (Long-term, Part-time or Full-time)",
-      "shortDescription": "Design and maintain high-availability, cloud-based data systems for a global technology company powering data-driven decision-making in the hospitality industry.",
-      "fullDescription": "Enat Solution is seeking an experienced Senior Database & Infrastructure Engineer on behalf of a global technology company that powers data-driven decision-making for the hospitality industry.\n\nThe ideal candidate is a hands-on technologist who thrives on building and maintaining high-availability, cloud-based data systems that support mission-critical applications across international clients. You'll help design, optimize, and scale infrastructure that enables hotels and hospitality teams worldwide to make smarter, faster business decisions.",
+      "id": 2,
+      "title": "Respiratory Care Practitioner",
+      "location": "Spokane, Washington",
+      "type": "Healthcare",
+      "employmentType": "Full-Time, Night Shift (36 hours/week)",
+      "shortDescription": "Join our respiratory therapy team and deliver exceptional patient care in a leading medical center.",
+      "fullDescription": "We are seeking a dedicated and skilled Respiratory Care Practitioner to join a leading medical center in Spokane, WA. The ideal candidate will demonstrate a solid understanding of modern respiratory therapy practices and will work collaboratively with physicians, nurses, and interdisciplinary care teams to deliver exceptional patient care.\n\nIn this role, you'll play a key part in improving patient outcomes through clinical expertise, compassion, and commitment to quality care.",
       "responsibilities": [
-        "Design and implement high-availability database systems ensuring performance, reliability, and scalability",
-        "Manage and optimize cloud infrastructure supporting large-scale, distributed environments",
-        "Monitor and fine-tune database performance to ensure zero downtime operations",
-        "Leverage open-source technologies to automate workflows and improve data delivery",
-        "Collaborate with cross-functional teams to translate business goals into technical solutions",
-        "Continuously evaluate and integrate new technologies to enhance performance and efficiency"
+        "Perform all aspects of respiratory care, including oxygen and aerosol therapy, ventilator management, airway clearance, and emergency interventions",
+        "Collaborate with physicians and nursing staff to plan and implement individualized care plans",
+        "Monitor and evaluate patients' responses to treatment and adjust care accordingly",
+        "Maintain accurate and detailed patient documentation and reports",
+        "Participate in continuing education and maintain all required certifications and competencies",
+        "Adhere to all hospital, departmental, and regulatory policies and standards"
       ],
       "qualifications": [
-        "5+ years of professional experience in Database Administration or Infrastructure Engineering",
-        "Deep expertise in PostgreSQL (design, tuning, replication, indexing, query optimization)",
-        "Hands-on experience with cloud platforms (AWS, Azure, or GCP)",
-        "Strong understanding of virtualization, containers, and CI/CD pipelines",
-        "Proven ability to maintain zero-downtime production systems",
-        "Excellent problem-solving skills, documentation discipline, and communication ability"
+        "Active Washington State Respiratory Care Practitioner License (required)",
+        "Basic Life Support (BLS) certification through the American Heart Association (AHA)",
+        "Education or training sufficient to meet certification, licensure, or registration requirements",
+        "Strong communication and teamwork skills, with a commitment to compassionate, patient-centered care"
       ],
       "benefits": [
-        "Compensation: $50 - $80/hour (based on experience)",
-        "Work on cutting-edge, global data systems that truly make an impact",
-        "Collaborate with a passionate and highly skilled international team",
-        "Enjoy a flexible remote schedule and long-term project stability",
-        "Partner with a reputable U.S.-based recruiting and consulting agency Enat Solution dedicated to connecting exceptional tech talent with meaningful opportunities"
+        "Comprehensive health coverage, retirement plan with employer matching",
+        "Generous paid time off (vacation, holidays, sick days)",
+        "Opportunity to work within a respected, mission-driven healthcare organization",
+        "Supportive and inclusive work environment that values growth, collaboration, and diversity",
+        "Relocation assistance may be available for highly qualified candidates"
       ],
-      "aboutCompany": "Our partner is a global technology company that powers data-driven decision-making for the hospitality industry. They support mission-critical applications across international clients, enabling hotels and hospitality teams worldwide to make smarter, faster business decisions.",
+      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs. We are committed to creating an inclusive, supportive environment for both our patients and our team members.",
       "applyEmail": "info@enatsolution.com",
-      "postedDate": "2025-11-13",
+      "postedDate": "2025-10-28",
       "status": "active"
     },
     {
-      "id": 9,
-      "title": "Senior Digital Transformation Engineer (Manufacturing | ERP & Automation)",
-      "location": "Ayer, MA (Hybrid)",
-      "type": "IT",
-      "employmentType": "Full-Time",
-      "shortDescription": "Lead enterprise-wide digital transformation initiatives across ERP, automation, and system integrations for a leading manufacturing organization.",
-      "fullDescription": "Enat Solution is partnering with a leading manufacturing organization to hire a Senior Digital Transformation Engineer. This role is ideal for a technical professional who can bridge business and technology leading modern digital initiatives, optimizing systems, and driving automation across enterprise operations.\n\nYou will help transform legacy systems into integrated, scalable, and efficient digital platforms while working closely with leaders across IT, Finance, Operations, and Engineering.",
+      "id": 1,
+      "title": "Nurse Manager - Home Infusion Pharmacy",
+      "location": "Spokane Valley, Washington",
+      "type": "Healthcare",
+      "employmentType": "Full-Time, Day Shift",
+      "shortDescription": "Lead our Home Infusion Pharmacy team with clinical expertise and compassionate leadership.",
+      "fullDescription": "We are seeking an experienced and compassionate Nurse Manager to lead our Home Infusion Pharmacy team. This individual will oversee clinical operations, ensure high-quality patient care, and support a collaborative work environment for nursing and pharmacy staff serving patients in their homes.\n\nYou will play a key role in coordinating interdisciplinary care, managing staff performance, maintaining compliance with healthcare regulations, and helping improve patient outcomes through innovation and leadership.",
       "responsibilities": [
-        "Lead enterprise-wide digital transformation initiatives across ERP, order management, fulfillment, eCommerce, and system integrations",
-        "Mentor and guide software developers & digital engineers; support professional development and technical excellence",
-        "Serve as an internal consultant to identify process bottlenecks and deliver scalable automated solutions",
-        "Manage external vendors and offshore development teams ensuring quality delivery and adherence to timelines",
-        "Develop and maintain Python automation tools (Pandas, NumPy) for data workflows, APIs, and reporting",
-        "Partner with Finance/Operations to build reports, reconcile inventory, and improve analytics capabilities",
-        "Evaluate technology platforms (ERP, MES, CMMS, B2B/B2C, analytics, personalization tools) and make recommendations",
-        "Create business cases with ROI analysis for digital investments and transformation initiatives",
-        "Oversee websites, domains, and analytics tools with strong focus on compliance (GDPR, CCPA)",
-        "Collaborate with IT/Help Desk to document infrastructure and ensure business continuity planning"
+        "Oversee daily operations of the Home Infusion Department",
+        "Supervise and mentor nursing and pharmacy staff",
+        "Coordinate interdisciplinary care for patients receiving home infusion therapy",
+        "Ensure compliance with quality standards, safety protocols, and documentation requirements",
+        "Develop and implement departmental policies, procedures, and performance goals",
+        "Monitor staffing levels and productivity standards",
+        "Support staff development and training initiatives"
       ],
       "qualifications": [
-        "6+ years of digital transformation or IT engineering experience",
-        "Strong background in ERP systems, automation, and digital architecture",
-        "Proficiency with Python (Pandas, NumPy)",
-        "Experience managing development teams and external vendors",
-        "Solid understanding of modern digital platforms and enterprise architectures",
-        "Bachelor's Degree required"
+        "Active RN license in Washington State (Oregon license preferred)",
+        "Bachelor's degree in Nursing or related healthcare field (or equivalent experience)",
+        "4+ years of home infusion or home health nursing experience",
+        "2+ years in a supervisory or nurse management role",
+        "Strong leadership, communication, and organizational skills",
+        "Passion for patient-centered, holistic care"
       ],
       "benefits": [
-        "Performance-based bonus program",
-        "Comprehensive health, dental, and vision coverage",
-        "Paid time off & holidays",
-        "401(k) with company match",
-        "Professional development & advancement opportunities",
-        "Employee discount programs"
+        "Comprehensive medical, dental, and vision coverage",
+        "401(k) with employer match",
+        "Paid time off (vacation, holidays, sick days)",
+        "Tuition reimbursement and professional development support",
+        "Employee wellness and family care programs"
       ],
-      "aboutCompany": "Our partner is a leading manufacturing organization in the pharmaceuticals and manufacturing industry. They are undergoing digital transformation to modernize legacy systems into integrated, scalable, and efficient digital platforms.",
+      "aboutCompany": "Our organization provides high-quality, compassionate care across multiple states through home health, hospice, infusion therapy, and community care programs. We are committed to creating an inclusive, supportive environment for both our patients and our team members.",
       "applyEmail": "info@enatsolution.com",
-      "postedDate": "2025-11-14",
+      "postedDate": "2025-10-24",
       "status": "active"
     }
   ]
