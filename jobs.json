@@ -196,6 +196,47 @@
       "applyEmail": "info@enatsolution.com",
       "postedDate": "2025-11-13",
       "status": "active"
+    },
+    {
+      "id": 9,
+      "title": "Senior Digital Transformation Engineer (Manufacturing | ERP & Automation)",
+      "location": "Ayer, MA (Hybrid)",
+      "type": "IT",
+      "employmentType": "Full-Time",
+      "shortDescription": "Lead enterprise-wide digital transformation initiatives across ERP, automation, and system integrations for a leading manufacturing organization.",
+      "fullDescription": "Enat Solution is partnering with a leading manufacturing organization to hire a Senior Digital Transformation Engineer. This role is ideal for a technical professional who can bridge business and technology leading modern digital initiatives, optimizing systems, and driving automation across enterprise operations.\n\nYou will help transform legacy systems into integrated, scalable, and efficient digital platforms while working closely with leaders across IT, Finance, Operations, and Engineering.",
+      "responsibilities": [
+        "Lead enterprise-wide digital transformation initiatives across ERP, order management, fulfillment, eCommerce, and system integrations",
+        "Mentor and guide software developers & digital engineers; support professional development and technical excellence",
+        "Serve as an internal consultant to identify process bottlenecks and deliver scalable automated solutions",
+        "Manage external vendors and offshore development teams ensuring quality delivery and adherence to timelines",
+        "Develop and maintain Python automation tools (Pandas, NumPy) for data workflows, APIs, and reporting",
+        "Partner with Finance/Operations to build reports, reconcile inventory, and improve analytics capabilities",
+        "Evaluate technology platforms (ERP, MES, CMMS, B2B/B2C, analytics, personalization tools) and make recommendations",
+        "Create business cases with ROI analysis for digital investments and transformation initiatives",
+        "Oversee websites, domains, and analytics tools with strong focus on compliance (GDPR, CCPA)",
+        "Collaborate with IT/Help Desk to document infrastructure and ensure business continuity planning"
+      ],
+      "qualifications": [
+        "6+ years of digital transformation or IT engineering experience",
+        "Strong background in ERP systems, automation, and digital architecture",
+        "Proficiency with Python (Pandas, NumPy)",
+        "Experience managing development teams and external vendors",
+        "Solid understanding of modern digital platforms and enterprise architectures",
+        "Bachelor's Degree required"
+      ],
+      "benefits": [
+        "Performance-based bonus program",
+        "Comprehensive health, dental, and vision coverage",
+        "Paid time off & holidays",
+        "401(k) with company match",
+        "Professional development & advancement opportunities",
+        "Employee discount programs"
+      ],
+      "aboutCompany": "Our partner is a leading manufacturing organization in the pharmaceuticals and manufacturing industry. They are undergoing digital transformation to modernize legacy systems into integrated, scalable, and efficient digital platforms.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-11-14",
+      "status": "active"
     }
   ]
 }
