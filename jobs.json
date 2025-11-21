@@ -1,6 +1,45 @@
 {
   "jobs": [
     {
+      "id": 11,
+      "title": "High-Performance Leadership & Management Coach",
+      "location": "Remote",
+      "type": "General",
+      "employmentType": "Part-Time (Short to Mid-Term Engagement)",
+      "shortDescription": "Elevate managers into confident, people-first leaders through 1:1 coaching sessions focused on high performance and leadership development.",
+      "fullDescription": "Enat Solution is proud to support one of our valued clients in hiring an experienced High-Performance Leadership & Management Coach. This role focuses on elevating managers into confident, people-first leaders who consistently deliver high performance across their teams.\n\nWe are seeking a coach with proven success in 1:1 leadership coaching, strong communication skills, and the ability to design individualized development plans that drive measurable improvement.\n\nAs the organization grows, our client wants to ensure their leadership team is equipped with the right tools, mindset, and behaviors to lead effectively. This engagement involves supporting managers through 2–3 high-impact coaching sessions per month, helping them strengthen their performance and leadership capabilities.",
+      "responsibilities": [
+        "Conduct baseline discovery and performance assessments for each manager",
+        "Develop customized leadership development paths",
+        "Deliver recurring 1:1 coaching sessions (remote)",
+        "Support managers in achieving measurable performance and leadership goals",
+        "Gather participant feedback and evaluate coaching effectiveness",
+        "Provide concise post-session and post-engagement reports outlining progress, strengths, and development areas"
+      ],
+      "qualifications": [
+        "Strong background in leadership coaching and executive development",
+        "Experience turning managers into high-performing leaders",
+        "Skilled in performance improvement, communication coaching, and people-centric leadership",
+        "Able to work independently and handle multiple coachees",
+        "Professional, empathetic, and outcome-driven",
+        "Expertise in Leadership Coaching, Leadership Development, and Leadership Training",
+        "Experience with High-Performance Coaching and Cross-Functional Team Leadership",
+        "Background in Career & Executive Coaching"
+      ],
+      "benefits": [
+        "Remote engagement",
+        "Short- to mid-term engagement (approximately 3–6 months)",
+        "Ongoing coaching sessions (2–3 per manager per month)",
+        "Hourly engagement with competitive compensation",
+        "Opportunity to impact organizational leadership and culture",
+        "Flexible scheduling for independent contractors"
+      ],
+      "aboutCompany": "Our client is a growing organization committed to developing their leadership team into high-performing, people-first leaders. They value professional development, continuous improvement, and creating a strong leadership culture.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-11-21",
+      "status": "active"
+    },
+    {
       "id": 10,
       "title": "IT Technical Lead - Customer Applications",
       "location": "Multiple Locations (Wilmington, DE | Colorado Springs, CO | Mississauga, ON, Canada)",
