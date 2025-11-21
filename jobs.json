@@ -1,6 +1,54 @@
 {
   "jobs": [
     {
+      "id": 10,
+      "title": "IT Technical Lead - Customer Applications",
+      "location": "Multiple Locations (Wilmington, DE | Colorado Springs, CO | Mississauga, ON, Canada)",
+      "type": "IT",
+      "employmentType": "Full-Time",
+      "shortDescription": "Lead the technical design and implementation of entitlement management and software licensing platforms for a pharmaceutical/biotech organization.",
+      "fullDescription": "Enat Solution, on behalf of our client in the Pharmaceutical/Biotech industry, is seeking a highly experienced IT Technical Lead – Customer Applications to architect and implement a next-generation entitlement management and software licensing platform.\n\nThe ideal candidate will provide strong technical leadership, drive the design of scalable solutions, and work closely with cross-functional teams to ensure successful implementation and long-term adoption. This position follows a hybrid model (3 onsite / 2 remote).",
+      "responsibilities": [
+        "Lead the end-to-end technical design and implementation of entitlement and software licensing solutions",
+        "Develop deep expertise in licensing and entitlement platforms to ensure best-practice adoption",
+        "Architect scalable B2B license management and monetization solutions for software products",
+        "Ensure alignment with enterprise architecture, compliance requirements, and IT policies",
+        "Partner with cross-functional business teams, product teams, and stakeholders to define requirements and deliver optimal solutions",
+        "Guide teams in integrating entitlement systems with enterprise platforms such as ERP and other backend systems",
+        "Solve day-to-day operational challenges and implement optimizations to improve system performance",
+        "Deliver clear technical documentation, presentations, and communications for global stakeholders",
+        "Drive seamless integration with backend ERP systems and customer-facing applications",
+        "Ensure compliance with privacy and regulatory frameworks such as PII, GDPR, and CFR",
+        "Implement secure solutions using AWS access control and industry-standard practices"
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Science or equivalent experience",
+        "8+ years of experience in core computer science principles, algorithms, and enterprise architecture",
+        "2+ years as a technical lead guiding medium to large teams",
+        "Expertise in designing IT enterprise solutions using both custom-built and off-the-shelf technologies",
+        "Strong experience with backend integration involving ERP platforms",
+        "Background in building customer-facing applications and understanding of usability principles",
+        "Proficiency in backend scripting languages such as JavaScript/TypeScript (Node.js) or Python",
+        "Hands-on experience with AWS services (storage, caching, API Gateway, IAM)",
+        "Strong understanding of B2B licensing and software monetization concepts",
+        "Experience working in Agile/SCRUM environments",
+        "Excellent communication, documentation, and stakeholder engagement skills",
+        "Strong attention to detail, deadline-driven, and able to work independently"
+      ],
+      "benefits": [
+        "Competitive compensation package",
+        "Hybrid work arrangement (3 days onsite, 2 days remote)",
+        "Comprehensive health, dental, and vision coverage",
+        "401(k) with company match",
+        "Professional development & advancement opportunities",
+        "Occasional travel for cross-site collaboration"
+      ],
+      "aboutCompany": "Our client is a leading pharmaceutical/biotech organization seeking to implement next-generation entitlement management and software licensing platforms. They value technical excellence, innovation, and strong leadership in building scalable enterprise solutions.",
+      "applyEmail": "info@enatsolution.com",
+      "postedDate": "2025-11-21",
+      "status": "active"
+    },
+    {
       "id": 9,
       "title": "Senior Digital Transformation Engineer (Manufacturing | ERP & Automation)",
       "location": "Ayer, MA (Hybrid)",
