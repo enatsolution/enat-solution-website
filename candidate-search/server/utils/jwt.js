@@ -1,8 +1,8 @@
 ﻿const jwt = require('jsonwebtoken');
-const config = require('../config');
 
 // Generate JWT token
 const generateToken = (user) => {
+  const secret = 'candidate-profile-search-jwt-secret-2024';
   return jwt.sign(
     {
       id: user.id,
@@ -10,7 +10,7 @@ const generateToken = (user) => {
       name: user.name,
       role: user.role
     },
-    config.JWT_SECRET,
+    secret,
     { expiresIn: '24h' }
   );
 };
@@ -18,7 +18,8 @@ const generateToken = (user) => {
 // Verify JWT token
 const verifyToken = (token) => {
   try {
-    return jwt.verify(token, config.JWT_SECRET);
+    const secret = 'candidate-profile-search-jwt-secret-2024';
+    return jwt.verify(token, secret);
   } catch (err) {
     return null;
   }
