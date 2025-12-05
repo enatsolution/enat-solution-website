@@ -1,6 +1,6 @@
 [build]
-  publish = "candidate-search/client/dist"
-  command = "cd candidate-search/client && npm install && npm run build"
+  publish = "."
+  command = "cd candidate-search/client && npm install && npm run build && cp -r dist ../../candidate-search-app"
 
 [build.environment]
   NODE_VERSION = "18"
