@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const config = require('./config');
@@ -13,41 +13,25 @@ const postjobfreeRoutes = require('./routes/postjobfree');
 const googleResumesRoutes = require('./routes/google-resumes');
 
 const app = express();
+const { generateToken } = require('./utils/jwt');
 const PORT = config.PORT;
 
 // CORS configuration for credentials
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  'http://localhost:8000',
-  'https://enatsolution.com',
-  'https://www.enatsolution.com',
-  process.env.FRONTEND_URL // For production deployment
-];
-
 app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: 'http://localhost:5173',
   credentials: true
 }));
 
 app.use(express.json());
 
 // Session configuration
-const isProduction = process.env.NODE_ENV === 'production';
 app.use(session({
   secret: config.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true, // Changed to true to ensure session is created
+  saveUninitialized: false,
   cookie: {
-    secure: true, // Always true for cross-domain cookies (HTTPS required)
-    httpOnly: false, // Temporarily disabled for debugging
-    sameSite: 'none', // Required for cross-domain cookie sharing
+    secure: false, // Set to true in production with HTTPS
+    httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
   }
 }));
@@ -92,16 +76,7 @@ app.post('/api/auth/login', async (req, res) => {
 
   // Generate JWT token
   const token = generateToken(user);
-
-  // Generate JWT token
-  const token = generateToken(user);
-
   // Set session
-  console.log('Session set:', {
-    sessionID: req.sessionID,
-    authenticated: req.session.authenticated,
-    email: req.session.userEmail
-  });
   req.session.authenticated = true;
   req.session.userId = user.id;
   req.session.userEmail = user.email;
@@ -111,6 +86,7 @@ app.post('/api/auth/login', async (req, res) => {
   res.json({
     success: true,
     message: 'Login successful',
+    token: token,
     user: {
       email: user.email,
       name: user.name,
@@ -129,7 +105,6 @@ app.post('/api/auth/logout', (req, res) => {
 });
 
 app.get('/api/auth/check', (req, res) => {
-  console.log('Auth check - SessionID:', req.sessionID, 'Authenticated:', req.session?.authenticated);
   if (req.session && req.session.authenticated) {
     res.json({
       authenticated: true,
@@ -160,11 +135,4 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log('Login with your @enatsolution.com email and password');
 });
-
-
-
-
-
-
-
 
