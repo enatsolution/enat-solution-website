@@ -46,7 +46,7 @@ app.use(session({
   saveUninitialized: true, // Changed to true to ensure session is created
   cookie: {
     secure: true, // Always true for cross-domain cookies (HTTPS required)
-    httpOnly: true,
+    httpOnly: false, // Temporarily disabled for debugging
     sameSite: 'none', // Required for cross-domain cookie sharing
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
   }
@@ -154,6 +154,7 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log('Login with your @enatsolution.com email and password');
 });
+
 
 
 
