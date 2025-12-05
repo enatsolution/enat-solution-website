@@ -1,5 +1,6 @@
 // Authentication middleware
 const requireAuth = (req, res, next) => {
+  console.log('Auth check - Session:', req.session ? 'exists' : 'missing', 'Authenticated:', req.session?.authenticated);
   if (req.session && req.session.authenticated) {
     return next();
   }
@@ -7,4 +8,5 @@ const requireAuth = (req, res, next) => {
 };
 
 module.exports = { requireAuth };
+
 
