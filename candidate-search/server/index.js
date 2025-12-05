@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const config = require('./config');
@@ -22,7 +22,6 @@ const allowedOrigins = [
   'http://localhost:8000',
   'https://enatsolution.com',
   'https://www.enatsolution.com',
-  'https://enatsolution.com/candidate-search-app',
   process.env.FRONTEND_URL // For production deployment
 ];
 
@@ -92,6 +91,11 @@ app.post('/api/auth/login', async (req, res) => {
   }
 
   // Set session
+  console.log('Session set:', {
+    sessionID: req.sessionID,
+    authenticated: req.session.authenticated,
+    email: req.session.userEmail
+  });
   req.session.authenticated = true;
   req.session.userId = user.id;
   req.session.userEmail = user.email;
@@ -119,6 +123,7 @@ app.post('/api/auth/logout', (req, res) => {
 });
 
 app.get('/api/auth/check', (req, res) => {
+  console.log('Auth check - SessionID:', req.sessionID, 'Authenticated:', req.session?.authenticated);
   if (req.session && req.session.authenticated) {
     res.json({
       authenticated: true,
@@ -149,3 +154,6 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log('Login with your @enatsolution.com email and password');
 });
+
+
+
