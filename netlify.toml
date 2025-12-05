@@ -41,16 +41,18 @@
   status = 200
   headers = {Content-Type = "text/plain; charset=utf-8"}
 
-# Candidate Search routing
+# Candidate Search routing (MUST be before catch-all)
 [[redirects]]
   from = "/candidate-search"
   to = "/candidate-search.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/candidate-search-app/*"
   to = "/candidate-search-app/:splat"
   status = 200
+  force = true
 
 # Ensure JSON files are served correctly
 [[redirects]]
@@ -59,10 +61,11 @@
   status = 200
   force = false
 
+# Catch-all for SPA routing (MUST be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 404
+  status = 200
 
 # Additional security headers
 [[headers]]
