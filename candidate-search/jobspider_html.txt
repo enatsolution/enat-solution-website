@@ -1,0 +1,757 @@
+﻿<SCRIPT LANGUAGE=JavaScript SRC="/job/_ScriptLibrary/pm.js"></SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>thisPage._location = "/job/resume-search-results.asp";</SCRIPT>
+
+<FORM name=thisForm METHOD=post>
+
+<HTML>
+<HEAD>
+
+<STYLE TYPE="text/css">
+.StandardRow {font-family:arial; font-weight:bold; font-size:10px}
+</STYLE>
+
+<script type="text/javascript" charset="utf-8">
+  (function(G,o,O,g,L,e){G[g]=G[g]||function(){(G[g]['q']=G[g]['q']||[]).push(
+   arguments)},G[g]['t']=1*new Date;L=o.createElement(O),e=o.getElementsByTagName(
+   O)[0];L.async=1;L.src='//www.google.com/adsense/search/async-ads.js';
+  e.parentNode.insertBefore(L,e)})(window,document,'script','_googCsa');
+</script>
+
+<title>Resumes for at JobSpider</title>
+<meta name="title"			content="Resumes for at JobSpider">
+<meta name="description"		content="Looking for a applicant? Online resume search engine helps you find newly posted resumes from all over the USA and Canada. New resumes posted daily.">
+<meta name="keywords"			content="hot job searches,career education,california jobs,job bank,usa jobs,teen jobs,computer jobs,job florida,texas jobs,it work,science jobs,michigan jobs,job site,construction jobs,classified ads,nursing jobs,hotel jobs,accounting jobs,health care jobs,job opening,help wanted,internet jobs,sales jobs,retail jobs,job hunting,finance jobs,job web site,customer service jobs,information technology job,computer career,job search online,project manager jobs,job search web site,technology jobs,it careers,engineering job search,job search career,free job A26searches,it job description,internet job search,nursing job search,computer job listing,sales job site,computer job site,hr job site,find a job on the internet,it job search,internet job postings,find a job online,online job site,job listing web site,online job search engine,resume search engine,online job search site,online job hunting">
+<link rel="stylesheet" type="text/css" href="/job/include/jobsearch.css">
+</HEAD>
+<!-- Looking for a applicant? Online resume search engine helps you find newly posted resumes from all over the USA and Canada. New resumes posted daily. --> 
+<BODY BACKGROUND="/job/JobSideBG.gif" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH="0" MARGINHEIGHT="0">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="238" height="90" bgcolor="#FFFFFF"><a href="/"><img height="51" alt="Resumes for at JobSpider"
+      src="/job/images/JSlogo.gif" width="238" border="0" /></a></td>
+
+      <td align="right" bgcolor="#FFFFFF">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1662552535203450"
+     crossorigin="anonymous"></script>
+<!-- TOP Banner -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1662552535203450"
+     data-ad-slot="5017949031"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" bgcolor="#0066CC" valign="middle" height="20"><a href=
+      "/job/main-overview.asp" class="mainmenu">My Spider</a> <a href="/job/scams.asp"
+      class="mainmenu">Scam Awareness</a> <a href="/job/Contacting_Us.asp" class=
+      "mainmenu">Contacting Us</a> <a href="/job/faq.asp" class="mainmenu">F. A.
+      Q.</a>
+	
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" bgcolor="#000000" height="3"></td>
+    </tr>
+  </table>
+
+    <table CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="100%">
+        <tr VALIGN="TOP" ALIGN="LEFT">
+            <td>
+                <table BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="124">
+                    <tr VALIGN="TOP" ALIGN="LEFT">
+                        <td HEIGHT="34"></td>
+                    </tr>
+                    <tr VALIGN="TOP" ALIGN="LEFT">
+                        <td>
+ 
+                            <table ID="Table1" BORDER="0" CELLSPACING="3" CELLPADDING="1" WIDTH="100%">
+                                <tr>
+                                    <td>
+                                        <CENTER>&nbsp;</CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><SPAN class="BoldTxt"><font COLOR="#FFFFCC" SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Job Seekers</font></SPAN></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><a HREF="/job/job-search.asp" class="BoldTxt"><font COLOR="#FFFFFF" SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Search Jobs</font></a></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><a HREF="/job/browse-jobs.asp" class="BoldTxt"><font COLOR="#FFFFFF" SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Browse Jobs</font></a></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><a HREF="/job/PostResume1.asp" class="BoldTxt"><font COLOR="#FFFFFF" SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Post a Resume</font></a></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><a HREF="/job/job-alert.asp" class="BoldTxt"><font COLOR="#FFFFFF" SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Job Alerts</font></a></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER>&nbsp;</CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><SPAN class="BoldTxt"><font COLOR="#FFFFCC" SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Employers</font></SPAN></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><a HREF="/job/resume-search.asp" class="BoldTxt"><font COLOR="#FFFFFF" SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Search Resumes</font></a></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><a HREF="/job/browse-resumes.asp" class="BoldTxt"><font COLOR="#FFFFFF" SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Browse Resumes</font></a></CENTER>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <CENTER><a HREF="/job/PostJob1.asp" class="BoldTxt"><font COLOR="#FFFFFF" SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">Post a Job</font></a></CENTER>
+                                    </td>
+                                </tr>
+                               
+                            </table>
+<br>
+<center>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1662552535203450"
+     crossorigin="anonymous"></script>
+<!-- JS - Left Side Links -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1662552535203450"
+     data-ad-slot="6183665393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td WIDTH="100%">
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr valign="top" align="left">
+        <td height="18">
+        </td>
+      </tr>
+
+      <tr valign="top" align="left">
+        <td>
+          <table id="Table3" border="0" cellspacing="0" cellpadding="1" width="95%"
+          align="center" bordercolor="black">
+            <tr>
+              <td BGCOLOR="#4C4C4C">
+                <h1>Resume Search Results</h1>
+              </td>
+            </tr>
+          </table>
+
+          <br >
+
+          <table width="95%" border="0" align="center">
+            <tr>
+              <td>
+                <center>
+
+<table width="100%" border="0">
+<tr>
+<td>      
+<TABLE cellSpacing=1 cellPadding=1 width="100%" border=0>
+	<TR>
+		<TD>
+          <font face="arial" size="2">
+
+          <b>We found <font color="#ff0000">1106</font> matching resumes.</b>
+
+		<BR>
+
+          <b>This page shows resumes <font color="#0000ff">1</font> to <font color="#0000ff">50</font>.</b>
+
+          </font>
+          </TD>
+          <TD>
+<INPUT type=button name="Button1" id="Button1" value="New Search" onclick="thisPage._fireEvent('Button1','onclick'); return false;">
+
+		</TD>
+	</TR>
+</TABLE>
+<center><font face="arial" size="2">
+
+1
+            <a href="/job/resume-search-results.asp/page_2">2</a>
+            
+            <a href="/job/resume-search-results.asp/page_3">3</a>
+            
+            <a href="/job/resume-search-results.asp/page_4">4</a>
+            
+            <a href="/job/resume-search-results.asp/page_5">5</a>
+            
+            <a href="/job/resume-search-results.asp/page_6">6</a>
+            
+            <a href="/job/resume-search-results.asp/page_7">7</a>
+            
+            <a href="/job/resume-search-results.asp/page_8">8</a>
+            
+            <a href="/job/resume-search-results.asp/page_9">9</a>
+            
+            <a href="/job/resume-search-results.asp/page_10">10</a>
+            
+            <a href="/job/resume-search-results.asp/page_11">11</a>
+            
+            <a href="/job/resume-search-results.asp/page_12">12</a>
+            
+            <a href="/job/resume-search-results.asp/page_13">13</a>
+            
+            <a href="/job/resume-search-results.asp/page_14">14</a>
+            
+            <a href="/job/resume-search-results.asp/page_15">15</a>
+            
+            <a href="/job/resume-search-results.asp/page_16">16</a>
+            
+            <a href="/job/resume-search-results.asp/page_17">17</a>
+            
+            <a href="/job/resume-search-results.asp/page_18">18</a>
+            
+            <a href="/job/resume-search-results.asp/page_19">19</a>
+            
+            <a href="/job/resume-search-results.asp/page_20">20</a>
+            
+            <a href="/job/resume-search-results.asp/page_21">21</a>
+            
+            <a href="/job/resume-search-results.asp/page_22">22</a>
+            
+            <a href="/job/resume-search-results.asp/page_23">23</a>
+            
+        <a href="/job/resume-search-results.asp/page_2">Next &gt;</a>
+        <BR>
+<BR>
+<FONT face=Arial size=2>Results for <B>All</B><B>.</B>
+<BR><BR>(Tip: Click on the column headers to sort your results by that criteria)</font>
+
+<table border=1 cellpadding=2 cellspacing=0 width="100%" BORDERCOLOR=#336699>
+	<tr>
+		<th bgcolor="#336699" valign=top align=center><font face=Arial size=2 color=#ffffff><b>#</b></font></th>
+		<th bgcolor="#336699" valign=top align=center><A href="#" onclick="location.href='/job/resume-search-results.asp/sort_5';return false;" ><font face=Arial size=2 color=#ffffff><b>Posted</b></font></A></th>
+		<th bgcolor="#336699" valign=top align=center><A href="#" onclick="location.href='/job/resume-search-results.asp/sort_3';return false;" ><font face=Arial size=2 color=#ffffff><b>Job Function Sought</b></font></A></th>
+		<th bgcolor="#336699" valign=top align=center><A href="#" onclick="location.href='/job/resume-search-results.asp/sort_1';return false;" ><font face=Arial size=2 color=#ffffff><b>Desired Industry</b></font></A></th>
+		<th bgcolor="#336699" valign=top align=center><A href="#" onclick="location.href='/job/resume-search-results.asp/sort_4';return false;" ><font face=Arial size=2 color=#ffffff><b>Location</b></font></A></th>
+		<th bgcolor="#336699" valign=top align=center><font face=Arial size=2 color=#ffffff><b>Details</b></font></th>
+	</tr>
+
+	<tr>
+		<td class='StandardRow' align=center>1</td>
+		<td class='StandardRow' align=center>11/27/2025</td>
+		<td class='StandardRow' align=center>ACADEMIC WRITTER</td>
+		<td class='StandardRow' align=center>Education/Teaching/Training</td>
+		<td NOWRAP class='StandardRow' align=center>Alamo, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85147.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>2</td>
+		<td class='StandardRow' align=center>11/26/2025</td>
+		<td class='StandardRow' align=center>OPERATIONS MANAGER / PROJECT MANAGEMENT</td>
+		<td class='StandardRow' align=center>Manufacturing</td>
+		<td NOWRAP class='StandardRow' align=center>Oklahoma City, OK</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85146.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>3</td>
+		<td class='StandardRow' align=center>11/26/2025</td>
+		<td class='StandardRow' align=center>WS</td>
+		<td class='StandardRow' align=center>Advertising</td>
+		<td NOWRAP class='StandardRow' align=center>Ottawa, AZ</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85145.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>4</td>
+		<td class='StandardRow' align=center>11/21/2025</td>
+		<td class='StandardRow' align=center>CLEANING RESTORATION TECH</td>
+		<td class='StandardRow' align=center>Cleaners/Laundry</td>
+		<td NOWRAP class='StandardRow' align=center>Neenah, WI</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85144.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>5</td>
+		<td class='StandardRow' align=center>11/18/2025</td>
+		<td class='StandardRow' align=center>IT SUPPORT SPECIALIST, TECHNICAL SUPPORT ENGINEER, FULL-STACK DEVELOPER, </td>
+		<td class='StandardRow' align=center>Information Technology</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85143.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>6</td>
+		<td class='StandardRow' align=center>11/18/2025</td>
+		<td class='StandardRow' align=center>BRISCO ROOFING, LLC</td>
+		<td class='StandardRow' align=center>Building Trades/Construction</td>
+		<td NOWRAP class='StandardRow' align=center>Vancouver, WA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85142.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>7</td>
+		<td class='StandardRow' align=center>11/17/2025</td>
+		<td class='StandardRow' align=center>ACCOUNTS RECEIVABLE CLERK</td>
+		<td class='StandardRow' align=center>Accounting/Bookkeeping</td>
+		<td NOWRAP class='StandardRow' align=center>Greenbrae, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85141.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>8</td>
+		<td class='StandardRow' align=center>11/17/2025</td>
+		<td class='StandardRow' align=center>ACCOUNTING, BOOKKEEPER, PAYROLL, AUDITOR, FINANCIAL ADVISOR</td>
+		<td class='StandardRow' align=center>Accounting/Bookkeeping</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85140.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>9</td>
+		<td class='StandardRow' align=center>11/17/2025</td>
+		<td class='StandardRow' align=center>ACCOUNTING, BOOKKEEPER, PAYROLL, AUDITOR, FINANCIAL ADVISOR</td>
+		<td class='StandardRow' align=center>Accounting/Bookkeeping</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85139.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>10</td>
+		<td class='StandardRow' align=center>11/17/2025</td>
+		<td class='StandardRow' align=center>SENIOR COPYWRITER | BRAND MESSAGING | MARKETING CONTENT | REMOTE</td>
+		<td class='StandardRow' align=center>Marketing</td>
+		<td NOWRAP class='StandardRow' align=center>Atlanta, GA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85138.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>11</td>
+		<td class='StandardRow' align=center>11/17/2025</td>
+		<td class='StandardRow' align=center>SENIOR COPYWRITER | BRAND MESSAGING | MARKETING CONTENT | REMOTE</td>
+		<td class='StandardRow' align=center>Marketing</td>
+		<td NOWRAP class='StandardRow' align=center>Atlanta, GA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85137.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>12</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>DEVOPS ENGINEER (SENIOR OR INTERMEDIATE)</td>
+		<td class='StandardRow' align=center>Telecommunications</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85136.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>13</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>RETAIL SALES ASSOCIATE</td>
+		<td class='StandardRow' align=center>Retail/Counter/Merchandising</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85135.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>14</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>SECURITY GUARD / SECURITY OFFICER</td>
+		<td class='StandardRow' align=center>Law Enforcement/Security/Safety</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85134.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>15</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>FINANCIAL ADVISOR / FINANCIAL PLANNER</td>
+		<td class='StandardRow' align=center>Accounting/Bookkeeping</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85133.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>16</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>ACTOR / PERFORMER ROLES</td>
+		<td class='StandardRow' align=center>Agency</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85132.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>17</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>OPERATIONS MANAGEMENT & COORDINATION</td>
+		<td class='StandardRow' align=center>Transportation/Air, Sea & Land</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85131.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>18</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>PRODUCT DEVELOPMENT MANAGER</td>
+		<td class='StandardRow' align=center>Restaurant/Bar/Club/Food/Beverages</td>
+		<td NOWRAP class='StandardRow' align=center>Toronto, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85130.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>19</td>
+		<td class='StandardRow' align=center>11/13/2025</td>
+		<td class='StandardRow' align=center>STORAGE </td>
+		<td class='StandardRow' align=center>Business/Management</td>
+		<td NOWRAP class='StandardRow' align=center>Georgetown, TX</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85129.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>20</td>
+		<td class='StandardRow' align=center>11/11/2025</td>
+		<td class='StandardRow' align=center>HVAC CONTRACTOR</td>
+		<td class='StandardRow' align=center>HVAC</td>
+		<td NOWRAP class='StandardRow' align=center>Kennett Square, PA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85128.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>21</td>
+		<td class='StandardRow' align=center>11/6/2025</td>
+		<td class='StandardRow' align=center>ADMINISTRATIVE ASSISTANT</td>
+		<td class='StandardRow' align=center>Information Technology</td>
+		<td NOWRAP class='StandardRow' align=center>Brampton, ON</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85127.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>22</td>
+		<td class='StandardRow' align=center>11/5/2025</td>
+		<td class='StandardRow' align=center>LUNSFORD AIR CONDITIONING & HEATING</td>
+		<td class='StandardRow' align=center>HVAC</td>
+		<td NOWRAP class='StandardRow' align=center>Freeport, FL</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85126.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>23</td>
+		<td class='StandardRow' align=center>11/3/2025</td>
+		<td class='StandardRow' align=center>CONTENT STRATEGIST / SENIOR COPYWRITER / BRAND MESSAGING LEAD (REMOTE / CONTRACT</td>
+		<td class='StandardRow' align=center>Marketing</td>
+		<td NOWRAP class='StandardRow' align=center>Denver, CO</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85125.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>24</td>
+		<td class='StandardRow' align=center>10/31/2025</td>
+		<td class='StandardRow' align=center>GAMER</td>
+		<td class='StandardRow' align=center>Building Trades/Construction</td>
+		<td NOWRAP class='StandardRow' align=center>Ohio, LA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85124.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>25</td>
+		<td class='StandardRow' align=center>10/28/2025</td>
+		<td class='StandardRow' align=center>SENIOR CONTENT MANAGER | MARKETING COMMUNICATIONS | OPEN TO REMOTE W-2</td>
+		<td class='StandardRow' align=center>Marketing</td>
+		<td NOWRAP class='StandardRow' align=center>Denver, CO</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85123.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>26</td>
+		<td class='StandardRow' align=center>10/27/2025</td>
+		<td class='StandardRow' align=center>CIDER MILL, LIVE MUSIC, WEDDING VENUE, MUSIC VENUE, TAPROOM</td>
+		<td class='StandardRow' align=center>Entertainment</td>
+		<td NOWRAP class='StandardRow' align=center>Round Mountain, TX</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85122.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>27</td>
+		<td class='StandardRow' align=center>10/27/2025</td>
+		<td class='StandardRow' align=center>SENIOR SALESFORCE DEVELOPER</td>
+		<td class='StandardRow' align=center>Computer Software/Programming</td>
+		<td NOWRAP class='StandardRow' align=center>IRVING, TX</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85121.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>28</td>
+		<td class='StandardRow' align=center>10/23/2025</td>
+		<td class='StandardRow' align=center>REMOTE BRAND & MARKETING MANAGER | CONTENT STRATEGY | COPYWRITING (W-2 CONTRACT)</td>
+		<td class='StandardRow' align=center>Marketing</td>
+		<td NOWRAP class='StandardRow' align=center>Denver, CO</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85120.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>29</td>
+		<td class='StandardRow' align=center>10/22/2025</td>
+		<td class='StandardRow' align=center>ARCHITECTURAL CAD DRAFTER (PART-TIME)</td>
+		<td class='StandardRow' align=center>Architecture/Interior Design</td>
+		<td NOWRAP class='StandardRow' align=center>North Hills, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85119.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>30</td>
+		<td class='StandardRow' align=center>10/21/2025</td>
+		<td class='StandardRow' align=center>LK</td>
+		<td class='StandardRow' align=center>Advertising</td>
+		<td NOWRAP class='StandardRow' align=center>Fleming Island, AZ</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85118.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>31</td>
+		<td class='StandardRow' align=center>10/21/2025</td>
+		<td class='StandardRow' align=center>TBD</td>
+		<td class='StandardRow' align=center>Trainee</td>
+		<td NOWRAP class='StandardRow' align=center>New York, NY</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85117.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>32</td>
+		<td class='StandardRow' align=center>10/16/2025</td>
+		<td class='StandardRow' align=center>TEACHER</td>
+		<td class='StandardRow' align=center>Education/Teaching/Training</td>
+		<td NOWRAP class='StandardRow' align=center>wyoming, WY</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85116.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>33</td>
+		<td class='StandardRow' align=center>10/15/2025</td>
+		<td class='StandardRow' align=center>ACCOUNTING ANALYST & EXEC ADMIN</td>
+		<td class='StandardRow' align=center>Customer Service/Technical Support</td>
+		<td NOWRAP class='StandardRow' align=center>San Jose, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85115.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>34</td>
+		<td class='StandardRow' align=center>10/14/2025</td>
+		<td class='StandardRow' align=center>GAME</td>
+		<td class='StandardRow' align=center>Beauty/Cosmetic</td>
+		<td NOWRAP class='StandardRow' align=center>New York, NY</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85114.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>35</td>
+		<td class='StandardRow' align=center>10/14/2025</td>
+		<td class='StandardRow' align=center>COMMERCIAL MOVERS - ONLINE MOVERS & STORAGE</td>
+		<td class='StandardRow' align=center>Transportation/Air, Sea & Land</td>
+		<td NOWRAP class='StandardRow' align=center>Doral, FL, USA, FL</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85113.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>36</td>
+		<td class='StandardRow' align=center>10/14/2025</td>
+		<td class='StandardRow' align=center>PLAYER</td>
+		<td class='StandardRow' align=center>Entertainment</td>
+		<td NOWRAP class='StandardRow' align=center>new york, NY</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85112.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>37</td>
+		<td class='StandardRow' align=center>10/13/2025</td>
+		<td class='StandardRow' align=center>SOFTWARE ENGINEER</td>
+		<td class='StandardRow' align=center>Computer Software/Programming</td>
+		<td NOWRAP class='StandardRow' align=center>Virginia, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85111.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>38</td>
+		<td class='StandardRow' align=center>10/13/2025</td>
+		<td class='StandardRow' align=center>HI-VAC AIR CONDITIONING SERVICE</td>
+		<td class='StandardRow' align=center>HVAC</td>
+		<td NOWRAP class='StandardRow' align=center>Sunrise, FL</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85110.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>39</td>
+		<td class='StandardRow' align=center>10/9/2025</td>
+		<td class='StandardRow' align=center>PROJECT MANAGER</td>
+		<td class='StandardRow' align=center>Warehouse/Inventory</td>
+		<td NOWRAP class='StandardRow' align=center>Winnipeg, MB</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85109.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>40</td>
+		<td class='StandardRow' align=center>10/9/2025</td>
+		<td class='StandardRow' align=center>INFORMATION TECHNOLOGY</td>
+		<td class='StandardRow' align=center>Information Technology</td>
+		<td NOWRAP class='StandardRow' align=center>Bessemer, PA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85108.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>41</td>
+		<td class='StandardRow' align=center>10/9/2025</td>
+		<td class='StandardRow' align=center>SUN AIR CONDITIONING & HEATING</td>
+		<td class='StandardRow' align=center>HVAC</td>
+		<td NOWRAP class='StandardRow' align=center>Sugar Land, TX</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85107.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>42</td>
+		<td class='StandardRow' align=center>10/8/2025</td>
+		<td class='StandardRow' align=center>BRUNO PLUMBING & HEATING</td>
+		<td class='StandardRow' align=center>HVAC</td>
+		<td NOWRAP class='StandardRow' align=center>Washington, PA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85106.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>43</td>
+		<td class='StandardRow' align=center>10/7/2025</td>
+		<td class='StandardRow' align=center>SOUTHLAND HEATING AND AIR</td>
+		<td class='StandardRow' align=center>HVAC</td>
+		<td NOWRAP class='StandardRow' align=center>Valencia, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85105.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>44</td>
+		<td class='StandardRow' align=center>10/2/2025</td>
+		<td class='StandardRow' align=center>MANUFACTURING PRODUCTION ASSEMBLER/QUALITY CONTROL INSPECTOR</td>
+		<td class='StandardRow' align=center>Manufacturing</td>
+		<td NOWRAP class='StandardRow' align=center>Milwaukee, WI</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85104.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>45</td>
+		<td class='StandardRow' align=center>10/2/2025</td>
+		<td class='StandardRow' align=center>METZ AIR CONTROL</td>
+		<td class='StandardRow' align=center>HVAC</td>
+		<td NOWRAP class='StandardRow' align=center>Riverside, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85103.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>46</td>
+		<td class='StandardRow' align=center>10/2/2025</td>
+		<td class='StandardRow' align=center>KAHL AC, HEATING & ELECTRICAL</td>
+		<td class='StandardRow' align=center>Billing</td>
+		<td NOWRAP class='StandardRow' align=center>Montgomery, TX</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85102.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>47</td>
+		<td class='StandardRow' align=center>9/29/2025</td>
+		<td class='StandardRow' align=center>MARKETING, ADMINISTRATIVE DEPARTMENT, CUSTOMER SERVICE DEPARTMENTS</td>
+		<td class='StandardRow' align=center>Finance/Investment</td>
+		<td NOWRAP class='StandardRow' align=center>Vancouver, BC</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85101.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>48</td>
+		<td class='StandardRow' align=center>9/25/2025</td>
+		<td class='StandardRow' align=center>BEST</td>
+		<td class='StandardRow' align=center>Agency</td>
+		<td NOWRAP class='StandardRow' align=center>warszawa, AK</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85100.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>49</td>
+		<td class='StandardRow' align=center>9/25/2025</td>
+		<td class='StandardRow' align=center>BEST</td>
+		<td class='StandardRow' align=center>CAD/Drafting</td>
+		<td NOWRAP class='StandardRow' align=center>warszawa, AK</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85099.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class='StandardRow' align=center>50</td>
+		<td class='StandardRow' align=center>9/24/2025</td>
+		<td class='StandardRow' align=center>ASSISTANT MANAGER / SUPERVISOR</td>
+		<td class='StandardRow' align=center>Warehouse/Inventory</td>
+		<td NOWRAP class='StandardRow' align=center>San Diego, CA</td>
+		<td class='StandardRow' align=center><a href='/job/view-resume-85097.html'><img src="/job/images/Preview-16x16.png" width=16 height=16 alt="View Ad" border="0"></a></td>
+	</tr>
+
+</table>
+</FONT></center></td></tr></table>
+				            </center>
+				          </td>
+				        </tr>
+				      </table>
+				    </td>
+				  </tr>
+				</table>
+             </TD>
+            <TD>
+			<IMG SRC="/job/images/clearpixel.gif" WIDTH=300 HEIGHT=18 BORDER=0>
+
+		<div id='googleAdUnitIframe_2'></div>
+	          
+<BR><BR>
+<center>
+
+</center>
+          </TD>
+        </TR>
+    </TABLE>
+<BR>
+<BR>
+<BR>
+<TABLE width='100%' BORDER=0 align=center>
+	<TR>
+		<TD>
+		<center> 
+		<font face=arial size=1 color='#6F6F6F'> &copy; 2025 Job Spider<BR></font>
+		<font face=arial size=1 color='#6F6F6F'><a href="/job/privacy-policy.asp">Privacy Policy</a> | <a href="/job/cc-marketing-sites.asp">CC Marketing Sites</a> | <a href="/job/site-map.asp">Site Map</a> | <a href="/job/job-links.asp">Links</a><BR></font>
+		<BR>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Bottom -->
+<ins class="adsbygoogle"
+     style="display:block;max-width:1000px"
+     data-ad-client="ca-pub-1662552535203450"
+     data-ad-slot="7512070389"
+     data-ad-format="horizontal"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+		<!-- <iframe src="http://www.facebook.com/plugins/likebox.php?id=196415831442&amp;width=600&amp;connections=10&amp;stream=false&amp;header=true&amp;height=210" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:600px; height:210px;" allowTransparency="true"></iframe> -->
+
+		</center>
+       </TD>
+    </TR>
+</TABLE>
+<BR>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11167823-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+<script type="text/javascript" charset="utf-8"> 
+var pageOptions = { 
+  'pubId': 'pub-1662552535203450',
+  'query': ' resume search',
+  'hl': 'en'
+};
+
+var adblock1 = { 
+  'container': 'googleAdUnitIframe_1',
+  'number': 10,
+  'width': '300px'
+};
+
+var adblock2 = { 
+  'container': 'googleAdUnitIframe_2',
+  'number': 8,
+  'width': '300px'
+};
+
+_googCsa('ads', pageOptions, adblock1, adblock2);
+
+</script>
+
+</BODY>
+
+<INPUT type=hidden name="_method">
+<INPUT type=hidden name="_Button1_state" value="value=New%20Search">
+<INPUT type=hidden name="_thisPage_state" value="">
+
+</FORM>
+</HTML>

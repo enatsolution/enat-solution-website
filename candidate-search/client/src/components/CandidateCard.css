@@ -1,0 +1,236 @@
+﻿.candidate-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.candidate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+  border-color: #0ea5e9;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e2e8f0;
+}
+
+.avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card-title {
+  flex: 1;
+}
+
+.card-title h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: #1e293b;
+}
+
+.username {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.job-title {
+  display: block;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.source-icon {
+  float: right;
+  font-size: 1.2rem;
+}
+
+.bio {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.objective {
+  color: #0369a1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f0f9ff;
+  border-radius: 8px;
+  border-left: 3px solid #0ea5e9;
+}
+
+.experience {
+  color: #7c3aed;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #faf5ff;
+  border-radius: 8px;
+  border-left: 3px solid #8b5cf6;
+}
+
+.contact-note {
+  color: #92400e;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 8px;
+  background: #fef3c7;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+.card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.detail {
+  font-size: 0.85rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #f0fdf4;
+  border-radius: 8px;
+  border: 1px solid #bbf7d0;
+}
+
+.contact-link {
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: #0ea5e9;
+}
+
+.contact-link.email {
+  font-weight: 600;
+  color: #0284c7;
+}
+
+.contact-link.phone {
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.contact-link.fax {
+  color: #64748b;
+}
+
+.contact-link.address {
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* NPI-specific styles */
+.detail.specialty {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 500;
+}
+
+.detail.credential {
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 500;
+}
+
+.detail.npi-number {
+  background: #f3e8ff;
+  color: #7c3aed;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.hireable-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn-card {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-view-profile {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: white;
+}
+
+.btn-view-profile:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+}
+
+.btn-details {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.btn-details:hover {
+  background: #e2e8f0;
+}

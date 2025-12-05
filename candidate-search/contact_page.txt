@@ -1,0 +1,25 @@
+﻿node : [eval]:21
+At line:1 char:53
++ $env:PATH = "C:\Program Files\nodejs;" + 
+$env:PATH; node -e "
++                                              
+       ~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([ 
+   eval]:21:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandErr 
+   or
+ 
+      const name = .attr('name');
+                   ^
+Expression expected
+
+SyntaxError: Unexpected token '.'
+    at makeContextifyScript 
+(node:internal/vm:194:14)
+    at compileScript 
+(node:internal/process/execution:388:10)
+    at evalTypeScript 
+(node:internal/process/execution:260:22)
+    at node:internal/main/eval_string:71:3
+
+Node.js v24.11.1

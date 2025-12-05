@@ -1,0 +1,154 @@
+================================================================================
+                    🚀 DEPLOY TO GITHUB - QUICK GUIDE
+================================================================================
+
+LOCATION: C:\Users\iamgo\Documents\augment-projects\enat solution\candidate-search
+
+================================================================================
+                        ⚠️ PREREQUISITES
+================================================================================
+
+1. Git installed on your computer
+   Download: https://git-scm.com/download/win
+
+2. GitHub account
+   Sign up: https://github.com
+
+3. GitHub personal access token
+   Create: https://github.com/settings/tokens
+
+================================================================================
+                        📋 QUICK STEPS
+================================================================================
+
+STEP 1: Install Git
+  - Download from: https://git-scm.com/download/win
+  - Run installer
+  - Restart computer
+  - Verify: git --version
+
+STEP 2: Create GitHub Repository
+  - Go to: https://github.com
+  - Click "+" → "New repository"
+  - Name: candidate-search
+  - Click "Create repository"
+
+STEP 3: Initialize Git in Project
+  Command: git init
+
+STEP 4: Configure Git
+  Commands:
+    git config --global user.name "Your Name"
+    git config --global user.email "your.email@enatsolution.com"
+
+STEP 5: Add Files
+  Command: git add .
+
+STEP 6: Create Commit
+  Command: git commit -m "Initial commit: Candidate Search Application"
+
+STEP 7: Add Remote
+  Command: git remote add origin https://github.com/YOUR_USERNAME/candidate-search.git
+  (Replace YOUR_USERNAME with your GitHub username)
+
+STEP 8: Push to GitHub
+  Commands:
+    git branch -M main
+    git push -u origin main
+
+STEP 9: Enter Credentials
+  - Username: Your GitHub username
+  - Password: Your GitHub personal access token
+
+================================================================================
+                        🔑 GET GITHUB PERSONAL ACCESS TOKEN
+================================================================================
+
+1. Go to: https://github.com/settings/tokens
+2. Click "Generate new token"
+3. Select "Generate new token (classic)"
+4. Fill in:
+   - Note: "Candidate Search Deployment"
+   - Expiration: 90 days
+   - Scopes: Check "repo"
+5. Click "Generate token"
+6. COPY THE TOKEN (you won't see it again!)
+7. Use this token as your password when pushing
+
+================================================================================
+                        📝 WHAT GETS UPLOADED
+================================================================================
+
+✅ server/          - Backend code
+✅ client/          - Frontend code
+✅ package.json     - Dependencies
+✅ README.md        - Documentation
+✅ .gitignore       - Files to ignore
+
+❌ node_modules/    - Ignored (too large)
+❌ .env             - Ignored (contains secrets)
+❌ dist/            - Ignored (build files)
+
+================================================================================
+                        🔄 AFTER DEPLOYMENT
+================================================================================
+
+To push future updates:
+
+  git add .
+  git commit -m "Your commit message"
+  git push origin main
+
+================================================================================
+                        🆘 COMMON ISSUES
+================================================================================
+
+"git: command not found"
+  → Install Git from: https://git-scm.com/download/win
+
+"fatal: not a git repository"
+  → Run: git init
+
+"Permission denied"
+  → Use GitHub personal access token (not password)
+  → Token must have "repo" scope
+
+"remote already exists"
+  → Run: git remote remove origin
+  → Then add correct remote
+
+================================================================================
+                        📚 DETAILED GUIDE
+================================================================================
+
+For detailed step-by-step instructions, see:
+  GITHUB_DEPLOYMENT_GUIDE.md
+
+================================================================================
+                        ✅ VERIFICATION
+================================================================================
+
+After deployment, verify on GitHub:
+
+1. Go to: https://github.com/YOUR_USERNAME/candidate-search
+2. Check all files are there
+3. Check commit history
+4. Check README is visible
+
+================================================================================
+                        🎯 NEXT STEPS
+================================================================================
+
+1. Install Git
+2. Create GitHub account (if needed)
+3. Create GitHub personal access token
+4. Create repository on GitHub
+5. Follow the 9 steps above
+6. Verify files on GitHub
+
+================================================================================
+
+Ready to deploy? Start with Step 1! 🚀
+
+================================================================================
+
