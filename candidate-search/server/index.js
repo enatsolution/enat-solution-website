@@ -90,6 +90,12 @@ app.post('/api/auth/login', async (req, res) => {
     });
   }
 
+  // Generate JWT token
+  const token = generateToken(user);
+
+  // Generate JWT token
+  const token = generateToken(user);
+
   // Set session
   console.log('Session set:', {
     sessionID: req.sessionID,
@@ -154,6 +160,8 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log('Login with your @enatsolution.com email and password');
 });
+
+
 
 
 
