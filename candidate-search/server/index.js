@@ -43,7 +43,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 app.use(session({
   secret: config.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true, // Changed to true to ensure session is created
   cookie: {
     secure: true, // Always true for cross-domain cookies (HTTPS required)
     httpOnly: true,
@@ -154,6 +154,7 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log('Login with your @enatsolution.com email and password');
 });
+
 
 
 
