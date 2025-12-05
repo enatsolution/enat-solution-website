@@ -1,9 +1,10 @@
 [build]
-  publish = "."
-  command = "echo 'Static site - no build needed'"
+  publish = "candidate-search/client/dist"
+  command = "cd candidate-search/client && npm install && npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
+  VITE_API_URL = "https://candidate-search-backend.onrender.com"
 
 # Security and performance processing
 [build.processing]
@@ -41,18 +42,16 @@
   status = 200
   headers = {Content-Type = "text/plain; charset=utf-8"}
 
-# Candidate Search routing (MUST be before catch-all)
+# Candidate Search routing
 [[redirects]]
   from = "/candidate-search"
   to = "/candidate-search.html"
   status = 200
-  force = true
 
 [[redirects]]
   from = "/candidate-search-app/*"
   to = "/candidate-search-app/:splat"
   status = 200
-  force = true
 
 # Ensure JSON files are served correctly
 [[redirects]]
@@ -61,11 +60,10 @@
   status = 200
   force = false
 
-# Catch-all for SPA routing (MUST be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
+  status = 404
 
 # Additional security headers
 [[headers]]
