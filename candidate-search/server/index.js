@@ -11,9 +11,9 @@ const npiRoutes = require('./routes/npi');
 const jobvertiseRoutes = require('./routes/jobvertise');
 const postjobfreeRoutes = require('./routes/postjobfree');
 const googleResumesRoutes = require('./routes/google-resumes');
+const { generateToken } = require('./utils/jwt');
 
 const app = express();
-const { generateToken } = require('./utils/jwt');
 const PORT = config.PORT;
 
 // CORS configuration for credentials
